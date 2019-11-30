@@ -1,0 +1,82 @@
+.reg{
+    width: 400px;
+    margin:auto;
+  
+  }
+  .reg h1{
+    color:#3f2b96;
+  }
+  
+  .reg form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height:400px;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .inputs{
+    margin:0;
+    padding: 0;
+    /* border: 1px solid green; */
+    width:350px;
+    height:450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background:linear-gradient(to right, #5D26C1, #A17FE0, #59C173); */
+    background:linear-gradient(to right, #a8c0ff, #6c54d4);
+  }
+  .inputs input{
+    font-size: 18px;
+    padding-left: 10px;
+    border:none;
+  
+  }
+  
+  .button{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .reg form input{
+    width:300px;
+    height: 40px;
+    margin:10px 0;
+  }
+  .reg form button{
+    width: 350px;
+    height: 50px;
+    background-color: #3f2b96;
+    color:white;
+    font-size: 25px;
+    border:none;
+    cursor: pointer;
+  
+  
+  }
+  
+  
+  
+  .toTheOtherForm p{
+    margin:15px 0px 5px 0;
+  }
+  
+  .toTheOtherForm .toLogin{
+    width:350px;
+    height:50px;
+    background-color: #8fa6e0;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  
+  }
+  
+  .toTheOtherForm a {
+    text-decoration: none;
+    color:white;
+    font-size:25px;
+  
+  }
