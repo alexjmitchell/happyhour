@@ -1,18 +1,15 @@
-import React from "react"
-import { useUsers } from "../hooks"
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Main from "../components/Main";
 
 function App() {
-  const { users } = useUsers()
-
-  console.log(users)
-
   return (
-    <div>
-      {users.map(user => (
-        <p key={user.id}>{user.name}</p>
-      ))}
-    </div>
-  )
+    <Router>
+      <div>
+        <Route exact path="/" component={Main}></Route>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
