@@ -1,4 +1,4 @@
-.reg{
+.reg, .prof{
     width: 400px;
     margin:auto;
   
@@ -16,6 +16,25 @@
   justify-content: center;
   }
   
+
+  .prof{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+  align-items: center;
+  justify-content: center;
+  }
+
+.profInputs input, .profInputs textarea{ 
+  font-size: 18px;
+    padding-left: 10px;
+    margin:5px 0;
+    border:1px solid green;
+    width:350px;
+  
+}
+
+
   .inputs{
     margin:0;
     padding: 0;
@@ -46,7 +65,7 @@
     height: 40px;
     margin:10px 0;
   }
-  .reg form button{
+  .reg form button, .prof form button{
     width: 350px;
     height: 50px;
     background-color: #3f2b96;
