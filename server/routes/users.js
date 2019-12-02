@@ -87,8 +87,6 @@ router.get("/admins",(req,res,next)=>{
 })
 
 
-// router.get("/oneadmin")
-
 
 // ********************************
 
