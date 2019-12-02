@@ -9,8 +9,8 @@ const LOGOUT = "auth/LOGOUT"
 const initialState = {
     username: '',
     isAuthenticated: false,
-    loading: false
-}
+    loading: false,
+   }
 // reducer(s)
 export default (state = initialState, action) => {
     switch(action.type) {
@@ -43,6 +43,8 @@ function login(username, password, dispatch) {
                 dispatch({
                     type: LOGIN_SUCCESS,
                     payload: username
+                    //
+
                 })
                 resolve()
             })
@@ -77,6 +79,9 @@ function logout () {
         type: LOGOUT
     }
 }
+
+
+
 
 export function useAuth() {
     const username = useSelector(appState => appState.authState.username)

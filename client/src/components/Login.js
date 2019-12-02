@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
+import { useUsers } from '../hooks'
 import { Link } from 'react-router-dom'
 
 export default props => {
@@ -7,6 +8,7 @@ const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
+const { getone } = useUsers ()
 
 function handlesubmit(e){
     e.preventDefault()
@@ -14,6 +16,7 @@ function handlesubmit(e){
     signin(username,password) //after signin we want to redirect to another page
     .then((resp)=>{
         setLoginmatch(true)
+        getone(username)
         props.history.push("/profile")
 
     }) 

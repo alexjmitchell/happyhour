@@ -1,32 +1,36 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
+import { useUsers} from '../hooks'
 import { Link } from 'react-router-dom'
 import "../styles/forms.css"
 import { set } from 'date-fns'
 
 
 export default props => {
-    const {username} = useAuth()
-    //const [username, setUsername]=useState('')
-    const [password, setPassword]=useState('')
-    const [contactName, setContactName]=useState('')
+    // const {username} = useAuth()
+    const {admins, oneAdmin} = useUsers()
+    const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
+    // const [password, setPassword]=useState('')
 
-    // const [cpassword, setCPassword]=useState('')
-    const [email, setEmail]=useState('')
-    const [phonenumber, setPhone]=useState('')
+
+
+    const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
+    const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
+    const [phonenumber, setPhone]=useState(oneAdmin.map(u=>u.phone).toString())
 
     const [compName,setCompName]=useState("")
-    const [adress,setAdress]=useState("")
+    const [adress,setAdress]=useState('')
     const [usstate, setUsState]=useState('')
     const [city,setCity]=useState('')
     const [zip, setZip]=useState('')
     const [coordinates, setCoordinates]=useState('')
-    const [compEmail, setCompEmail]=useState('')
+    const [compEmail, setCompEmail]=useState("")
     const [compPhone, setCompPhone]=useState('')
     const [compWeb,setCompWeb]=useState('')
     const [fb, setFb]=useState("")
     const [ig,setIg]=useState('')
     const [logo, setLogo]=useState('')
+    const [foodType, setFoodType]=useState('')
     const [pic,setPic]=useState('')
     const [desc, setDesc]=useState('')
     const [banner,setBanner]=useState('')
@@ -40,9 +44,17 @@ export default props => {
     const [sat, setSat]=useState(false) 
     const [sun, setSun]=useState(false) 
 
+    const id = admins.filter(a=>a.username == username).map(u=>u.id)
+            //  setContactName(u.name)
+
+    // console.log(oneemail + " nnn email")
+        
+            //  console.log(bdemail.toString())
 
 
-
+            //  console.log(bdemail)
+    
+            // setEmail(bdemail)
 
     
     
@@ -51,7 +63,7 @@ export default props => {
 
    // const [days, setDays]=useState([true,false])
 
-    const { reg } = useAuth()
+   // const { reg } = useAuth()
     
     function handlesubmit(e){
         e.preventDefault()
@@ -79,6 +91,8 @@ const d=days
        
 console.log(days)
 console.log(d.join(","))
+console.log(admins)
+
 // console.log(dd.join(",") + " dd join days")
 
     
@@ -128,6 +142,9 @@ console.log(d.join(","))
                         <input type="" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
                         <input type="" name ="pic" placeholder="pic url**" value={pic} onChange={e=>setPic(e.target.value)}/>
                         <input type="" name ="banner" placeholder="banner url**" value={banner} onChange={e=>setBanner(e.target.value)}/>
+
+                        <input type="" name ="foodtype" placeholder="Food type" value={foodType} onChange={e=>setFoodType(e.target.value)}/>
+
 
                         <textarea type="text" name="desc" placeholder="Description" value={desc} onChange={e=>setDesc(e.target.value)}/>
 

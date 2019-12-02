@@ -5,6 +5,8 @@ const db = require('../db')
 const jwt = require ('jsonwebtoken') 
 const config = require('config') 
 
+// const {username}=useUsers()
+
 router.post("/register", (req, res, next) => {
   const salt = uuid()
   const username = req.body.username
@@ -43,7 +45,6 @@ router.post('/login', (req, res, next) =>{
     if(results.length > 0) {
       password = sha512(password + results[0].salt)
 
-
       //to see if the user record exists. if exists we will have back 1, if not 0
       const sql =`SELECT count(1) as count FROM admins WHERE username =? AND password = ?` 
       db.query(sql,[username, password], (err,results, fields) =>{
@@ -57,26 +58,38 @@ router.post('/login', (req, res, next) =>{
             token // token:token
           })
 
-        }else{
-          res.status(401).json({
+          }else{
+            res.status(401).json({
             message: "Username or Password are incorrect"
-          })
+             })
+          }
+
+        })
+
+      } else{
+        res.status(401).json({
+        message: "User doesn't exist"
+        })
         }
 
-      })
 
-    }else{
-      res.status(401).json({
-        message: "User doesn't exist"
-      })
-    }
-
-
-  })
-
-
+    })
 
 })
+
+router.get("/admins",(req,res,next)=>{
+  const sql = `
+  SELECT id, username, name, phone, email FROM admins`
+  db.query(sql, (err,results,fields)=>{
+    res.json(results)
+  })
+
+  
+})
+
+
+// router.get("/oneadmin")
+
 
 // ********************************
 

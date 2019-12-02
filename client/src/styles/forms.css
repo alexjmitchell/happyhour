@@ -4,7 +4,7 @@
   
   }
   .reg h1{
-    color:#3f2b96;
+    color:#df3926;
   }
   
   .reg form{
@@ -46,7 +46,8 @@
     align-items: center;
     justify-content: center;
     /* background:linear-gradient(to right, #5D26C1, #A17FE0, #59C173); */
-    background:linear-gradient(to right, #a8c0ff, #6c54d4);
+    background:linear-gradient(to right, rgb(238, 81, 100), #df3926);
+
   }
   .inputs input{
     font-size: 18px;
@@ -68,7 +69,7 @@
   .reg form button, .prof form button{
     width: 350px;
     height: 50px;
-    background-color: #3f2b96;
+    background-color: rgb(199, 40, 23);
     color:white;
     font-size: 25px;
     border:none;
@@ -86,7 +87,7 @@
   .toTheOtherForm .toLogin{
     width:350px;
     height:50px;
-    background-color: #8fa6e0;
+    background-color: rgb(224, 94, 109);
     text-align: center;
     line-height: 40px;
     cursor: pointer;
