@@ -1,13 +1,20 @@
 import React from "react";
 import Coverflow from "react-coverflow";
 import { StyleRoot } from "radium";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Icon from "../lib/Icon";
 
 function Slider() {
   const fn = function() {};
   return (
     <div>
-      <div>hhhh</div>
-      <div>ddd</div>
+      <p>
+        Check Your Liked List Here:{" "}
+        <Link to="/liked">
+          {" "}
+          <Icon icon="heart" />
+        </Link>
+      </p>
       <Coverflow
         width="960"
         height="500"
@@ -24,7 +31,7 @@ function Slider() {
           tabIndex="0"
         >
           <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
+            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg    />"
             alt="HH description"
             data-action="our link"
             style={{
@@ -84,42 +91,6 @@ function Slider() {
           data-action="our link"
         />
       </Coverflow>
-      ,
-      {/* <StyleRoot>
-        <Coverflow
-          displayQuantityOfSide={2}
-          navigation
-          infiniteScroll
-          enableHeading
-          media={{
-            "@media (max-width: 900px)": {
-              width: "600px",
-              height: "300px"
-            },
-            "@media (min-width: 900px)": {
-              width: "960px",
-              height: "600px"
-            }
-          }}
-        >
-          <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
-            alt="HHPLace one"
-          />
-          <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
-            alt="HHPlace two"
-          />
-          <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
-            alt="HHPlace three"
-          />
-          <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
-            alt="HHPlace four"
-          />
-        </Coverflow>
-      </StyleRoot> */}
     </div>
   );
 }

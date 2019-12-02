@@ -1,45 +1,48 @@
-import { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import axios from "axios"
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 
 // action definitions
-const GET_USERS = "users/GET_USERS"
+const GET_PICTURES = "users/GET_PICTURES";
 
 // initial state
 const initialState = {
   users: []
-}
+};
 
 // reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_USERS:
-      return { ...state, users: action.payload }
+    case GET_PICTURES:
+      return { ...state, users: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
 
 // action creators
-const getUsers = () => {
+const getPic = () => {
   return dispatch => {
-    axios.get("/users").then(resp => {
+    axios.get("/companies").then(resp => {
       dispatch({
-        type: GET_USERS,
+        type: GET_PICTURES,
         payload: resp.data
-      })
-    })
-  }
-}
+      });
+    });
+  };
+};
 
 // custom hooks
 export function useUsers() {
-  const users = useSelector(appState => appState.userState.users)
-  const dispatch = useDispatch()
+  const users = useSelector(appState => appState.userState.users);
+
+  const dispatch = useDispatch();
+
+  const get = () => dispatch(getPic());
 
   useEffect(() => {
-    dispatch(getUsers())
-  }, [dispatch])
+    get();
+  }, [dispatch]);
 
-  return { users }
+  return { users };
 }

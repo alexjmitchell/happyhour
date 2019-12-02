@@ -1,12 +1,26 @@
-const router = require("express").Router()
+const router = require("express").Router();
+const db = require("../db");
 
-const users = [
-  { id: 1, name: "Mike" },
-  { id: 2, name: "Ryan" }
-]
+router.get("/companies", (req, res, next) => {
+  const sql = `
+  SELECT picture FROM companies`;
 
-router.get("/", (req, res, next) => {
-  res.json(users)
-})
+  db.query(sql, (err, results, fields) => {
+    res.json(results);
+  });
+});
 
-module.exports = router
+// router.post("/companies", (req, res, next) => {
+//   let picture = req.body.picture;
+
+//   const sql = `
+//   INSERT INTO companies.picture VALUES ('${picture})`;
+
+//   db.query(sql, (err, results, fields) => {
+//     console.log("error", err);
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
+module.exports = router;

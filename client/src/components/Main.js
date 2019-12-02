@@ -3,8 +3,11 @@ import "../styles/Maincss.css";
 import Icon from "../lib/Icon";
 import Slider from "../components/Slider.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Liked from "./Liked";
+import { useUsers } from "../hooks";
 
 function Main() {
+  const { users } = useUsers();
   return (
     <div>
       <header className="Header">
@@ -44,10 +47,20 @@ function Main() {
         <Router>
           <div>
             <Route path="/" component={Slider}></Route>
+            <Route path="/liked" component={Liked}></Route>
           </div>
         </Router>
       </main>
       <footer className="footerwrap">Partnership With Us</footer>
+      <div>
+        <div className="container">
+          {users.map((user, i) => (
+            <div key={i}>
+              <p>Name: {user.companies}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
