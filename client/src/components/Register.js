@@ -1,7 +1,10 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { Link } from 'react-router-dom'
+import { useAdmins } from '../hooks'
+
 import "../styles/forms.css"
+
 
 export default props => {
 const [username, setUsername]=useState('')
@@ -10,6 +13,8 @@ const [contactName, setContactName]=useState('')
 const [cpassword, setCPassword]=useState('')
 const [email, setEmail]=useState('')
 const [phonenumber, setPhone]=useState('')
+const { getRegistered } = useAdmins ()
+
 
 const { reg } = useAuth()
 
@@ -18,6 +23,16 @@ function handlesubmit(e){
 
     reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
     .then((resp)=>{
+        getRegistered([
+            {
+                username,
+                name: contactName,
+                email,
+                phone: phonenumber
+            }
+        ]
+        )
+
         props.history.push("/profile")
 
     }) 

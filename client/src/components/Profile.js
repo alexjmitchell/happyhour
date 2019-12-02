@@ -1,14 +1,14 @@
 import React, { useState} from 'react'
-import { useAuth } from '../hooks'
-import { useUsers} from '../hooks'
-import { Link } from 'react-router-dom'
+// import { useAuth } from '../hooks'
+import { useAdmins} from '../hooks'
+// import { Link } from 'react-router-dom'
 import "../styles/forms.css"
-import { set } from 'date-fns'
+// import { set } from 'date-fns'
 
 
 export default props => {
     // const {username} = useAuth()
-    const {admins, oneAdmin} = useUsers()
+    const {admins, oneAdmin} = useAdmins()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
     // const [password, setPassword]=useState('')
 
@@ -44,27 +44,10 @@ export default props => {
     const [sat, setSat]=useState(false) 
     const [sun, setSun]=useState(false) 
 
-    const id = admins.filter(a=>a.username == username).map(u=>u.id)
+   // const id = admins.filter(a=>a.username == username).map(u=>u.id)
             //  setContactName(u.name)
 
-    // console.log(oneemail + " nnn email")
-        
-            //  console.log(bdemail.toString())
-
-
-            //  console.log(bdemail)
-    
-            // setEmail(bdemail)
-
-    
-    
-    
-    //value from the database
-
-   // const [days, setDays]=useState([true,false])
-
-   // const { reg } = useAuth()
-    
+     
     function handlesubmit(e){
         e.preventDefault()
         let days = []
@@ -84,14 +67,18 @@ const d=days
         if (sun)
         {days.push("Su")}
 
-
+if (admins.length ==0){ //company length
+    console.log ("insert")
+}else {
+    console.log ("update")
+}
 
 
         
        
 console.log(days)
 console.log(d.join(","))
-console.log(admins)
+console.log(oneAdmin)
 
 // console.log(dd.join(",") + " dd join days")
 

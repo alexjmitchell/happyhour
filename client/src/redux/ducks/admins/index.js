@@ -1,14 +1,12 @@
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
-// import {useAuth} from '../hooks'
 
-
-// const {username} = useAuth()
 
 // action definitions
 const GET_ADMINS = "users/GET_ADMINS"
 const GET_ONEADMIN = "users/GET_ONEADMIN"
+const GET_REGISTERED = "users/GET_REGISTERED"
 //const GET_COMPANIES = "users/GET_COMPANIES"
 
 // initial state
@@ -26,6 +24,8 @@ export default (state = initialState, action) => {
       return { ...state, admins: action.payload }
     case GET_ONEADMIN:
       return {...state, oneAdmin:state.admins.filter(e=>e.username == action.payload)}
+    case GET_REGISTERED:
+      return {...state, oneAdmin:action.payload}
     default:
       return state
   }
@@ -55,21 +55,36 @@ const getOneAdmin = (user)=>{
       type:GET_ONEADMIN,
       payload:user
     })
-
   }
 }
 
 
+
+const getJustRegistered = (registered)=>{
+
+  return dispatch => {
+
+    dispatch ({
+      type:GET_REGISTERED,
+      payload:registered
+    })
+  }
+}
+
+
+
+
 // custom hooks
-export function useUsers() {
-  const admins = useSelector(appState => appState.userState.admins)
-  const oneAdmin = useSelector(appState => appState.userState.oneAdmin)
+export function useAdmins() {
+  const admins = useSelector(appState => appState.adminState.admins)
+  const oneAdmin = useSelector(appState => appState.adminState.oneAdmin)
   const dispatch = useDispatch()
   const getone = user=>dispatch(getOneAdmin(user))
+const getRegistered = registered => dispatch(getJustRegistered(registered))
 
   useEffect(() => {
     dispatch(getAdmins())
   }, [dispatch])
 
-  return { admins, getone, oneAdmin }
+  return { admins, getone, oneAdmin, getRegistered }
 }

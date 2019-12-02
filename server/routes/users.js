@@ -5,7 +5,6 @@ const db = require('../db')
 const jwt = require ('jsonwebtoken') 
 const config = require('config') 
 
-// const {username}=useUsers()
 
 router.post("/register", (req, res, next) => {
   const salt = uuid()
@@ -14,7 +13,7 @@ router.post("/register", (req, res, next) => {
   const name = req.body.name
   const phone = req.body.phone
   const email = req.body.email
-  // console.log (username,password)
+
   console.log(name + " contactname")
   console.log(phone + " phone")
   console.log(email + " email")

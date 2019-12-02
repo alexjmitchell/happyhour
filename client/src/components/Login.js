@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
-import { useUsers } from '../hooks'
+import { useAdmins } from '../hooks'
 import { Link } from 'react-router-dom'
 
 export default props => {
@@ -8,7 +8,7 @@ const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
-const { getone } = useUsers ()
+const { getone } = useAdmins ()
 
 function handlesubmit(e){
     e.preventDefault()
