@@ -20,7 +20,7 @@ function Slider() {
         height="500"
         displayQuantityOfSide={2}
         navigation={false}
-        enableScroll={false}
+        enableScroll={true}
         clickable={true}
         active={0}
       >
