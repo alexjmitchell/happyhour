@@ -1,6 +1,6 @@
 import React from "react";
 import Coverflow from "react-coverflow";
-import { StyleRoot } from "radium";
+// import { StyleRoot } from "radium";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Icon from "../lib/Icon";
 

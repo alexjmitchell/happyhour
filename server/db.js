@@ -1,11 +1,11 @@
-const mysql = require("mysql");
+const mysql = require('mysql')
 
-const pool = mysql.createPool({
-  connectLimit: 10,
-  user: "root",
-  password: "",
-  host: "localhost",
-  database: "happy"
-});
+const pool=mysql.createPool({
+    connectionLimit: 10,
+    user: "root",
+    password:"",
+    database:"happy",
+    host:"localhost"
+})
 
-module.exports = pool;
+module.exports = pool
