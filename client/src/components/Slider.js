@@ -31,7 +31,7 @@ function Slider() {
           tabIndex="0"
         >
           <img
-            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg    />"
+            src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?cs=srgb&dl=cheers-drink-hand-544961.jpg&fm=jpg"
             alt="HH description"
             data-action="our link"
             style={{
