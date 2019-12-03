@@ -2,6 +2,8 @@ import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { Link } from 'react-router-dom'
 import { useAdmins } from '../hooks'
+import Header from "./Header";
+import Footer from "./Footer";
 
 import "../styles/forms.css"
 
@@ -50,6 +52,8 @@ function handlesubmit(e){
 }
 
     return (
+        <>
+        <Header/>
         <div className="reg">
             <h1> Sign up</h1>
             <form onSubmit={handlesubmit}>
@@ -72,5 +76,7 @@ function handlesubmit(e){
             </div>
 
         </div>
+    <Footer/>
+    </>
     )
 }

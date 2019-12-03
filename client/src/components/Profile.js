@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 // import { useAuth } from '../hooks'
 import { useAdmins} from '../hooks'
+import {useCompanies} from "../hooks"
 // import { Link } from 'react-router-dom'
 import "../styles/forms.css"
 // import { set } from 'date-fns'
@@ -9,17 +10,17 @@ import "../styles/forms.css"
 export default props => {
     // const {username} = useAuth()
     const {admins, oneAdmin} = useAdmins()
+    const { companies, oneCompany, regProf, getOneC, updtPro } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
+    const admin_id= Number(oneAdmin.map(u=>u.id).join(''))
     // const [password, setPassword]=useState('')
-
-
 
     const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
     const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
     const [phonenumber, setPhone]=useState(oneAdmin.map(u=>u.phone).toString())
 
     const [compName,setCompName]=useState("")
-    const [adress,setAdress]=useState('')
+    const [address,setAddress]=useState('')
     const [usstate, setUsState]=useState('')
     const [city,setCity]=useState('')
     const [zip, setZip]=useState('')
@@ -29,12 +30,18 @@ export default props => {
     const [compWeb,setCompWeb]=useState('')
     const [fb, setFb]=useState("")
     const [ig,setIg]=useState('')
+    const [tw,setTw]=useState('')
+
+
     const [logo, setLogo]=useState('')
     const [foodType, setFoodType]=useState('')
     const [pic,setPic]=useState('')
     const [desc, setDesc]=useState('')
     const [banner,setBanner]=useState('')
     const [menu, setMenu]=useState('')
+    const [startHr, setStartHr]=useState('')
+    const [endHr, setEndHr]=useState('')
+
 
     const [monday, setMonday]=useState(true)
     const [tuesday, setTuesday]=useState(false) 
@@ -44,6 +51,8 @@ export default props => {
     const [sat, setSat]=useState(false) 
     const [sun, setSun]=useState(false) 
 
+
+
    // const id = admins.filter(a=>a.username == username).map(u=>u.id)
             //  setContactName(u.name)
 
@@ -51,21 +60,22 @@ export default props => {
     function handlesubmit(e){
         e.preventDefault()
         let days = []
-const d=days
         if (monday)
-            {days.push("M")}
+            {days.push("Mo")}
         if (tuesday)
-        {days.push("T")}
+        {days.push("Tu")}
         if (wed)
-        {days.push("W")}
+        {days.push("We")}
         if(thurs)
-        {days.push("T")}
+        {days.push("Th")}
         if(fri)
-        {days.push("F")}
+        {days.push("Fr")}
         if (sat)
         {days.push("Sa")}
         if (sun)
         {days.push("Su")}
+
+        
 
 if (admins.length ==0){ //company length
     console.log ("insert")
@@ -73,29 +83,33 @@ if (admins.length ==0){ //company length
     console.log ("update")
 }
 
-
+const d=days.join(',')
         
        
 console.log(days)
-console.log(d.join(","))
+// console.log(d.join(","))
 console.log(oneAdmin)
 
 // console.log(dd.join(",") + " dd join days")
 
+
+console.log({
+    compName,
+    address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id
+})
     
-        // reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
-        // .then((resp)=>{
-        //     props.history.push("/profile")
+regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id) //after signin we want to redirect to another page
+        .then((resp)=>{
+            //func to send the company
+            getOneC(compName)
+            props.history.push("/test2")
     
-        // }) 
-        // .catch(e => {
-        //     console.log(username + " " + password + " user and password")
-        //     console.log(contactName + " " + phonenumber + " contactname and phone")
-        //     console.log("email " + email)
+        }) 
+        .catch(e => {
+            
     
-    
-        //     console.log("LOGIN ERROR")
-        // })
+            console.log(e + " ERROR")
+        })
 
 
     }
@@ -114,7 +128,7 @@ console.log(oneAdmin)
 <hr></hr>
 
                         <input type="text" name = "companyname" placeholder="Company name" value={compName} onChange={e=>setCompName(e.target.value)}/>
-                        <input type="text" name = "adress" placeholder="Adress" value={adress} onChange={e=>setAdress(e.target.value)}/>
+                        <input type="text" name = "address" placeholder="Address" value={address} onChange={e=>setAddress(e.target.value)}/>
 
                         <input type="text" name = "state" placeholder="State" value={usstate} onChange={e=>setUsState(e.target.value)}/>
                         <input type="text" name = "city" placeholder="City" value={city} onChange={e=>setCity(e.target.value)}/>
@@ -125,12 +139,19 @@ console.log(oneAdmin)
                         <input type="text" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value)}/>
                         <input type="text" name ="fb" placeholder="Company Facebook" value={fb} onChange={e=>setFb(e.target.value)}/>
                         <input type="text" name ="ig" placeholder="Company Instagram" value={ig} onChange={e=>setIg(e.target.value)}/>
+                        <input type="text" name ="tw" placeholder="Company Twitter" value={tw} onChange={e=>setTw(e.target.value)}/>
 
                         <input type="" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
                         <input type="" name ="pic" placeholder="pic url**" value={pic} onChange={e=>setPic(e.target.value)}/>
                         <input type="" name ="banner" placeholder="banner url**" value={banner} onChange={e=>setBanner(e.target.value)}/>
 
                         <input type="" name ="foodtype" placeholder="Food type" value={foodType} onChange={e=>setFoodType(e.target.value)}/>
+
+
+                        <input type="" name ="starhour" placeholder="start hr**" value={startHr} onChange={e=>setStartHr(e.target.value)}/>
+
+                        <input type="" name ="endhour" placeholder="end hr" value={endHr} onChange={e=>setEndHr(e.target.value)}/>
+
 
 
                         <textarea type="text" name="desc" placeholder="Description" value={desc} onChange={e=>setDesc(e.target.value)}/>

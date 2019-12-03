@@ -8,6 +8,7 @@ import MainBaner from "./Main-Baner"
 function Main() {
   return (
     <div>
+
       <Header />
       <MainBaner />
       <Slider />
