@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Link } from "react-router-dom"
 
 function Like() {
   return (
@@ -8,7 +8,7 @@ function Like() {
         Go back to ALL: <Link to="/">Click Here</Link>
       </p>
     </div>
-  );
+  )
 }
 
-export default Like;
+export default Like
