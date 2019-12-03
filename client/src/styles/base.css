@@ -20,3 +20,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.pics {
+  border: 1px solid green;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}

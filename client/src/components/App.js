@@ -1,34 +1,38 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import Login from './Login'
-import Maintest from './Maintest'
-import Main from './Main'
+import Login from "./Login"
+import Maintest from "./Maintest"
+import Main from "./Main"
 import CheckLogin from "./CheckLogin"
 import Register from "./Register"
 import Test2 from "./Test2"
 import Profile from "./Profile"
+import Liked from "./Liked"
+import Facebook from "./Facebook"
+import CompanyPage from "./CompanyPage"
 
 function App() {
   return (
     <div>
       <Router>
-
         <Switch>
-        {/* <Route exact path="/main" component={Maintest}/>  */}
-        <Route exact path="/" component={Main}/>
-        <Route path="/test2" component={Test2}/>
+          {/* <Route exact path="/main" component={Maintest}/>  */}
+          <Route exact path="/" component={Main} />
+          <Route path="/test2" component={Test2} />
 
-         <Route path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
+          <Route exact path="/liked" component={Liked}></Route>
+          <Route path="/CompanyPage" component={CompanyPage}></Route>
+          <Route path="/Facebook" component={Facebook}></Route>
 
-         {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="*" component={CheckLogin}/>
-          </Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
 
-      </Router> 
-     </div>
+          {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="*" component={CheckLogin} />
+        </Switch>
+      </Router>
+    </div>
   )
 }
 
 export default App
-
