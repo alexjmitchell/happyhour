@@ -2,6 +2,8 @@ import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { useAdmins } from '../hooks'
 import { Link } from 'react-router-dom'
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default props => {
 const [username, setUsername]=useState('')
@@ -34,6 +36,8 @@ function handlesubmit(e){
 }
 
     return (
+        <>
+<Header/>
         <div className="reg">
         <h1> Sign in</h1>
    
@@ -51,6 +55,10 @@ function handlesubmit(e){
             <p> Don't have an account? </p>
             <p className="toLogin"> <Link to="/register">Register</Link></p>
             </div>
+
         </div>
+
+<Footer/>
+        </>
     )
 }

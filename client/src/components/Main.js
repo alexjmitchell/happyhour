@@ -12,26 +12,26 @@ function Main() {
   return (
     <div>
       <div>
-        <Route path="/" component={Header}></Route>
+        {/* <Route path="/" component={Header}></Route> */}
       </div>
       <main className="mainwrap">
         <Router>
           <div>
             <Route path="/" component={Slider}></Route>
             <Route path="/liked" component={Liked}></Route>
-            <Route path="/" component={Footer}></Route>
+            {/* <Route path="/" component={Footer}></Route> */}
           </div>
         </Router>
       </main>
-      <div>
-        <div className="container">
+      {/* <div> */}
+        {/* <div className="container">
           {users.map((user, i) => (
             <div key={i}>
               <p>Name: {user.companies}</p>
             </div>
-          ))}
-        </div>
-      </div>
+          ))} */}
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }

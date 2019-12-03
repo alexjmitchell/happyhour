@@ -14,9 +14,6 @@ router.post("/register", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
 
-  console.log(name + " contactname")
-  console.log(phone + " phone")
-  console.log(email + " email")
 
 
   // *********************
@@ -97,6 +94,140 @@ router.get("/companies", (req, res, next) => {
     res.json(results);
   });
 });
+
+
+
+
+///*********************** */
+
+router.post("/profile", (req, res, next) => {
+  const companyname = req.body.companyname
+  const address = req.body.address
+  const city = req.body.city
+  const state = req.body.state
+  const zip = req.body.zip
+  const phone = req.body.phone
+  const email = req.body.email
+  const website = req.body.website
+  const coordinates = req.body.coordinates
+  const logo = req.body.logo
+  const picture = req.body.picture
+  const facebook = req.body.facebook
+  const instagram = req.body.instagram
+  const twitter = req.body.twitter
+  // const banner = req.body.state
+  const foodtype = req.body.foodtype
+  const menu = req.body.menu
+  const descript = req.body.descript
+  const hhdays = req.body.hhdays
+  const starthour = req.body.starthour
+  const endhour = req.body.endhour
+  const admin_id = req.body.admin_id
+  // const username = req.body.username
+  
+  console.log({
+    companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id
+
+  })
+
+  
+
+  // *********************
+  const sql = 'INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+  
+    db.query(sql, [companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id], (err, results, fields)=>{
+
+        if(err){
+          throw new Error (err)
+        }
+        res.json({
+          message: "company created",
+          results
+        })
+
+      })
+  })
+
+
+//getting all the companies profiles
+  router.get("/gprofile",(req,res,next)=>{
+    const sql = `
+    SELECT companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
+    db.query(sql, (err,results,fields)=>{
+      res.json(results)
+    })
+  
+    
+  })
+
+  router.put("/gprofile",(req,res,next)=>{
+  const companyname = req.body.companyname
+  const address = req.body.address
+  const city = req.body.city
+  const state = req.body.state
+  const zip = req.body.zip
+  const phone = req.body.phone
+  const email = req.body.email
+  const website = req.body.website
+  const coordinates = req.body.coordinates
+  const logo = req.body.logo
+  const picture = req.body.picture
+  const facebook = req.body.facebook
+  const instagram = req.body.instagram
+  const twitter = req.body.twitter
+  // const banner = req.body.state
+  const foodtype = req.body.foodtype
+  const menu = req.body.menu
+  const descript = req.body.descript
+  const hhdays = req.body.hhdays
+  const starthour = req.body.starthour
+  const endhour = req.body.endhour
+  const admin_id = req.body.admin_id
+
+  console.log(req.body)
+  
+
+    const sql = `
+    UPDATE companies
+    set 
+    companyname = ?, 
+    address=?, 
+    city=?,
+    state=?, 
+    zip=?,
+    phone=?, 
+    email=?, 
+    website=?, 
+    facebook=?, 
+    instagram=?, 
+    twitter=?, 
+    coordinates=?, 
+    logo=?, 
+    picture=?, 
+    foodtype=?, 
+    menu=?, 
+    descrip=?, 
+    hhdays=?, 
+    starthour=?, 
+    endhour=?, 
+    admin_id=? 
+    WHERE admin_id=?`
+
+    db.query(sql,[companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id, admin_id], (err,results,fields)=>{
+      res.json(results)
+    })
+  
+    
+  })
+  
+
+
+///*********************** */
+
+
+
+
+
 
 // router.post("/companies", (req, res, next) => {
 //   let picture = req.body.picture;
