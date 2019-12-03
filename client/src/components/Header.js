@@ -14,20 +14,9 @@ function Header() {
         <Link to={'/PartnerWithUs'}>Partner With Us</Link>
         <Link to={'/SingleViewPage'}>Single View Page</Link>
 
-        <p>CONTACT</p>
-        <div className="iconf">
-          <Icon icon="facebook-square" />
-        </div>
-        <div className="iconc">
-          <Icon icon="camera" />
-        </div>
-        <div className="icont">
-          <Icon icon="twitter" />
-        </div>
         <p>LOGIN/SIGN UP</p>
       </header>
-
     </div>
-  );
+  )
 }
-export default Header;
+export default Header
