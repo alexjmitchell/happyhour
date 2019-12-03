@@ -24,13 +24,13 @@ function Main() {
         </Router>
       </main>
       <div>
-        <div className="container">
+        {/* <div className="container">
           {users.map((user, i) => (
             <div key={i}>
-              <p>Name: {user.companies}</p>
+              <p>Name: {user.picture}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

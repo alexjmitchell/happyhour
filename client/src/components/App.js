@@ -7,6 +7,11 @@ import CheckLogin from "./CheckLogin"
 import Register from "./Register"
 import Test2 from "./Test2"
 import Profile from "./Profile"
+// Laz Components Added
+import AboutUs from "./AboutUs"
+import ContactUs from "./ContactUs"
+import PartnerWithUs from "./PartnerWithUs"
+import SingleViewPage from "./SingleViewPage"
 
 function App() {
   return (
@@ -18,8 +23,13 @@ function App() {
         <Route exact path="/" component={Main}/>
         <Route path="/test2" component={Test2}/>
 
-         <Route path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
+        <Route path="/AboutUs" component={AboutUs}/>
+        <Route path="/ContactUs" component={ContactUs}/>
+        <Route path="/PartnerWithUs" component={PartnerWithUs}/>
+        <Route path="/SingleViewPage" component={SingleViewPage}/>
+        
+        <Route path="/Login" component={Login}/> 
+        <Route path ="/Register" component={Register}/>
 
          {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin}/>

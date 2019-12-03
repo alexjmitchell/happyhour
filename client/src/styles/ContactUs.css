@@ -1,0 +1,229 @@
+html {
+    scroll-behavior: smooth;
+    background-color: beige;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#contactUs {
+    background: black;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 10%;
+}
+
+/* ---------- Start: contactUsBanner Section ---------- */
+
+.contactUsBanner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 0;
+    /* background: #e68a00; */
+}
+
+    /* ----- Start: Google Maps Section ----- */
+
+.GoogleMaps {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(53,128,199); */
+}
+
+.GoogleMapsWrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid  rgb(51,51,51);
+}
+
+
+    /* ----- End: Google Maps Section ----- */
+
+    /* ----- Start: contactUsInfo Section ----- */
+
+.contactUsInfo {
+    width: 70%;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid  rgb(51,51,51);
+}
+
+#phone {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0px 0px 5px 0px;
+    color: rgb(51,51,51);
+}
+
+#or {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0px 0px 5px 0px;
+}
+
+#emailBanner {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: rgb(51,51,51);
+}
+
+#address {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+    /* ----- End: contactUsInfo Section ----- */
+
+/* ---------- End: contactUsBanner Section ---------- */
+
+/* ---------- Start: contactUsMain Section ---------- */
+
+.contactUsMain {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    /* ---------- Start: officeContainer ---------- */
+
+.officeContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-image: url("wework.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover; */
+}
+
+.textPicWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 50px;
+    background-color: rgb(51,51,51);
+}
+
+#visitUs {
+    font-size: 30px;
+    text-align: center;
+    color: #e68a00;
+    margin-bottom: 10px;
+}
+
+#officeName, #address1, #address2 {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+#wework {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+}
+
+#mktResearch {
+    font-size: 20px;
+    text-align: center;
+    color: #e68a00;
+}
+
+
+    /* ---------- Start: formContainer ---------- */
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-image: url("contactFormBackground.jpg"); */
+}
+
+.contactUsForm {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 50px;
+    background-color: rgb(51,51,51);
+}
+
+#contactUsTitle {
+    font-size: 30px;
+    text-align: center;
+    color: #e68a00;
+    margin-bottom: 0;
+}
+
+.upperWrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+input#fname, input#lname, input#email, input#company {
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nameContainer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.emailCompanyContainer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.lowerWrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.messageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: white;
+}
+
+.submitButton {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e68a00;
+    color: white;
+    text-decoration: none;
+}
+
+/* ---------- End: formUsMain Section ---------- */
