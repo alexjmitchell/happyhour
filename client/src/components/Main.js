@@ -11,19 +11,9 @@ function Main() {
       <Header />
       <MainBaner />
       <Slider />
-      {/* <div>
-        <Route path="/" component={Header}></Route>
-        <Route path="/" component={MainBaner}></Route>
-      </div>
-      <main className="mainwrap">
-        <Router>
-          <div>
-            <Route path="/" component={Slider}></Route>
-            <Route path="/" component={Footer}></Route>
-          </div>
-        </Router>
-      </main> */}
+      
       <Footer />
+   
     </div>
   )
 }

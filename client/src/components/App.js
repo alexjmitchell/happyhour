@@ -10,6 +10,10 @@ import Profile from "./Profile"
 import Liked from "./Liked"
 import Facebook from "./Facebook"
 import CompanyPage from "./CompanyPage"
+import AboutUs from "./AboutUs"
+import ContactUs from "./ContactUs"
+import PartnerWithUs from "./PartnerWithUs"
+import SingleViewPage from "./SingleViewPage"
 
 function App() {
   return (
@@ -20,9 +24,17 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
 
+
           <Route exact path="/liked" component={Liked}></Route>
           <Route path="/CompanyPage" component={CompanyPage}></Route>
           <Route path="/Facebook" component={Facebook}></Route>
+
+        <Route path="/AboutUs" component={AboutUs}/>
+        <Route path="/ContactUs" component={ContactUs}/>
+        <Route path="/PartnerWithUs" component={PartnerWithUs}/>
+        <Route path="/SingleViewPage" component={SingleViewPage}/>
+        
+  
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

@@ -43,7 +43,7 @@ function Slider() {
           ))}
         </Coverflow>
       </div>
-    </div>
+         
   )
 }
 export default Slider
