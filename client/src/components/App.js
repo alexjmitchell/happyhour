@@ -7,9 +7,8 @@ import CheckLogin from "./CheckLogin"
 import Register from "./Register"
 import Test2 from "./Test2"
 import Profile from "./Profile"
-import Header from "./Header";
-import Footer from "./Footer";
-
+import Header from "./Header"
+import Footer from "./Footer"
 
 import Liked from "./Liked"
 import Facebook from "./Facebook"
@@ -28,25 +27,18 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
 
-
-
-         <Route exact path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
-
-         {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="*" component={CheckLogin}/>
-          </Switch>
-
+          <Route exact path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route exact path="/liked" component={Liked}></Route>
           <Route path="/CompanyPage" component={CompanyPage}></Route>
           <Route path="/Facebook" component={Facebook}></Route>
 
-        <Route path="/AboutUs" component={AboutUs}/>
-        <Route path="/ContactUs" component={ContactUs}/>
-        <Route path="/PartnerWithUs" component={PartnerWithUs}/>
-        <Route path="/SingleViewPage" component={SingleViewPage}/>
-        
-
+          <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/ContactUs" component={ContactUs} />
+          <Route path="/PartnerWithUs" component={PartnerWithUs} />
+          <Route path="/SingleViewPage" component={SingleViewPage} />
+          {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="*" component={CheckLogin} />
         </Switch>
       </Router>
     </div>

@@ -21,29 +21,28 @@ function Slider() {
         <Coverflow
           width="960"
           height="500"
-          displayQuantityOfSide={2}
+          displayQuantityOfSide={4}
           navigation={false}
           enableScroll={false}
           clickable={true}
           active={0}
         >
           {users.map((user, i) => (
-            <Link to="/CompanyPage">
-              <img
-                className="pics"
-                src={user.picture}
-                alt={user.companyname}
-                // data-action="our link"
-                // style={{
-                //   display: "block",
-                //   width: "100%"
-                // }}
-              />
-            </Link>
+            <img
+              className="pics"
+              src={user.picture}
+              alt={<Link to={"/CompanyPage"}>{user.companyname}</Link>}
+
+              // data-action="our link"
+              // style={{
+              //   display: "block",
+              //   width: "100%"
+              // }}
+            />
           ))}
         </Coverflow>
       </div>
-         
+    </div>
   )
 }
 export default Slider
