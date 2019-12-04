@@ -18,6 +18,7 @@ import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
+import GoogleMaps from "./GoogleMaps"
 
 function App() {
   return (
@@ -33,18 +34,20 @@ function App() {
          <Route exact path="/login" component={Login}/> 
          <Route path ="/register" component={Register}/>
 
-         {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="*" component={CheckLogin}/>
-          </Switch>
-
-          <Route exact path="/liked" component={Liked}></Route>
-          <Route path="/CompanyPage" component={CompanyPage}></Route>
-          <Route path="/Facebook" component={Facebook}></Route>
+         <Route exact path="/liked" component={Liked}></Route>
+         <Route path="/CompanyPage" component={CompanyPage}></Route>
+         <Route path="/Facebook" component={Facebook}></Route>
 
         <Route path="/AboutUs" component={AboutUs}/>
         <Route path="/ContactUs" component={ContactUs}/>
         <Route path="/PartnerWithUs" component={PartnerWithUs}/>
-        <Route path="/SingleViewPage" component={SingleViewPage}/>
+        <Route path="/SingleViewPage" component={SingleViewPage}/>  
+        <Route path="/GoogleMaps" component={GoogleMaps}/>       
+
+         {/* <Route path = "/profile" component ={Profile}/> */}
+         <Route path="*" component={CheckLogin}/>
+
+ 
         
 
         </Switch>

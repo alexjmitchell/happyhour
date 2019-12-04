@@ -13,6 +13,7 @@ function Header() {
         <Link to={'/ContactUs'}>Contact Us</Link>
         <Link to={'/PartnerWithUs'}>Partner With Us</Link>
         <Link to={'/SingleViewPage'}>Single View Page</Link>
+        <Link to={'/GoogleMaps'}>GoogleMaps</Link> 
 
         <p>LOGIN/SIGN UP</p>
       </header>

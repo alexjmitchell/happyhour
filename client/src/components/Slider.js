@@ -20,30 +20,30 @@ function Slider() {
       <div className="container">
         <Coverflow
           width="960"
-          height="500"
-          displayQuantityOfSide={2}
+          height="700"
+          displayQuantityOfSide={2.5}
           navigation={false}
           enableScroll={false}
           clickable={true}
           active={0}
         >
           {users.map((user, i) => (
-            <Link to="/CompanyPage">
+            
               <img
                 className="pics"
                 src={user.picture}
-                alt={user.companyname}
+                alt={<Link to={"/SingleViewPage"}>{user.companyname}</Link>}
                 // data-action="our link"
                 // style={{
                 //   display: "block",
                 //   width: "100%"
                 // }}
               />
-            </Link>
+            
           ))}
         </Coverflow>
       </div>
-         
+    </div>
   )
 }
 export default Slider

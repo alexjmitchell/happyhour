@@ -1,0 +1,16 @@
+html {
+    background-color: white;
+}
+
+.mapsMainContainer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: blue;
+}
+
+.Map1, .Map2 {
+    margin: 10px auto;
+    padding: 10px;
+    background-color: beige;
+    border: 1px solid red;
+}
