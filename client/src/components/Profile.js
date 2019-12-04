@@ -12,11 +12,20 @@ import Footer from "./Footer";
 
 export default props => {
     // const {username} = useAuth()
+
     const {admins, oneAdmin} = useAdmins()
     const { companies, oneCompany, regProf, getOneC, updtPro } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
     const admin_id= Number(oneAdmin.map(u=>u.id).join(''))
     // const [password, setPassword]=useState('')
+
+const lastAdminId = admins[admins.length -1].id
+
+console.log(lastAdminId)
+
+
+    const [picImg, setPicImg] = useState('')
+
 
     const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
     const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
@@ -98,10 +107,10 @@ console.log(oneAdmin)
 
 console.log({
     compName,
-    address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id
+    address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, lastAdminId
 })
     
-regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id) //after signin we want to redirect to another page
+regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, lastAdminId ) //after signin we want to redirect to another page
         .then((resp)=>{
             //func to send the company
             getOneC(compName)
@@ -137,11 +146,12 @@ regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, co
                                 </fieldset>
                                 <hr></hr>
                                 <fieldset className="uploadImgsection">
-                                    <input type="" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
+                                    <input type="file" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
+                                    {/* <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/> */}
+
+                                    <input type="file" name ="pic" placeholder="pic url**" value={pic} onChange={e=>setPic(e.target.value)}/>
                                     <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/>
-                                    <input type="" name ="pic" placeholder="pic url**" value={pic} onChange={e=>setPic(e.target.value)}/>
-                                    <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/>
-                                    <input type="" name ="banner" placeholder="banner url**" value={banner} onChange={e=>setBanner(e.target.value)}/>
+                                    <input type="file" name ="banner" placeholder="banner url**" value={banner} onChange={e=>setBanner(e.target.value)}/>
                                     <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/>
                                 </fieldset>
                             </div>
@@ -159,12 +169,12 @@ regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, co
                                     </fieldset>
                                 
                                         <fieldset className="contactinputs">
-                                        <input type="text" name ="companyemail" placeholder="Company email" value={compEmail} onChange={e=>setCompEmail(e.target.value)} tabIndex="7"/>
-                                        <input type="text" name ="phone" placeholder="Company phone" value={compPhone} onChange={e=>setCompPhone(e.target.value)} tabIndex="8"/>
-                                        <input type="text" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value) } tabIndex="9"/>
-                                        <input type="text" name ="fb" placeholder="Company Facebook" value={fb} onChange={e=>setFb(e.target.value)} tabIndex="10"/>
-                                        <input type="text" name ="ig" placeholder="Company Instagram" value={ig} onChange={e=>setIg(e.target.value)} tabIndex="11"/>
-                                        <input type="text" name ="tw" placeholder="Company Twitter" value={tw} onChange={e=>setTw(e.target.value)} tabIndex="12"/>
+                                        <input type="email" name ="companyemail" placeholder="Company email" value={compEmail} onChange={e=>setCompEmail(e.target.value)} tabIndex="7"/>
+                                        <input type="tel" name ="phone" placeholder="Company phone" value={compPhone} onChange={e=>setCompPhone(e.target.value)} tabIndex="8"/>
+                                        <input type="url" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value) } tabIndex="9"/>
+                                        <input type="url" name ="fb" placeholder="Company Facebook" value={fb} onChange={e=>setFb(e.target.value)} tabIndex="10"/>
+                                        <input type="url" name ="ig" placeholder="Company Instagram" value={ig} onChange={e=>setIg(e.target.value)} tabIndex="11"/>
+                                        <input type="url" name ="tw" placeholder="Company Twitter" value={tw} onChange={e=>setTw(e.target.value)} tabIndex="12"/>
                                         <textarea type="text" name="menu" placeholder="Menu" value={menu} onChange={e=>setMenu(e.target.value)} tabIndex="14"/>
 
                                     </fieldset>

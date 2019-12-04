@@ -2,10 +2,12 @@ import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
-
 // action definitions
 const GET_COMPANIES = "users/GET_COMPANIES"
 const GET_ONECOMPANY = "users/GET_ONECOMPANY"
+
+
+
 // const GET_REGISTERED = "users/GET_REGISTERED"
 //const GET_COMPANIES = "users/GET_COMPANIES"
 
@@ -60,8 +62,8 @@ console.log ("hooks " + companyname )
 
 //update profile
 
-function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id) {
-
+function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, lastAdminId) {
+console.log(lastAdminId + " lastadmin id")
 if (admin_id==0)
 {
     console.log("company doesn't exist")
@@ -111,7 +113,6 @@ if (admin_id==0)
 export function useCompanies() {
   const companies = useSelector(appState => appState.companyState.companies)
   const oneCompany = useSelector(appState => appState.companyState.oneCompany)
-  console.log(oneCompany + " usecompanies hooks function")
   const dispatch = useDispatch()
   const getOneC = companyname=>dispatch(getOneCompany(companyname))
 
