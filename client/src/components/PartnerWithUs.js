@@ -27,8 +27,7 @@ const { getone } = useAdmins ();
 
         <div class="partnerWithUsMainContainer">
 
-            <Route path="/" component={Header}></Route>
-
+<Header/>
             <div class="benefitsMainContainer">
                 
                 <div class="benefitsWrapper">
@@ -243,8 +242,7 @@ const { getone } = useAdmins ();
                 <p class="pricingFooter"> * All rates are based on monthly subscription plans that can be cancelled at any time.</p> 
             </div>
 
-            <Route path="/" component={Footer}></Route>
-
+<Footer/>
         </div>
 
     )

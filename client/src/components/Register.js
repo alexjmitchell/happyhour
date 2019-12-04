@@ -66,7 +66,7 @@ function handlesubmit(e){
                     <input type="text" name = "cpassword" placeholder="confirm password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
 
                 </div>
-                <div className="button">
+                <div className="buttons">
                     <button type="submit">Register</button>
                 </div>
             </form>

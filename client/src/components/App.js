@@ -27,16 +27,6 @@ function App() {
           {/* <Route exact path="/main" component={Maintest}/>  */}
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
-
-
-
-         <Route exact path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
-
-         {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="*" component={CheckLogin}/>
-          </Switch>
-
           <Route exact path="/liked" component={Liked}></Route>
           <Route path="/CompanyPage" component={CompanyPage}></Route>
           <Route path="/Facebook" component={Facebook}></Route>
@@ -46,6 +36,15 @@ function App() {
         <Route path="/PartnerWithUs" component={PartnerWithUs}/>
         <Route path="/SingleViewPage" component={SingleViewPage}/>
         
+
+
+         <Route exact path="/login" component={Login}/> 
+         <Route path ="/register" component={Register}/>
+
+         {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="*" component={CheckLogin}/>
+
+          
 
         </Switch>
       </Router>

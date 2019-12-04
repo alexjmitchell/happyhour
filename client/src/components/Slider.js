@@ -43,6 +43,7 @@ function Slider() {
           ))}
         </Coverflow>
       </div>
+      </div>
          
   )
 }

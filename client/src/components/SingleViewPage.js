@@ -69,8 +69,7 @@ const { getone } = useAdmins ();
 
             </div>
 
-            <Route path="/" component={Footer}></Route>
-
+<Footer/>
         </div>
 
     )
