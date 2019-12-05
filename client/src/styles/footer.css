@@ -1,0 +1,104 @@
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 40px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.footerwrap {
+  height: 100px;
+  background: black;
+  color: red;
+  /* padding-left: 20px; */
+  line-height: 100px;
+}
+
+footer {
+  width: 100%;
+  margin-top: 30px;
+}
+
+ul.social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.social li {
+  margin: 20px;
+  border: 1px solid white;
+  background-color: white;
+  color: rgba(124, 26, 86, 0.8);
+  width: 60px;
+  height: 60px;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.social a li.fb {
+  color: #4267b2;
+}
+.social a li.fb:hover {
+  background: #4267b2;
+  color: white;
+}
+.social a li.rss {
+  color: #ee802f;
+}
+.social a li.rss:hover {
+  background: #ee802f;
+  color: white;
+}
+.social a li.tw {
+  color: #1da1f2;
+}
+.social a li.tw:hover {
+  background: #1da1f2;
+  color: white;
+}
+.social a li.yt {
+  color: #ff0000;
+}
+.social a li.yt:hover {
+  background: #ff0000;
+  color: white;
+}
+
+.social a li.yelp {
+  color: #c41200;
+}
+.social a li.yelp:hover {
+  background: #c41200;
+  color: white;
+}
+.social a li.pint {
+  color: #bd081c;
+}
+.social a li.pint:hover {
+  background: #bd081c;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}

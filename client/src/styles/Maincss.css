@@ -32,46 +32,16 @@ code {
   line-height: 50%;
 }
 
-.iconf {
-  padding-top: 8px;
-  color: rgb(70 103 156);
-  font-size: 35px;
-}
 
-.icont {
-  padding-top: 8px;
-  font-size: 35px;
-  color: rgb(36 177 229);
-}
+.bann {
+  /* background-image: url("https://www.ultimatehappyhours.com/wp-content/uploads/2018/05/ultimate-happy-hours-banner.jpg");
+  background-color: #cccccc; */
+  width: 100%;
 
-.iconc {
-  padding-top: 8px;
-  font-size: 35px;
-  color: grey;
-}
 
-.ban {
-  justify-content: space-between;
-  padding: 20px;
-  background:black;
-  height: 240px;
-  display: flex;
-}
 
 .mainwrap {
   height: 665px;
 }
-.footerwrap {
-  height: 50px;
-  background: black;
-  color: red;
-  padding-left: 20px;
-  line-height: 50px;
-}
 
-.picleft {
-  width: 300px;
-  height: 200px;
-  border: 1px solid black;
-  border-radius: 50px;
-}
+

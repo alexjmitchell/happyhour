@@ -2,37 +2,48 @@ import React from "react"
 import "../styles/Maincss.css"
 import Icon from "../lib/Icon"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-// import internal links
-// import stylesheet
-import "../styles/Footer.css"
-// import assets
+import "../styles/footer.css"
+
 
 function Footer() {
   return (
     <div>
-      <footer className="footerMainContainer">
+      <footer className="footerwrap">
+        <div className="media">
+          <ul className="social">
+            <div>Partnership With Us</div>
+            <li className="fb">
+              <a href="https://www.facebook.com/Chilis/">
+                <i className="fa fa-facebook"></i>
+              </a>
+            </li>{" "}
+            <li className="rss">
+              <a href="https://www.instagram.com/accounts/login/?hl=en">
+                <i className="fa fa-instagram"></i>
+              </a>
+            </li>{" "}
+            <li className="tw">
+              <a href="https://twitter.com/">
+                <i className="fa fa-twitter"></i>
+              </a>
+            </li>{" "}
+            <li className="yt">
+              <a href="https://www.youtube.com/">
+                <i className="fa fa-youtube"></i>
+              </a>
+            </li>{" "}
+            <li className="yelp">
+              <a href="https://www.yelp.com/login">
+                <i className="fa fa-yelp"></i>
+              </a>
+            </li>{" "}
+            <li className="pint">
+              <a href="https://www.pinterest.com/login/">
+                <i className="fa fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
 
-        <div className="Nav1">
-          <div><Link to={'/AboutUs'}>About Us</Link></div>
-          <div><Link to={'/ContactUs'}>Contact Us</Link></div>
-          <div><Link to={'/PartnerWithUs'}>Partner With Us</Link></div>
-          <div><Link to={'/SingleViewPage'}>Single View Page</Link></div>
-          <div><Link to={'/GoogleMaps2'}>GoogleMaps2</Link></div>
-        </div>
-
-        <div className="socialIcons">
-        
-          <div className="iconf">
-            <Link to="/Facebook">
-              <Icon icon="facebook-square" />
-            </Link>
-            <a href="https://en-gb.facebook.com/login/">
-              {" "}
-              <Icon icon="facebook-square" />
-            </a>
-          </div>
-          <div className="iconc"><Icon icon="camera" /></div>
-          <div className="icont"><Icon icon="twitter" /></div>        
         </div>
 
 

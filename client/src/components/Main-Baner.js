@@ -6,8 +6,9 @@ function Baner() {
   return (
     <div>
       <div className="">
-        <div className="ban">
-          <img src={banerpic} />
+        <div className="bann">
+          {/* <img src={banerpic} /> */}
+          <img src="https://www.ultimatehappyhours.com/wp-content/uploads/2018/05/ultimate-happy-hours-banner.jpg" />
         </div>
       </div>
     </div>
