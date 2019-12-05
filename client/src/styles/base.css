@@ -23,13 +23,6 @@ code {
     monospace;
 }
 
-
-footer{
-  /* position: absolute; */
-  width:100%;
-  bottom:0;
-}
-
 .pics {
   border: 1px solid green;
   margin: auto;
