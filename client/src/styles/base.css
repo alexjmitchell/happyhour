@@ -15,7 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 40px;;
+  margin-bottom: 40px;
 }
 
 code {
@@ -23,16 +23,13 @@ code {
     monospace;
 }
 
-
-footer{
-  position: absolute;
-  width:100%;
-  bottom:0;
-}
-
 .pics {
   border: 1px solid green;
   margin: auto;
   width: 200px;
   height: 200px;
+}
+
+.sliderImg {
+  color: white;
 }

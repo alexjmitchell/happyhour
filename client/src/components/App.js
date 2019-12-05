@@ -18,7 +18,7 @@ import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
 
-function App() {
+function App(props) {
   return (
     <div>
       <Router>
@@ -30,13 +30,13 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path="/liked" component={Liked}></Route>
-          <Route path="/CompanyPage" component={CompanyPage}></Route>
+          <Route path="/CompanyPage/:id" component={CompanyPage}></Route>
           <Route path="/Facebook" component={Facebook}></Route>
 
           <Route path="/AboutUs" component={AboutUs} />
           <Route path="/ContactUs" component={ContactUs} />
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
-          <Route path="/SingleViewPage" component={SingleViewPage} />
+          <Route path="/SingleViewPage/:id" component={SingleViewPage} />
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
         </Switch>
