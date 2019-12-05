@@ -53,7 +53,7 @@ code {
 .ban {
   justify-content: space-between;
   padding: 20px;
-  background: red;
+  background:black;
   height: 240px;
   display: flex;
 }

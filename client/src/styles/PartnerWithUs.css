@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color:  rgb(51,51,51);
 }
 
 #partnerWithUs {
@@ -10,51 +11,10 @@ body {
     padding-left: 10%;
 }
 
-/* ---------- Start: benefitsWrapper Section ---------- */
-
-.benefitsMainContainer {
-    width: 100%;
-    background-color: beige;
-}
-
-.benefitsWrapper {
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 0 auto;
-    padding: 0;
-    background-color: white;
-}
-
-
-.visitorBenefits, .clientBenefits {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(51,51,51);
-}
-
-#visitorTitle, #clientTitle {
-    text-align: center;
-    color: white;
-}
-
-.visitorBenefits, .clientBenefits {
-    padding: 20px;
-    color: white;
-}
-
-.visitorBenefits p, .clientBenefits p {
-    font-size: 20px;
-}
-
-/* ---------- End: benefitsWrapper Section ---------- */
-
 /* ---------- Start: howItWorksMainContainer ---------- */
 
 .howItWorksMainContainer {
     width: 100%;
-    background-color: royalblue;
 }
 
 .howItWorksTitle {
@@ -68,16 +28,13 @@ body {
 
 .howItWorksWrapper {
     width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    margin: 10px auto;
-    background-color: royalblue;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 .cards {
     padding: 10px;
-    background-color: royalblue;
     color: white;
 }
 
@@ -117,6 +74,7 @@ body {
   }
   
   .flip-card-back {
+    padding: 10px;
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
@@ -174,8 +132,6 @@ body {
 }
 
 #green {
-    color: green;
-    text-decoration: underline;
     font-weight: bold;
 }
 

@@ -18,7 +18,8 @@ import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
-import GoogleMaps from "./GoogleMaps"
+import GoogleMaps1 from "./GoogleMaps1"
+import GoogleMaps2 from "./GoogleMaps2"
 
 function App() {
   return (
@@ -42,13 +43,11 @@ function App() {
         <Route path="/ContactUs" component={ContactUs}/>
         <Route path="/PartnerWithUs" component={PartnerWithUs}/>
         <Route path="/SingleViewPage" component={SingleViewPage}/>  
-        <Route path="/GoogleMaps" component={GoogleMaps}/>       
+        <Route path="/GoogleMaps1" component={GoogleMaps1}/>
+        <Route path="/GoogleMaps2" component={GoogleMaps2}/>
 
          {/* <Route path = "/profile" component ={Profile}/> */}
          <Route path="*" component={CheckLogin}/>
-
- 
-        
 
         </Switch>
       </Router>
