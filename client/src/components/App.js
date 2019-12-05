@@ -9,7 +9,6 @@ import Test2 from "./Test2"
 import Profile from "./Profile"
 import Header from "./Header"
 import Footer from "./Footer"
-
 import Liked from "./Liked"
 import Facebook from "./Facebook"
 import CompanyPage from "./CompanyPage"
@@ -17,6 +16,8 @@ import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
+import GoogleMaps1 from "./GoogleMaps1"
+import GoogleMaps2 from "./GoogleMaps2"
 
 function App(props) {
   return (
@@ -26,6 +27,7 @@ function App(props) {
           {/* <Route exact path="/main" component={Maintest}/>  */}
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
+
 
           <Route exact path="/login" component={Login} />
           <Route path="/register" component={Register} />
@@ -37,8 +39,12 @@ function App(props) {
           <Route path="/ContactUs" component={ContactUs} />
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
+          <Route path="/GoogleMaps1" component={GoogleMaps1}/>
+          <Route path="/GoogleMaps2" component={GoogleMaps2}/>
+
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
+
         </Switch>
       </Router>
     </div>

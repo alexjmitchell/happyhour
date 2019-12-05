@@ -3,6 +3,8 @@ import "../styles/Maincss.css"
 import Icon from "../lib/Icon"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../styles/footer.css"
+
+
 function Footer() {
   return (
     <div>
@@ -41,7 +43,10 @@ function Footer() {
               </a>
             </li>
           </ul>
+
         </div>
+
+
       </footer>
     </div>
   )

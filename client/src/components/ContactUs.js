@@ -1,16 +1,17 @@
+
 import React, { useState } from "react"
 import { useAuth } from "../hooks"
 import { useAdmins } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-// import internal links
 import Header from "./Header"
 import Footer from "./Footer"
-// import stylesheet
+import GoogleMapReact from 'google-map-react';
+import GoogleMaps1 from "./GoogleMaps1"
 import "../styles/ContactUs.css"
-// import assets
 import ResearchPic from "../assets/research.jpg"
 
 export default props => {
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [loginmatch, setLoginmatch] = useState(true)

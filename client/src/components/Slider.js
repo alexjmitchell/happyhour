@@ -35,14 +35,15 @@ function Slider() {
       <div className="container">
         <Coverflow
           width="960"
-          height="500"
-          displayQuantityOfSide={2}
+          height="700"
+          displayQuantityOfSide={2.5}
           navigation={false}
           enableScroll={false}
           clickable={true}
           active={0}
         >
           {users.map((user, i) => (
+
             <img
               className="slidePics"
               src={user.picture}
@@ -55,6 +56,7 @@ function Slider() {
                 </Link>
               }
             />
+
           ))}
         </Coverflow>
       </div>
