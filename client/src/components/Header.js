@@ -9,10 +9,6 @@ function Header() {
       <header className="Header">
         <p>LOGO</p>
         <Link to={'/'}>Home</Link>
-        <Link to={'/AboutUs'}>About Us</Link>
-        <Link to={'/ContactUs'}>Contact Us</Link>
-        <Link to={'/PartnerWithUs'}>Partner With Us</Link>
-        <Link to={'/SingleViewPage'}>Single View Page</Link>
 
         <p>LOGIN/SIGN UP</p>
       </header>

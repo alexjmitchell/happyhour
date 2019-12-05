@@ -30,11 +30,12 @@ body {
 
     /* ----- Start: Google Maps Section ----- */
 
-.GoogleMaps {
+.GoogleMaps1 {
     width: 100%;
+    display: flex;
+    justify-content: center;
     margin: 0;
-    padding: 0;
-    /* background-color: rgb(53,128,199); */
+    padding: 10px;
 }
 
 .GoogleMapsWrapper {
@@ -43,7 +44,6 @@ body {
     margin-top: 20px;
     border: 2px solid  rgb(51,51,51);
 }
-
 
     /* ----- End: Google Maps Section ----- */
 

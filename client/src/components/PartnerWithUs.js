@@ -12,8 +12,8 @@ import Step1 from "../assets/step1.png"
 import Step2 from "../assets/step2.png"
 import Step3 from "../assets/step3.png"
 import Step4 from "../assets/step4.png"
-import Happy from "../assets/happy.jpg"
-import Happier from "../assets/happier.jpg"
+import Happy from "../assets/happy.png"
+import Happier from "../assets/happier.png"
 import Happiest from "../assets/happiest.png"
 
 export default props => {
@@ -27,32 +27,7 @@ const { getone } = useAdmins ();
 
         <div class="partnerWithUsMainContainer">
 
-<Header/>
-            <div class="benefitsMainContainer">
-                
-                <div class="benefitsWrapper">
-                    <div class="visitorBenefits">
-                        <h1 id="visitorTitle">Visitor Benefits</h1>
-                        <p>&#10004; Our visitors want fun, fast, easy, timely, and reliable information on what matters most to them:</p>
-                        <div>
-                            <p>What happy hours are close, convenient, and easy to get to?</p>
-                            <p>What happy hour promotions are they most interested in?  Drink specials? Food specials?  Entertainment?  Other?</p><br></br>
-                        </div>
-                        <p>&#10008; What they don't want is to have to surf individual websites to find the information they're looking for.</p>                        
-                    </div>
-
-                    <div class="clientBenefits">
-                        <h1 id="clientTitle">Client Benefits</h1>
-                            <p>&#9733; Increase your brand's awareness through an innovative customer engagement experience</p>
-                            <p>&#9728; Increase your revenue by attracting new customers</p>
-                            <p>&#9745; Improve your marketing spend by knowing that every dollar goes directly toward your targeted audience</p>
-                            <p>&#10031; Improve your ROI by continually tracking results and refining your offers</p>
-                    </div>
-
-                </div>
-
-            </div>
-
+          <Header/>
             <div class="howItWorksMainContainer">
 
                 <div class="howItWorksTitle">Here's How It Works</div>
@@ -74,8 +49,10 @@ const { getone } = useAdmins ();
                                     />
                                 </div>
                                 <div class="flip-card-back">
-                                    <h1>Sign Up</h1> 
-                                    <p>Register and complete your initial profile (which we're are here to help you with</p> 
+                                    <h1>Sign Up</h1>
+                                    <p>Register and complete<br/> your initial profile</p>
+                                    <p>Takes about 10 minutes</p>
+                                    <p>(one time only)</p>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +73,9 @@ const { getone } = useAdmins ();
                                 </div>
                                 <div class="flip-card-back">
                                     <h1>Enter your promotion(s)</h1> 
-                                    <p>Register and complete your initial profile (which we're are here to help you with</p> 
+                                    <p>Market your brand</p>
+                                    <p>Share your specials and events</p>
+                                    <p>Attract new customers</p>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +96,11 @@ const { getone } = useAdmins ();
                                 </div>
                                 <div class="flip-card-back">
                                     <h1>Track Your Success</h1> 
-                                    <p>Register and complete your initial profile (which we're are here to help you with</p> 
+                                    <p>Track each promotion's:</p>
+                                    <p>&nbsp;&nbsp;...click-through rates</p>
+                                    <p>&nbsp;&nbsp;...offers and redemptions</p>
+                                    <p>&nbsp;&nbsp;...marketing spend<br/>vs. targeted goals</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +120,9 @@ const { getone } = useAdmins ();
                                     />
                                 </div>
                                 <div class="flip-card-back">
-                                    <h1>Improve and Repeat</h1> 
-                                    <p>Register and complete your initial profile (which we're are here to help you with</p> 
+                                    <h1>Improve and Repeat</h1>
+                                    <p>We're here to help you<br/> grow your business</p>
+                                    <p>Because if you don't succeed,<br/> we don't succeed.</p>
                                 </div>
                             </div>
                         </div>
@@ -160,23 +144,16 @@ const { getone } = useAdmins ();
                             data-action="our link"
                             style={{
                             display: "block",
-                            width: "15%",
-                            height: "15%"
+                            width: "60px",
+                            height: "60px"
                             }}
                         />
                         <p id="trial">FREE for 6 months!</p>
-                        <p>$20 per month after trial</p>
-                        <p>Unlimited promotions</p>
-                        <p>Graphic design</p>
-                        <p>Content creation</p>
-                        <p>Content management</p>
-                        <p>Monthly Volume Reports</p>
-                        <p>Google Analytics</p>
-                        <p>Branding Options</p>
-                        <p>Creating brand identity packages</p>
-                        <p>Content creation and management</p>
-                        <p>Training</p>
-                        <p>Local Support!: 9-5, Mon-Fri, excludes holidays</p>
+                        <p>$50 per month after trial (per location)</p>
+                        <p>1 promotion per week</p>
+                        <p>Monthly Volumne Reporting and Analytics</p>
+                        <p>Local Training and Support</p>
+                        <br/><br/><br/><br/>
                         <input class="happyBtn" type="submit" value="Happy Button" />
                     </div>
                     
@@ -189,23 +166,18 @@ const { getone } = useAdmins ();
                             data-action="our link"
                             style={{
                             display: "block",
-                            width: "15%",
-                            height: "15%"
+                            width: "60px",
+                            height: "60px"
                             }}
                         />
                         <p id="trial">FREE for 6 months!</p>
-                        <p>$50 per month after trial</p>
-                        <p>Unlimited promotions</p>
-                        <p>Graphic design</p>
-                        <p>Content creation</p>
+                        <p>$100 per month after trial (per location)</p>
+                        <p>3 promotions per week</p>
+                        <p>Monthly Volumne Reporting and Analytics</p>
+                        <p>Local Training and Support</p>
+                        <p>Consulting on content creation</p>
                         <p>Content management</p>
-                        <p>Monthly Volume Reports</p>
-                        <p>Google Analytics</p>
-                        <p>Branding Options</p>
-                        <p>Creating brand identity packages</p>
-                        <p>Content creation and management</p>
-                        <p>Training</p>
-                        <p>Local Support!: 9-5, Mon-Sun, excludes holidays</p>
+                        <br/><br/>
                         <input class="happierBtn" type="submit" value="Happier Button" />
                     </div>
                     
@@ -218,23 +190,19 @@ const { getone } = useAdmins ();
                             data-action="our link"
                             style={{
                             display: "block",
-                            width: "15%",
-                            height: "15%"
+                            width: "60px",
+                            height: "60px"
                             }}
                         />
                         <p id="trial">FREE for 6 months!</p>
-                        <p>$100 per month after trial</p>
+                        <p>$250 per month after trial (per location)</p>
                         <p>Unlimited promotions</p>
-                        <p>Graphic design</p>
-                        <p>Content creation</p>
+                        <p>Monthly Volumne Reporting and Analytics</p>
+                        <p>Local Training and Support</p>
+                        <p>Consulting on content creation</p>
                         <p>Content management</p>
-                        <p>Monthly Volume Reports</p>
-                        <p>Google Analytics</p>
-                        <p>Branding Options</p>
                         <p>Creating brand identity packages</p>
-                        <p>Content creation and management</p>
-                        <p>Training</p>
-                        <p>Local Support!: Unlimited, 24/7</p>
+                        <p>Content creation/collaboration and graphic design</p>
                         <input class="happiestBtn" type="submit" value="Happiest Button" />
                     </div>
 
