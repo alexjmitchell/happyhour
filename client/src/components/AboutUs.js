@@ -24,8 +24,7 @@ const { getone } = useAdmins ();
 
         <div className="aboutUsMainContainer">
             
-            <Route path="/" component={Header}></Route>
-
+<Header/>
             <div className="aboutUsStoryContainer">
                 <div className="aboutUsStoryWrapper">
                     <h1>Our Story</h1>
@@ -99,8 +98,7 @@ const { getone } = useAdmins ();
 
             </div>
 
-            <Route path="/" component={Footer}></Route>
-
+<Footer/>
         </div>
 
     )

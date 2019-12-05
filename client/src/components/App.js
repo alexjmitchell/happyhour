@@ -27,10 +27,6 @@ function App(props) {
           {/* <Route exact path="/main" component={Maintest}/>  */}
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
-
-
-          <Route exact path="/login" component={Login} />
-          <Route path="/register" component={Register} />
           <Route exact path="/liked" component={Liked}></Route>
           <Route path="/CompanyPage/:id" component={CompanyPage}></Route>
           <Route path="/Facebook" component={Facebook}></Route>
@@ -44,6 +40,15 @@ function App(props) {
 
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
+
+
+         <Route exact path="/login" component={Login}/> 
+         <Route path ="/register" component={Register}/>
+
+         {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="*" component={CheckLogin}/>
+
+          
 
         </Switch>
       </Router>

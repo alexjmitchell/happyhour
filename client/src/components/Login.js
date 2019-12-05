@@ -47,7 +47,7 @@ function handlesubmit(e){
                 <input type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                 { loginmatch ? "" : <p>login fail</p>}
             </div>
-            <div className="button">
+            <div className="buttons">
                 <button type="submit">Login</button>
             </div>
             </form>

@@ -20,8 +20,8 @@ export default props => {
 
   return (
     <div class="singlePageViewMainContainer">
-      <Route path="/" component={Header}></Route>
-      <div>
+      <Header/>
+    <div>
         <h1> company: {comp} </h1>
         {thecompany.map(c => (
           <>
@@ -74,8 +74,8 @@ export default props => {
               </div>
             </div>
 
-            <Route path="/" component={Footer}></Route>
-          </>
+        <Footer/>
+    </>
         ))}
       </div>
     </div>

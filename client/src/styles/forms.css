@@ -1,4 +1,8 @@
-.reg, .prof{
+body, html{
+  background-color: white;
+}
+
+.reg{
     width: 400px;
     margin:auto;
   
@@ -17,14 +21,7 @@
   }
   
 
-  .prof{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-  align-items: center;
-  justify-content: center;
-  }
-
+  
 .profInputs input, .profInputs textarea{ 
   font-size: 18px;
     padding-left: 10px;
@@ -66,7 +63,7 @@
     height: 40px;
     margin:10px 0;
   }
-  .reg form button, .prof form button{
+  .reg form button{
     width: 350px;
     height: 50px;
     background-color: rgb(199, 40, 23);
@@ -99,4 +96,63 @@
     color:white;
     font-size:25px;
   
+  }
+
+  .prof{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    width: 1200px;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .prof form{
+  display:flex;
+  flex-direction: column;
+  }
+
+  .prof .profInputs{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+  }
+
+  #profileLeft{
+    width:390px;
+    margin-bottom: 60px;
+  }
+
+  #right, #middlebottom{
+    width:790px;
+  }
+#rightTop{
+  display: flex;
+}
+  #rightTop fieldset{
+    width: 390px;
+  }
+  
+
+  .buttons{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+
+  fieldset{
+    
+  }
+
+  .middleBottom button{
+    width: 350px;
+    height: 50px;
+    background-color: rgb(199, 40, 23);
+    color:white;
+    font-size: 25px;
+    border:none;
+    cursor: pointer;
+    align-items: right;
   }

@@ -7,7 +7,6 @@ import "../styles/footer.css"
 
 function Footer() {
   return (
-    <div>
       <footer className="footerwrap">
         <div className="media">
           <ul className="social">
@@ -48,7 +47,6 @@ function Footer() {
 
 
       </footer>
-    </div>
   )
 }
 export default Footer

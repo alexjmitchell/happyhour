@@ -2,10 +2,12 @@ import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
-
 // action definitions
 const GET_COMPANIES = "users/GET_COMPANIES"
 const GET_ONECOMPANY = "users/GET_ONECOMPANY"
+
+
+
 // const GET_REGISTERED = "users/GET_REGISTERED"
 //const GET_COMPANIES = "users/GET_COMPANIES"
 
@@ -25,10 +27,7 @@ export default (state = initialState, action) => {
       return { ...state, companies: action.payload }
     case GET_ONECOMPANY:
             return {...state, oneCompany:action.payload}
-    //   return {...state, oneCompany:state.companies.filter(e=>e.companyname == action.payload)}
-    // case GET_REGISTERED:
-    //   return {...state, oneAdmin:action.payload}
-    default:
+       default:
       return state
   }
 }
@@ -63,9 +62,8 @@ console.log ("hooks " + companyname )
 
 //update profile
 
-function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id) {
-
-//    console.log (getOneCompany(companyname).length)
+function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, lastAdminId) {
+console.log(lastAdminId + " lastadmin id")
 if (admin_id==0)
 {
     console.log("company doesn't exist")
@@ -115,7 +113,6 @@ if (admin_id==0)
 export function useCompanies() {
   const companies = useSelector(appState => appState.companyState.companies)
   const oneCompany = useSelector(appState => appState.companyState.oneCompany)
-  console.log(oneCompany + " usecompanies hooks function")
   const dispatch = useDispatch()
   const getOneC = companyname=>dispatch(getOneCompany(companyname))
 
@@ -123,9 +120,6 @@ const regProf = (username,companyname, address, city, state, zip, phone, email, 
     return regProfile(username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id)
 }
 
-// const updtPro = (username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id) => {
-//     return updateProfile(username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id)
-// }
 
 
 
