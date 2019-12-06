@@ -13,7 +13,6 @@ router.post("/register", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
 
-
   // *********************
   const sql =
     "INSERT INTO admins (username, password, salt, name, phone, email) VALUES (?,?,?,?,?,?)"
@@ -88,9 +87,6 @@ router.get("/companies", (req, res, next) => {
   })
 })
 
-
-
-
 ///*********************** */
 
 router.post("/profile", (req, res, next) => {
@@ -117,43 +113,82 @@ router.post("/profile", (req, res, next) => {
   const endhour = req.body.endhour
   const admin_id = req.body.admin_id
   // const username = req.body.username
-  
+
   console.log({
-    companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id
-
+    companyname,
+    address,
+    city,
+    state,
+    zip,
+    phone,
+    email,
+    website,
+    facebook,
+    instagram,
+    twitter,
+    coordinates,
+    logo,
+    picture,
+    foodtype,
+    menu,
+    descript,
+    hhdays,
+    starthour,
+    endhour,
+    admin_id
   })
-
-  
 
   // *********************
-  const sql = 'INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
-  
-    db.query(sql, [companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id], (err, results, fields)=>{
+  const sql =
+    "INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
-        if(err){
-          throw new Error (err)
-        }
-        res.json({
-          message: "company created",
-          results
-        })
-
+  db.query(
+    sql,
+    [
+      companyname,
+      address,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+      website,
+      facebook,
+      instagram,
+      twitter,
+      coordinates,
+      logo,
+      picture,
+      foodtype,
+      menu,
+      descript,
+      hhdays,
+      starthour,
+      endhour,
+      admin_id
+    ],
+    (err, results, fields) => {
+      if (err) {
+        throw new Error(err)
+      }
+      res.json({
+        message: "company created",
+        results
       })
-  })
-
+    }
+  )
+})
 
 //getting all the companies profiles
-  router.get("/gprofile",(req,res,next)=>{
-    const sql = `
+router.get("/gprofile", (req, res, next) => {
+  const sql = `
     SELECT companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
-    db.query(sql, (err,results,fields)=>{
-      res.json(results)
-    })
-  
-    
+  db.query(sql, (err, results, fields) => {
+    res.json(results)
   })
+})
 
-  router.put("/gprofile",(req,res,next)=>{
+router.put("/gprofile", (req, res, next) => {
   const companyname = req.body.companyname
   const address = req.body.address
   const city = req.body.city
@@ -178,9 +213,8 @@ router.post("/profile", (req, res, next) => {
   const admin_id = req.body.admin_id
 
   console.log(req.body)
-  
 
-    const sql = `
+  const sql = `
     UPDATE companies
     set 
     companyname = ?, 
@@ -206,33 +240,57 @@ router.post("/profile", (req, res, next) => {
     admin_id=? 
     WHERE admin_id=?`
 
-    db.query(sql,[companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descript, hhdays, starthour, endhour, admin_id, admin_id], (err,results,fields)=>{
+  db.query(
+    sql,
+    [
+      companyname,
+      address,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+      website,
+      facebook,
+      instagram,
+      twitter,
+      coordinates,
+      logo,
+      picture,
+      foodtype,
+      menu,
+      descript,
+      hhdays,
+      starthour,
+      endhour,
+      admin_id,
+      admin_id
+    ],
+    (err, results, fields) => {
       res.json(results)
-    })
-  
-    
-  })
-  
-
+    }
+  )
+})
 
 ///*********************** */
 
+router.post("/feedback", (req, res, next) => {
+  let message = req.body.message
+  let email = req.body.email
+  let name = req.body.name
 
+  const sql = `
+  INSERT INTO feedback ( message, email, name ) VALUES (?,?,?)`
 
-
-
-
-// router.post("/companies", (req, res, next) => {
-//   let picture = req.body.picture;
-
-//   const sql = `
-//   INSERT INTO companies.picture VALUES ('${picture})`;
-
-//   db.query(sql, (err, results, fields) => {
-//     console.log("error", err);
-//     console.log(results);
-//     res.json(results);
-//   });
-// });
+  db.query(sql, [message, email, name], (err, results, fields) => {
+    if (err) {
+      throw new Error(err)
+    }
+    res.json({
+      message: "Feedback Sent",
+      results
+    })
+  })
+})
 
 module.exports = router

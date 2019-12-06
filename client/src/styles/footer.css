@@ -15,7 +15,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 40px;
 }
 
 code {
@@ -23,20 +22,20 @@ code {
     monospace;
 }
 
-.footerwrap {
+/* .footerwrap {
   height: 100px;
   background: black;
   color: red;
-  /* padding-left: 20px; */
+  
   line-height: 100px;
 }
 
 footer {
   width: 100%;
   margin-top: 30px;
-}
+} */
 
-ul.social {
+/* ul.social {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -101,4 +100,4 @@ ul.social {
 
 a {
   text-decoration: none;
-}
+} */

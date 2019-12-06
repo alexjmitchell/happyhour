@@ -17,11 +17,11 @@ export default props => {
   const { companies, oneCompany } = useCompanies()
   const comp = props.match.params.id
   const thecompany = companies.filter(e => e.companyname == comp)
-
+  console.log(thecompany, "daaa")
   return (
     <div class="singlePageViewMainContainer">
-      <Header/>
-    <div>
+      <Header />
+      <div>
         <h1> company: {comp} </h1>
         {thecompany.map(c => (
           <>
@@ -74,8 +74,8 @@ export default props => {
               </div>
             </div>
 
-        <Footer/>
-    </>
+            <Footer />
+          </>
         ))}
       </div>
     </div>
