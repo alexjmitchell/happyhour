@@ -15,7 +15,11 @@ const GET_ONECOMPANY = "users/GET_ONECOMPANY"
 const initialState = {
   companies: [],
 //   oneCompany: [],
-oneCompany:''
+oneCompany:'',
+uploadedPic:{
+  filename:"",
+  imgURL:""
+}
 //   company:{}
 
 }
@@ -58,6 +62,22 @@ console.log ("hooks " + companyname )
 
   }
 }
+
+
+
+// const uploadPicture = (filename, url) =>{
+//   return dispatch => {
+//     dispatch (
+//       {
+//         type: UPLOAD_PIC,
+//         payload: {
+//           filename,
+//           url
+//         }
+//       }
+//     )
+//   }
+// }
 
 
 //update profile
@@ -115,6 +135,9 @@ export function useCompanies() {
   const oneCompany = useSelector(appState => appState.companyState.oneCompany)
   const dispatch = useDispatch()
   const getOneC = companyname=>dispatch(getOneCompany(companyname))
+  // const uploadPic = companyname=>dispatch(uploadPicture(filename, url))
+
+
 
 const regProf = (username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, lastAdminId) => {
     return regProfile(username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id)

@@ -1,12 +1,14 @@
 import React, { useState} from 'react'
-// import { useAuth } from '../hooks'
 import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
-// import { Link } from 'react-router-dom'
 import "../styles/forms.css"
 import Header from "./Header";
 import Footer from "./Footer";
+//import FileUploader from 'react-firebase-file-uploader'
+import firebase from 'firebase'
+import config from './FbConfig'
 
+firebase.initializeApp(config)
 // import { set } from 'date-fns'
 
 
@@ -14,7 +16,7 @@ export default props => {
     // const {username} = useAuth()
 
     const {admins, oneAdmin} = useAdmins()
-    const { companies, oneCompany, regProf, getOneC, updtPro } = useCompanies()
+    const { companies, uploadPic, regProf } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
     const [admin_id, setAdmin_id]=useState(Number(oneAdmin.map(u=>u.id).join('')))
     const lastAdminId = Number(admins[admins.length -1].id)
@@ -57,6 +59,11 @@ console.log(ddarr.includes("Mo"))
     const [startHr, setStartHr]=useState(thecompany.map(c=>c.startHr).join())
     const [endHr, setEndHr]=useState(thecompany.map(c=>c.endhour).join())
 
+    const [localUrl, setLocalUrl] = useState('')
+    const [fbUrl, setFbUrl]=useState('')
+    
+
+
 
     const [monday, setMonday]=useState(ddarr.includes("Mo")?true:false)
     const [tuesday, setTuesday]=useState(ddarr.includes("Tu")?true:false) 
@@ -70,6 +77,24 @@ console.log(ddarr.includes("Mo"))
 
    // const id = admins.filter(a=>a.username == username).map(u=>u.id)
             //  setContactName(u.name)
+        function handleOnchange(e){
+            setLocalUrl(e.target.value)
+            var blob = new Blob (localUrl, {type: "image/jpg"})
+            const storageRef=firebase.storage().ref('flyers/')
+            const task = storageRef.put(blob)
+
+            task.on ('state_changed',function (snapshot){
+            console.log(snapshot)
+            }, function (error){
+                console.error(error)
+            }, function () {
+            setFbUrl(task.snapshot.downloadURL)
+            })
+
+console.log(fbUrl)
+        }
+
+        console.log(fbUrl)
 
      
     function handlesubmit(e){
@@ -117,19 +142,23 @@ console.log({
 })
   
 
+ 
 
-regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id,lastAdminId ) //after signin we want to redirect to another page
-        .then((resp)=>{
-            //func to send the company
-            // getOneC(compName)
-            props.history.push("/test2")
+console.log(localUrl + " picurllocal")
+
+
+// regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id,lastAdminId ) //after signin we want to redirect to another page
+//         .then((resp)=>{
+//             //func to send the company
+//             // getOneC(compName)
+//             props.history.push("/test2")
     
-        }) 
-        .catch(e => {
+//         }) 
+//         .catch(e => {
             
     
-            console.log(e + " ERROR")
-        })
+//             console.log(e + " ERROR")
+//         })
 
 
     }
@@ -157,10 +186,18 @@ regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, co
                                     {/* <input type="file" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
                                     <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/> */}
 
-                                    <input type="file" name ="pic" placeholder="pic url**" value={""} onChange={e=>setPic(e.target.value)}/>
+                                    <input type="file" name ="pic" placeholder="pic url" value={""} onChange={e=>setPic(e.target.value)}/>
                                     <img className="thumbpics" src={pic}/>
-                                    {/* <input type="file" name ="banner" placeholder="banner url**" value={banner} onChange={e=>setBanner(e.target.value)}/>
-                                    <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/> */}
+
+                                    
+
+
+                                    <input type="file" onChange={e=>handleOnchange(e)}/>
+
+
+
+
+                                    
                                 </div>
                             </div>
 

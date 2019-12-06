@@ -202,4 +202,5 @@ flex-wrap: wrap;
 
   textarea{
     height: 150px;
+    resize: none;
   }
