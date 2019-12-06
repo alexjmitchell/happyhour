@@ -2,9 +2,10 @@ body, html{
   background-color: white;
 }
 
-.reg{
+/* ---------- Registration Form ---------- */
+
+ .reg{
     width: 400px;
-    margin:auto;
   
   }
   .reg h1{
@@ -31,18 +32,15 @@ body, html{
   
 }
 
-
   .inputs{
     margin:0;
     padding: 0;
-    /* border: 1px solid green; */
     width:350px;
     height:450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background:linear-gradient(to right, #5D26C1, #A17FE0, #59C173); */
     background:linear-gradient(to right, rgb(238, 81, 100), #df3926);
 
   }
@@ -71,17 +69,15 @@ body, html{
     font-size: 25px;
     border:none;
     cursor: pointer;
+  } */
+/*   
   
-  
-  }
-  
-  
-  
+
   .toTheOtherForm p{
     margin:15px 0px 5px 0;
   }
   
-  .toTheOtherForm .toLogin{
+  /* .toTheOtherForm .toLogin{
     width:350px;
     height:50px;
     background-color: rgb(224, 94, 109);
@@ -89,8 +85,8 @@ body, html{
     line-height: 40px;
     cursor: pointer;
   
-  }
-  
+  } */
+/*   
   .toTheOtherForm a {
     text-decoration: none;
     color:white;
@@ -204,3 +200,5 @@ flex-wrap: wrap;
     height: 150px;
     resize: none;
   }
+
+ 

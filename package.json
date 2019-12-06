@@ -17,9 +17,9 @@
   "dependencies": {
     "concurrently": "^5.0.0",
     "firebase": "^7.5.1",
+    "react-firebase-file-uploader": "^2.4.3",
     "google-map-react": "^1.1.5",
     "react-coverflow": "^0.2.20",
-    "react-firebase-file-uploader": "^2.4.3",
     "validator": "^12.1.0"
   },
   "boilerplate": {

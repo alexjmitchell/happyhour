@@ -8,55 +8,51 @@ function Slider() {
   const { users } = useUsers()
   const { companyname } = useCompanies()
   const { liked } = useLiked()
-  console.log(liked, "test")
 
   const fn = function() {}
 
   function handleClick(e, liked) {
     e.preventDefault()
     // props.history.push("/CompanyPage/" + liked)
-    // add(liked)
   }
 
   return (
     <div>
-      <p>
+      {/* <p>
         Check Your Liked List Here:{" "}
         <Link to="/liked">
           {" "}
           <Icon icon="heart" />
         </Link>
-      </p>
+      </p> */}
       {/* //--- test heart--- */}
-      <button onClick={e => handleClick(e, "hello")}>
+      {/* <button onClick={e => handleClick(e, "hello")}>
         <Icon icon="heart" />
-      </button>
+      </button> */}
       {/* //--- test heart--- */}
-      <div className="container">
+      <div>
         <Coverflow
           width="960"
           height="800"
-          displayQuantityOfSide={2.3}
+          displayQuantityOfSide={2.5}
           navigation={false}
           enableScroll={false}
           clickable={true}
           active={0}
         >
           {users.map((user, i) => (
-
             <img
               className="slidePics"
               src={user.picture}
               alt={
-                <Link
+                <a 
                   className="sliderImg"
-                  to={`/SingleViewPage/${user.companyname}`}
+                  href={user.website}
                 >
                   {user.companyname}
-                </Link>
+                </a>
               }
             />
-
           ))}
         </Coverflow>
       </div>
