@@ -4,6 +4,7 @@ import { useAdmins } from '../hooks'
 import { Link } from 'react-router-dom'
 import Header from "./Header";
 import Footer from "./Footer";
+import "../styles/Login.css"
 
 export default props => {
 const [username, setUsername]=useState('')
@@ -37,28 +38,29 @@ function handlesubmit(e){
 
     return (
         <>
-<Header/>
-        <div className="reg">
-        <h1> Sign in</h1>
-   
-            <form onSubmit={handlesubmit}>
-            <div className="inputs">
-                <input type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
-                <input type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
-                { loginmatch ? "" : <p>login fail</p>}
+            <Header/>
+            <div className="loginMainContainer">
+                <div className="loginWrapper">
+                    <div className="loginLeftSide">
+                        <div className="loginLogo">Listo?</div>
+                        <div className="toTheOtherForm">
+                            <p className="toTheOtherFormText"> Don't<br/>have an<br/> account?</p>
+                            <p className="toLogin"> <Link to="/register">Create Account</Link></p>
+                        </div>
+                    </div>
+                    <div className="loginRightSide">
+                        <p className="pleaseSignIn">Welcome Back</p>
+                        <form className="loginForm" onSubmit={handlesubmit}>
+                            <input type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
+                            <input type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                                { loginmatch ? "" : <p>login fail</p>}
+                            <button className="loginButton" type="submit">Log  In</button>
+                        </form>
+                        <div className="forgotPswd">Forgot your password?</div>
+                    </div>
+                </div>
             </div>
-            <div className="buttons">
-                <button type="submit">Login</button>
-            </div>
-            </form>
-            <div className="toTheOtherForm">
-            <p> Don't have an account? </p>
-            <p className="toLogin"> <Link to="/register">Register</Link></p>
-            </div>
-
-        </div>
-
-<Footer/>
+            <Footer/>
         </>
     )
 }

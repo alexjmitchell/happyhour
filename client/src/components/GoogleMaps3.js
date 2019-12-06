@@ -9,6 +9,7 @@ import "../styles/GoogleMaps1.css"
 // Our API key: AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
+var infoWindow;
 
 class GoogleMaps1 extends Component {
   static defaultProps = {
@@ -19,7 +20,7 @@ class GoogleMaps1 extends Component {
   render() {
     return (
 
-      <div className="GoogleMaps1MainContainer">
+      <div className="GoogleMaps3MainContainer">
 
         <div className="mapTopBar">
           <h1>HERE ARE THE HAPPY HOURS NEAR YOU</h1>
