@@ -80,7 +80,7 @@ router.get("/admins", (req, res, next) => {
 
 router.get("/companies", (req, res, next) => {
   const sql = `
-  SELECT picture, companyname FROM companies`
+  SELECT picture, companyname, website FROM companies`
 
   db.query(sql, (err, results, fields) => {
     res.json(results)
@@ -272,7 +272,7 @@ router.put("/gprofile", (req, res, next) => {
   )
 })
 
-///*********************** */
+///***********************Feedback-Form-post**************** */
 
 router.post("/feedback", (req, res, next) => {
   let message = req.body.message
@@ -288,6 +288,25 @@ router.post("/feedback", (req, res, next) => {
     }
     res.json({
       message: "Feedback Sent",
+      results
+    })
+  })
+})
+
+//************************Subscribers-Form-post************* */
+
+router.post("/subscribers", (req, res, next) => {
+  let email = req.body.email
+
+  const sql = `
+  INSERT INTO subscribers (email) VALUES (?)`
+
+  db.query(sql, [email], (err, results, fields) => {
+    if (err) {
+      throw new Error(err)
+    }
+    res.json({
+      message: "Subscrib Sent",
       results
     })
   })

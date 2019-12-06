@@ -1,204 +1,191 @@
-body, html{
+body,
+html {
   background-color: white;
 }
 
 /* ---------- Registration Form ---------- */
 
- .reg{
-    width: 400px;
-  
-  }
-  .reg h1{
-    color:#df3926;
-  }
-  
-  .reg form{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    height:400px;
-  align-items: center;
-  justify-content: center;
-  }
-  
-
-  
-.profInputs input, .profInputs textarea{ 
-  font-size: 18px;
-    padding-left: 10px;
-    margin:5px 0;
-    /* border:1px solid black; */
-    width:350px;
-  
+.reg {
+  width: 400px;
+}
+.reg h1 {
+  color: #df3926;
 }
 
-  .inputs{
-    margin:0;
-    padding: 0;
-    width:350px;
-    height:450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:linear-gradient(to right, rgb(238, 81, 100), #df3926);
+.reg form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+}
 
-  }
-  .inputs input{
-    font-size: 18px;
-    padding-left: 10px;
-    border:none;
-  
-  }
-  
-  .button{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .reg form input{
-    width:300px;
-    height: 40px;
-    margin:10px 0;
-  }
-  .reg form button{
-    width: 350px;
-    height: 50px;
-    background-color: rgb(199, 40, 23);
-    color:white;
-    font-size: 25px;
-    border:none;
-    cursor: pointer;
-  } */
-/*   
-  
+.profInputs input,
+.profInputs textarea {
+  font-size: 18px;
+  padding-left: 10px;
+  margin: 5px 0;
+  /* border:1px solid black; */
+  width: 350px;
+}
 
-  .toTheOtherForm p{
-    margin:15px 0px 5px 0;
-  }
-  
-  /* .toTheOtherForm .toLogin{
-    width:350px;
-    height:50px;
-    background-color: rgb(224, 94, 109);
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-  
-  } */
-/*   
-  .toTheOtherForm a {
-    text-decoration: none;
-    color:white;
-    font-size:25px;
-  
-  }
+.inputs {
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgb(238, 81, 100), #df3926);
+}
+.inputs input {
+  font-size: 18px;
+  padding-left: 10px;
+  border: none;
+}
 
-  .prof{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
 
-    width: 100%;
+.reg form input {
+  width: 300px;
+  height: 40px;
+  margin: 10px 0;
+}
+.reg form button {
+  width: 350px;
+  height: 50px;
+  background-color: rgb(199, 40, 23);
+  color: white;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+*/ .toTheOtherForm p {
+  margin: 15px 0px 5px 0;
+}
+
+.toTheOtherForm .toLogin {
+  width: 350px;
+  height: 50px;
+  background-color: rgb(224, 94, 109);
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.toTheOtherForm a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.prof {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  width: 100%;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  }
+}
 
-  .prof form{
-    width:1200px;
-  display:flex;
+.prof form {
+  width: 1200px;
+  display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  }
+}
 
-  .prof .profInputs{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-  }
+.prof .profInputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  #profileLeft{
-    width:390px;
-    margin-bottom: 60px;
-  }
+#profileLeft {
+  width: 390px;
+  margin-bottom: 60px;
+}
 
-  #right, #middlebottom{
-    width:790px;
-  }
-#rightTop{
+#right,
+#middlebottom {
+  width: 790px;
+}
+#rightTop {
   display: flex;
 }
-  #rightTop div{
-    width: 390px;
-  }
-  
-
-  .buttons{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  fieldset{
-  border:0;
+#rightTop div {
+  width: 390px;
 }
-  .thumbpics{
-    width:130px;
-  }
 
-  .middleBottom button{
-    width: 350px;
-    height: 50px;
-    background-color: rgb(199, 40, 23);
-    color:white;
-    font-size: 25px;
-    border:none;
-    cursor: pointer;
-    align-items: right;
-  }
-
-
-
-.dayshr{
+.buttons {
+  margin-top: 30px;
   display: flex;
-  width:750px;
-  margin:10px 0;
+  flex-direction: row-reverse;
 }
-  .happydays{
-    display: flex;
-    width:390px;
-    flex-direction: row;
-    justify-content: start;
-flex-wrap: wrap;
-  }
-.hr{
+
+fieldset {
+  border: 0;
+}
+.thumbpics {
+  width: 130px;
+}
+
+.middleBottom button {
+  width: 350px;
+  height: 50px;
+  background-color: rgb(199, 40, 23);
+  color: white;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  align-items: right;
+}
+
+.dayshr {
+  display: flex;
+  width: 750px;
+  margin: 10px 0;
+}
+.happydays {
+  display: flex;
+  width: 390px;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.hr {
   display: flex;
   justify-content: space-evenly;
   width: 390px;
 }
 
-.hr input{
-  width:145px;
+.hr input {
+  width: 145px;
 }
 
-  .happydays label{
-    width: 48px;
-    height: 48px;
-    padding: 0 10px;
-    margin:0;
-    align-content:center;
-    font-size: 18px;
-  }
-  .happydays input{
-    width:30px;
-    height: 30px;
-    margin: 0px;
-  }
+.happydays label {
+  width: 48px;
+  height: 48px;
+  padding: 0 10px;
+  margin: 0;
+  align-content: center;
+  font-size: 18px;
+}
+.happydays input {
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+}
 
-  textarea{
-    height: 150px;
-    resize: none;
-  }
-
- 
+textarea {
+  height: 150px;
+  resize: none;
+}

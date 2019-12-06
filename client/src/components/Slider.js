@@ -42,13 +42,11 @@ function Slider() {
         >
           {users.map((user, i) => (
             <img
+              key={i}
               className="slidePics"
               src={user.picture}
               alt={
-                <a 
-                  className="sliderImg"
-                  href={user.website}
-                >
+                <a className="sliderImg" href={user.website}>
                   {user.companyname}
                 </a>
               }
