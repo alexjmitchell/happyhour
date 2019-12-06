@@ -8,14 +8,12 @@ function Slider() {
   const { users } = useUsers()
   const { companyname } = useCompanies()
   const { liked } = useLiked()
-  console.log(liked, "test")
 
   const fn = function() {}
 
   function handleClick(e, liked) {
     e.preventDefault()
     // props.history.push("/CompanyPage/" + liked)
-    // add(liked)
   }
 
   return (
@@ -43,7 +41,6 @@ function Slider() {
           active={0}
         >
           {users.map((user, i) => (
-
             <img
               className="slidePics"
               src={user.picture}
@@ -56,7 +53,6 @@ function Slider() {
                 </a>
               }
             />
-
           ))}
         </Coverflow>
       </div>
