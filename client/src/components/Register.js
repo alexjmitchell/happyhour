@@ -13,38 +13,64 @@ const [contactName, setContactName]=useState('')
 const [cpassword, setCPassword]=useState('')
 const [email, setEmail]=useState('')
 const [phonenumber, setPhone]=useState('')
+const [nameError, setNameError] = useState('')
+const [userExists, setUserExists]=useState(false)
+const [passError, setPassError]=useState('')
+
+
+
 const { getRegistered } = useAdmins ()
 
 const { reg } = useAuth()
+const {admins } = useAdmins()
 
 function handlesubmit(e){
     e.preventDefault()
 
-    reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
-    .then((resp)=>{
-        getRegistered([
-            {
-                username,
-                name: contactName,
-                email,
-                phone: phonenumber
-            }
-        ]
-        )
+    let err=false
+if(!username || !password || !contactName || !password || !cpassword || !email){
+    console.log("vacios")
+    setNameError("All fields are required")
+}
+    else {
+setNameError("")
+    }
 
-        props.history.push("/profile")
-
-    }) 
-    .catch(e => {
-        console.log(username + " " + password + " user and password")
-        console.log(contactName + " " + phonenumber + " contactname and phone")
-        console.log("email " + email)
+ 
+    setUserExists( admins.filter(u=>u.username == username).length>0 ? true : false)
+    setPassError (password === cpassword ? "" : "passwords does not match")
 
 
-        console.log("LOGIN ERROR")
-    })
+
+
+   
+
+
+
+
+    // //
+
+    // reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
+    // .then((resp)=>{
+    //     getRegistered([ //to display on the profile component
+    //         {
+    //             username,
+    //             name: contactName,
+    //             email,
+    //             phone: phonenumber
+    //         }]
+    //     )
+
+    //     props.history.push("/profile")
+
+    // }) 
+    // .catch(e => {
+    //     console.log("LOGIN ERROR")
+    // })
 // needs to be a promise because if not it will redirect before everything is done.
     //the "/" takes us to "*" in app.js that take us to checklogin. this check if it's authenticated shows profile if not, redirect to login
+
+
 
 }
 
@@ -64,16 +90,21 @@ function handlesubmit(e){
                     <div className="loginRightSide">
                         <p className="pleaseSignIn">Partner Registration</p>
                         <form className="loginForm" onSubmit={handlesubmit}>
-                            <input type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
+                            {userExists ? 
+                            <p className="pred">User already exists</p>: ""}
+                            <input className={userExists? "red" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input type="text" name = "contactname" placeholder="Contact name" value={contactName} onChange={e=>setContactName(e.target.value)}/>
                             <input type="text" name ="phonenumber" placeholder="Phone Number" value={phonenumber} onChange={e=>setPhone(e.target.value)}/>
                             <input type="text" name ="email" placeholder="email" value={email} onChange={e=>setEmail(e.target.value)}/>
-                            <input type="text" name = "password" placeholder="password" value={password} onChange={e=>setPassword(e.target.value)}/>
-                            <input type="text" name = "cpassword" placeholder="confirm password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
-                            {/* { loginmatch ? "" : <p>login fail</p>} */}
+                            <input className={passError ? "red" : ""} type="text" name = "password" placeholder="password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={passError ? "red" : ""} type="text" name = "cpassword" placeholder="confirm password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
+                            {passError!=""?
+                            <p className="pred"> {passError}</p>: ""}
                             <button className="loginButton" type="submit">Create Your Account</button>
                         </form>
-                        <div className="forgotPswd">Forgot your password?</div>
+                        { nameError!="" ? 
+                        <p className="pred"> *All fields are required</p>
+                          :""}
                     </div>
                 </div>
             </div>
