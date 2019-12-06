@@ -24,19 +24,14 @@ class GoogleMaps1 extends Component {
         </div>
 
         <iframe
-          id="theMap"
-          width="80%"
-          height="800px"
-          frameBorder="0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk&q=WeWork,Las+Vegas,NV"
-          // src="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"
-          allowFullScreen
-        ></iframe>
-
-        <div className="searchText">
-          <h2>LET'S FIND WHAT YOU'RE LOOKING FOR</h2>
-          <p>Search by keywords, location, or radius</p>
-        </div>
+              id="theMap"
+              width="80%"
+              height="800px"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
+              &q=WeWork,Las+Vegas,NV"
+              allowFullScreen
+          >
+          </iframe>
 
         <div className="searchItems">
           <div className="keywordSearch">

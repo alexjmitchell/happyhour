@@ -21,18 +21,6 @@ code {
     monospace;
 }
 
-.Header {
-  width: 100%;
-  background: black;
-  height: 50px;
-  color: red;
-  font-size: 20px;
-  padding: 0;
-  display: flex;
-  justify-content: space-evenly;
-  line-height: 50%;
-}
-
 .mainwrap {
   height: 665px;
 }
