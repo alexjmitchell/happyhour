@@ -1,16 +1,21 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { useAdmins } from '../hooks'
+import {useCompanies} from "../hooks"
+
 import { Link } from 'react-router-dom'
 import Header from "./Header";
 import Footer from "./Footer";
+import admins from '../redux/ducks/admins'
 
 export default props => {
 const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
-const { getone } = useAdmins ()
+const {oneAdmin, getone } = useAdmins ()
+const { getonc } = useCompanies()
+
 
 function handlesubmit(e){
     e.preventDefault()
@@ -19,6 +24,7 @@ function handlesubmit(e){
     .then((resp)=>{
         setLoginmatch(true)
         getone(username)
+
         props.history.push("/profile")
 
     }) 

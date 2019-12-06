@@ -35,8 +35,8 @@ function Slider() {
       <div className="container">
         <Coverflow
           width="960"
-          height="700"
-          displayQuantityOfSide={2.5}
+          height="800"
+          displayQuantityOfSide={2.3}
           navigation={false}
           enableScroll={false}
           clickable={true}

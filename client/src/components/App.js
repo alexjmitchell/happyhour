@@ -25,6 +25,9 @@ function App(props) {
       <Router>
         <Switch>
           {/* <Route exact path="/main" component={Maintest}/>  */}
+          <Route exact path="/login" component={Login}/> 
+         <Route path ="/register" component={Register}/>
+
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
           <Route exact path="/liked" component={Liked}></Route>
@@ -42,11 +45,8 @@ function App(props) {
           <Route path="*" component={CheckLogin} />
 
 
-         <Route exact path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
-
+         
          {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="*" component={CheckLogin}/>
 
           
 
