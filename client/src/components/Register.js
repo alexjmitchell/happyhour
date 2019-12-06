@@ -41,32 +41,23 @@ setNameError("")
     setPassError (password === cpassword ? "" : "passwords does not match")
 
 
+    reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
+    .then((resp)=>{
+        getRegistered([ //to display on the profile component
+            {
+                username,
+                name: contactName,
+                email,
+                phone: phonenumber
+            }]
+        )
 
+        props.history.push("/profile")
 
-   
-
-
-
-
-    // //
-
-    // reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
-    // .then((resp)=>{
-    //     getRegistered([ //to display on the profile component
-    //         {
-    //             username,
-    //             name: contactName,
-    //             email,
-    //             phone: phonenumber
-    //         }]
-    //     )
-
-    //     props.history.push("/profile")
-
-    // }) 
-    // .catch(e => {
-    //     console.log("LOGIN ERROR")
-    // })
+    }) 
+    .catch(e => {
+        console.log("LOGIN ERROR")
+    })
 // needs to be a promise because if not it will redirect before everything is done.
     //the "/" takes us to "*" in app.js that take us to checklogin. this check if it's authenticated shows profile if not, redirect to login
 
