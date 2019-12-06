@@ -1,16 +1,45 @@
 import React from "react"
-import "../styles/Maincss.css"
 import Icon from "../lib/Icon"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../styles/footer.css"
+import AboutUs from "./AboutUs"
+import ContactUs from "./ContactUs"
+import PartnerWithUs from "./PartnerWithUs"
+import SingleViewPage from "./SingleViewPage"
+import GoogleMaps1 from "./GoogleMaps1"
+import GoogleMaps2 from "./GoogleMaps2"
 
 
 function Footer() {
   return (
-      <footer className="footerwrap">
+
+      <footer className="footerWrapper">
+
+        <div className="footerLinks">
+          <h2>LINKS</h2>
+          <Link to={'/AboutUs'}>About Us</Link>
+          <Link to={'/ContactUs'}>Contact Us</Link>
+          <Link to={'/ParnterWithUs'}>Partner With Us</Link> 
+          <Link to={'/SingleViewPage'}>Single View Page</Link>
+          <Link to={'/GoogleMaps1'}>Google Maps 1</Link>
+        </div>
+
+        <div className="footerAddress">
+          <h2>ADDRESS</h2>
+          <p>WeWork</p>
+          <p>10845 Griffith Peak Dr #2</p>
+          <p>Las Vegas, NV  89101</p>
+        </div>
+
+        <div className="footerPhone">
+          <h2>CONTACT US</h2>
+          <p>702-837-0309</p>
+          <p>info-lv@happyhourfinder.com</p>
+        </div>
+
         <div className="media">
+          <h2>SOCIAL</h2>
           <ul className="social">
-            <div>Partnership With Us</div>
             <li className="fb">
               <a href="https://www.facebook.com/Chilis/">
                 <i className="fa fa-facebook"></i>
@@ -45,6 +74,12 @@ function Footer() {
 
         </div>
 
+        <div className="footerNewsletter">
+          <h2>JOIN OUR NEWSLETTER</h2>
+          <p>Email Adress</p>
+          <p>Input Box</p>
+          <p>Submit Box</p>
+        </div>
 
       </footer>
   )

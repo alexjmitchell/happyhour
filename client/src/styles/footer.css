@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   min-height: 100%;
+  position: relative;
 }
 *,
 *::before,
@@ -10,6 +11,7 @@ html {
 
 body {
   margin: 0;
+  margin-bottom: 40px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -22,28 +24,48 @@ code {
     monospace;
 }
 
-/* .footerwrap {
-  height: 100px;
-  background: black;
-  color: red;
-  
-  line-height: 100px;
+
+.footerWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* position: absolute; */
+  background: rgb(46,41,37);
 }
 
-footer {
-  width: 100%;
-  margin-top: 30px;
-} */
+.footerWrapper h2 {
+  color: rgb(91,91,91);
+  text-align: center;
+}
 
-/* ul.social {
+/* ---------- footerAddress Section 1 ---------- */
+
+.footerAddress p {
+  padding-left: 50px;
+  color: rgb(148,136,122);
+}
+
+/* ---------- footerPhone Section 2 ---------- */
+
+.footerPhone p {
+  padding-left: 50px;
+  color: rgb(148,136,122);
+}
+
+/* ---------- media Section 3 ---------- */
+
+ul.social {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .social li {
-  margin: 20px;
+  margin: 5px 15px;
   border: 1px solid white;
   background-color: white;
   color: rgba(124, 26, 86, 0.8);
@@ -52,6 +74,7 @@ footer {
   font-size: 50px;
   line-height: 60px;
   text-align: center;
+  border-radius: 10px;
 }
 
 .social a li.fb {
@@ -100,4 +123,29 @@ footer {
 
 a {
   text-decoration: none;
-} */
+}
+
+/* ---------- footerLinks Section 4 ---------- */
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinks a {
+  padding-left: 50px;
+  margin: 5px 0px 5px 0px;
+  color: rgb(148,136,122);
+}
+
+/* ---------- footerLinks Section 4 ---------- */
+
+.footerNewsLetter {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerNewsletter p {
+  padding-left: 50px;
+  color: rgb(148,136,122);
+}

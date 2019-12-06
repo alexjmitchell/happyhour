@@ -18,22 +18,22 @@ function Slider() {
 
   return (
     <div>
-      <p>
+      {/* <p>
         Check Your Liked List Here:{" "}
         <Link to="/liked">
           {" "}
           <Icon icon="heart" />
         </Link>
-      </p>
+      </p> */}
       {/* //--- test heart--- */}
-      <button onClick={e => handleClick(e, "hello")}>
+      {/* <button onClick={e => handleClick(e, "hello")}>
         <Icon icon="heart" />
-      </button>
+      </button> */}
       {/* //--- test heart--- */}
-      <div className="container">
+      <div>
         <Coverflow
           width="960"
-          height="700"
+          height="600"
           displayQuantityOfSide={2.5}
           navigation={false}
           enableScroll={false}
@@ -45,12 +45,12 @@ function Slider() {
               className="slidePics"
               src={user.picture}
               alt={
-                <Link
+                <a 
                   className="sliderImg"
-                  to={`/SingleViewPage/${user.companyname}`}
+                  href={user.website}
                 >
                   {user.companyname}
-                </Link>
+                </a>
               }
             />
           ))}

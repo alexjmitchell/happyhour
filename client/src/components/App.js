@@ -29,19 +29,15 @@ function App(props) {
           <Route exact path="/liked" component={Liked}></Route>
 
           <Route path="/Facebook" component={Facebook}></Route>
-
           <Route path="/AboutUs" component={AboutUs} />
           <Route path="/ContactUs" component={ContactUs} />
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
-          <Route path="/GoogleMaps1" component={GoogleMaps1} />
-          <Route path="/GoogleMaps2" component={GoogleMaps2} />
-
-          {/* <Route path = "/profile" component ={Profile}/> */}
-
           <Route exact path="/login" component={Login} />
           <Route path="/register" component={Register} />
-
+          {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="/GoogleMaps1" component={GoogleMaps1}/>
+          <Route path="/GoogleMaps2" component={GoogleMaps2}/>
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
         </Switch>
