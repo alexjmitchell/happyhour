@@ -10,8 +10,6 @@ import GoogleMaps1 from "./GoogleMaps1"
 function Main() {
   return (
     <div>
-      <MainBaner />
-      <Slider />
       <MainBanner />
       <Slider />
       <GoogleMaps1 />    
