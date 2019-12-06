@@ -1,12 +1,9 @@
-body, html{
+/* body, html{
   background-color: white;
 }
 
-/* ---------- Registration Form ---------- */
-
  .reg{
     width: 400px;
-  
   }
   .reg h1{
     color:#df3926;
@@ -20,14 +17,12 @@ body, html{
   align-items: center;
   justify-content: center;
   }
-  
 
-  
 .profInputs input, .profInputs textarea{ 
   font-size: 18px;
     padding-left: 10px;
     margin:5px 0;
-    /* border:1px solid black; */
+    border:1px solid black;
     width:350px;
   
 }
@@ -69,15 +64,13 @@ body, html{
     font-size: 25px;
     border:none;
     cursor: pointer;
-  } */
-/*   
-  
+  }
 
   .toTheOtherForm p{
     margin:15px 0px 5px 0;
   }
   
-  /* .toTheOtherForm .toLogin{
+  .toTheOtherForm .toLogin{
     width:350px;
     height:50px;
     background-color: rgb(224, 94, 109);
@@ -85,8 +78,8 @@ body, html{
     line-height: 40px;
     cursor: pointer;
   
-  } */
-/*   
+  }
+
   .toTheOtherForm a {
     text-decoration: none;
     color:white;
@@ -129,76 +122,66 @@ flex-wrap: wrap;
 #rightTop{
   display: flex;
 }
-  #rightTop div{
-    width: 390px;
-  }
-  
+#rightTop div{
+width: 390px;
+}
 
-  .buttons{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row-reverse;
-  }
+.buttons{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
 
-  fieldset{
+.fieldset{
   border:0;
 }
-  .thumbpics{
-    width:130px;
-  }
-
-  .middleBottom button{
-    width: 350px;
-    height: 50px;
-    background-color: rgb(199, 40, 23);
-    color:white;
-    font-size: 25px;
-    border:none;
-    cursor: pointer;
-    align-items: right;
-  }
-
-
-
+.thumbpics{
+  width:130px;
+}
+.middleBottom button{
+  width: 350px;
+  height: 50px;
+  background-color: rgb(199, 40, 23);
+  color:white;
+  font-size: 25px;
+  border:none;
+  cursor: pointer;
+  align-items: right;
+}
 .dayshr{
   display: flex;
   width:750px;
   margin:10px 0;
 }
-  .happydays{
-    display: flex;
-    width:390px;
-    flex-direction: row;
-    justify-content: start;
-flex-wrap: wrap;
-  }
+.happydays{
+  display: flex;
+  width:390px;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
 .hr{
   display: flex;
   justify-content: space-evenly;
   width: 390px;
 }
-
 .hr input{
   width:145px;
 }
-
-  .happydays label{
-    width: 48px;
-    height: 48px;
-    padding: 0 10px;
-    margin:0;
-    align-content:center;
-    font-size: 18px;
-  }
-  .happydays input{
-    width:30px;
-    height: 30px;
-    margin: 0px;
-  }
-
-  textarea{
-    height: 150px;
-    resize: none;
-  }
-
- 
+.happydays label{
+  width: 48px;
+  height: 48px;
+  padding: 0 10px;
+  margin:0;
+  align-content:center;
+  font-size: 18px;
+}
+.happydays input{
+  width:30px;
+  height: 30px;
+  margin: 0px;
+}
+textarea{
+  height: 150px;
+  resize: none;
+} */

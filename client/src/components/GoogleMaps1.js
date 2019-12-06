@@ -29,10 +29,9 @@ class GoogleMaps1 extends Component {
               id="theMap"
               width="80%"
               height="800px"
-              frameborder="0"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk&q=WeWork,Las+Vegas,NV"
-              // src="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"
-              allowfullscreen
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
+              &q=WeWork,Las+Vegas,NV"
+              allowFullScreen
           >
           </iframe>
 
