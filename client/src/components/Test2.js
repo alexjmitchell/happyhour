@@ -5,14 +5,14 @@ import {useCompanies} from "../hooks"
 
 export default props => {
   const { companies, oneCompany } = useCompanies()
-  console.log(companies)
-  console.log(oneCompany)
+  console.log(companies + "companiesentest2")
+  console.log(oneCompany + "onecompany test2")
 const thecompany=companies.filter(e=>e.companyname == oneCompany)
 return (
 
     <div>
       
-        <h1> company: {oneCompany} </h1>
+        {/* { <h1> company: {oneCompany} </h1> */}
         {thecompany.map(c=>(
           <>
           <p>{c.companyname}</p>
@@ -26,7 +26,7 @@ return (
     <Link to={"/login"}><p>Login</p></Link>
     <Link to={"/register"}><p>Register</p></Link>
     <Link to={"/profile"}><p>profile</p></Link>
-    <Link to={"/"}><p>main</p></Link>
+    <Link to={"/"}><p>main</p></Link> 
 
     </div>
 
