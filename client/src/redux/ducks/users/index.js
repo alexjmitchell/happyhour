@@ -37,20 +37,11 @@ function sendFeedback(message, email, name) {
   }
 }
 
-// function register(username, password, name, phone, email, dispatch) {
-//   return new Promise((resolve, reject) => {
-//     axios
-//       .post("/register", { username, password, name, phone, email })
-//       .then(resp => {
-//         login(username, password, dispatch).then(() => {
-//           resolve()
-//         })
-//       })
-//       .catch(e => {
-//         reject()
-//       })
-//   })
-// }
+function sendSubscrib(email) {
+  return dispatch => {
+    axios.post("/subscribers", { email }).then(resp => {})
+  }
+}
 
 // custom hooks
 export function useUsers() {
@@ -64,9 +55,13 @@ export function useUsers() {
     return dispatch(sendFeedback(message, email, name))
   }
 
+  const sendSubs = email => {
+    return dispatch(sendSubscrib(email))
+  }
+
   useEffect(() => {
     get()
   }, [dispatch])
 
-  return { users, sendF }
+  return { users, sendF, sendSubs }
 }
