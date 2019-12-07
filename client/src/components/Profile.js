@@ -18,21 +18,25 @@ export default props => {
     const {admins, oneAdmin} = useAdmins()
     const { companies, uploadPic, regProf } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
-    const [admin_id, setAdmin_id]=useState(Number(oneAdmin.map(u=>u.id).join('')))
-    const lastAdminId = Number(admins[admins.length -1].id)
+    // const [admin_id, setAdmin_id]=useState(Number(oneAdmin.map(u=>u.id).join('')))
+    let admin_id=Number(oneAdmin.map(u=>u.id).join(''))
+    let lastAdminId = Number(admins[admins.length -1].id)
+    const [fromRegForm, setFromRegForm]=useState(oneAdmin.map(u=>u.justRegistered))
     const thecompany = companies.filter(f=>f.admin_id==admin_id)
     const dd=thecompany.map(c =>c.hhdays).join()
-    
-    console.log( dd + " hhdays")
-console.log(lastAdminId)
-const ddarr=dd.split(",")
-console.log(ddarr.includes("Mo"))
+    // console.log( dd + " hhdays")
 
+const ddarr=dd.split(",")
+// console.log(ddarr.includes("Mo"))
+
+
+
+// oneAdmin.map(o=>console.log(o.justRegistered + " hay algo en just registered?"))
 
     // const [picImg, setPicImg] = useState('')
 
 
-    const [contactName, setContactName]=useState('')
+    const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
     const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
     const [phonenumber, setPhone]=useState(oneAdmin.map(u=>u.phone).toString())
 
@@ -62,11 +66,6 @@ console.log(ddarr.includes("Mo"))
     const [localUrl, setLocalUrl] = useState('')
     const [isUploading, setIsUploading] = useState(false)
 
-    // const [fireUrl, setFirebUrl]=useState('')
-    
-
-
-
     const [monday, setMonday]=useState(ddarr.includes("Mo")?true:false)
     const [tuesday, setTuesday]=useState(ddarr.includes("Tu")?true:false) 
     const [wed, setWed]=useState(ddarr.includes("We")?true:false) 
@@ -74,31 +73,6 @@ console.log(ddarr.includes("Mo"))
     const [fri, setFri]=useState(ddarr.includes("Fr")?true:false) 
     const [sat, setSat]=useState(ddarr.includes("Sa")?true:false) 
     const [sun, setSun]=useState(ddarr.includes("Su")?true:false) 
-
-
-
-//    const id = admins.filter(a=>a.username == username).map(u=>u.id)
-            //  setContactName(u.name)
-
-
-            //         function handleOnchange(e){
-//             setLocalUrl(e.target.value)
-//             var blob = new Blob (localUrl, {type: "image/jpg"})
-//             const storageRef=firebase.storage().ref('flyers/')
-//             const task = storageRef.put(blob)
-
-//             task.on ('state_changed',function (snapshot){
-//             console.log(snapshot)
-//             }, function (error){
-//                 console.error(error)
-//             }, function () {
-//             setFbUrl(task.snapshot.downloadURL)
-//             })
-
-// console.log(fbUrl)
-//         }
-
-        // console.log(fbUrl)
 
 
         function handleUploadStart(filename) {
@@ -126,10 +100,6 @@ console.log(ddarr.includes("Mo"))
                 })
         }
     
-
-
-
-
      
     function handlesubmit(e){
         e.preventDefault()
@@ -151,16 +121,6 @@ console.log(ddarr.includes("Mo"))
 
         
 
-
-
-
-
-if (!admin_id ==0){ //from the login form
-
-
-}
-
-
 const d=days.join(',')
         
 
@@ -176,16 +136,38 @@ console.log({
 })
   
 
- 
-
-console.log(localUrl + " picurllocal")
 
 
-regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id,lastAdminId ) //after signin we want to redirect to another page
+
+console.log ("ADMIN ID before assign " + admin_id)
+console.log ("LAST ADMIN before " + lastAdminId)
+console.log ("viene de reg form?  BEFORE " + fromRegForm)
+
+
+
+if (fromRegForm=="r")
+{
+    
+    admin_id=lastAdminId
+    lastAdminId=0
+}
+
+// console.log (oneAdmin.map(u=>u.justRegistered) + " just registeredMMMMM")
+// console.log(fromRegForm + " var fromregform")
+
+// console.log(localUrl + " picurllocal")
+
+console.log ("ADMIN ID " + admin_id)
+console.log ("LAST ADMIN ID " + lastAdminId)
+// console.log ("viene de reg form? " + fromRegForm)
+// console.log ("company id? " + thecompany.map(c=>c.id))
+
+
+regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm ) //after signin we want to redirect to another page
         .then((resp)=>{
             //func to send the company
             // getOneC(compName)
-            props.history.push("/test2")
+            // props.history.push("/test2")
     
         }) 
         .catch(e => {
@@ -193,6 +175,8 @@ regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, co
     
             console.log(e + " ERROR")
         })
+
+
 
 
     }

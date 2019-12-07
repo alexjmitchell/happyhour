@@ -78,6 +78,7 @@ const getJustRegistered = (registered)=>{
 export function useAdmins() {
   const admins = useSelector(appState => appState.adminState.admins)
   const oneAdmin = useSelector(appState => appState.adminState.oneAdmin)
+
   const dispatch = useDispatch()
   const getone = user=>dispatch(getOneAdmin(user))
 const getRegistered = registered => dispatch(getJustRegistered(registered))

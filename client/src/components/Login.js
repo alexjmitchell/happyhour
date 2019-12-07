@@ -8,14 +8,15 @@ import Header from "./Header";
 import Footer from "./Footer";
 import admins from '../redux/ducks/admins'
 import "../styles/Login.css"
+import { get } from 'https'
 
 export default props => {
 const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
-const {oneAdmin, getone } = useAdmins ()
-const { getonc } = useCompanies()
+const {getone, getRegistered } = useAdmins ()
+// const { getonc } = useCompanies()
 const [nameError, setNameError] = useState('')
 
 
@@ -34,8 +35,8 @@ function handlesubmit(e){
     signin(username,password) //after signin we want to redirect to another page
     .then((resp)=>{
         setLoginmatch(true)
-
         getone(username)
+        
 
         props.history.push("/profile")
 

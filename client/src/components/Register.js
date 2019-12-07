@@ -35,7 +35,6 @@ if(!username || !password || !contactName || !password || !cpassword || !email){
     else {
 setNameError("")
     }
-
  
     setUserExists( admins.filter(u=>u.username == username).length>0 ? true : false)
     setPassError (password === cpassword ? "" : "passwords does not match")
@@ -48,9 +47,11 @@ setNameError("")
                 username,
                 name: contactName,
                 email,
-                phone: phonenumber
+                phone: phonenumber,
+                justRegistered: "r"
             }]
         )
+
 
         props.history.push("/profile")
 
