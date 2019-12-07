@@ -37,8 +37,6 @@ function App(props) {
           <Route path="/ContactUs" component={ContactUs} />
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
-          <Route exact path="/login" component={Login} />
-          <Route path="/register" component={Register} />
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="/GoogleMaps1" component={GoogleMaps1}/>
           <Route path="/GoogleMaps2" component={GoogleMaps2}/>

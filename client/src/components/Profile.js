@@ -4,7 +4,7 @@ import {useCompanies} from "../hooks"
 import "../styles/forms.css"
 import Header from "./Header";
 import Footer from "./Footer";
-//import FileUploader from 'react-firebase-file-uploader'
+import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
 import config from './FbConfig'
 
@@ -22,14 +22,14 @@ export default props => {
     const lastAdminId = Number(admins[admins.length -1].id)
     const thecompany = companies.filter(f=>f.admin_id==admin_id)
     const dd=thecompany.map(c =>c.hhdays).join()
-
+    
     console.log( dd + " hhdays")
 console.log(lastAdminId)
 const ddarr=dd.split(",")
 console.log(ddarr.includes("Mo"))
 
 
-    const [picImg, setPicImg] = useState('')
+    // const [picImg, setPicImg] = useState('')
 
 
     const [contactName, setContactName]=useState('')
@@ -60,7 +60,9 @@ console.log(ddarr.includes("Mo"))
     const [endHr, setEndHr]=useState(thecompany.map(c=>c.endhour).join())
 
     const [localUrl, setLocalUrl] = useState('')
-    const [fbUrl, setFbUrl]=useState('')
+    const [isUploading, setIsUploading] = useState(false)
+
+    // const [fireUrl, setFirebUrl]=useState('')
     
 
 
@@ -75,26 +77,58 @@ console.log(ddarr.includes("Mo"))
 
 
 
-   // const id = admins.filter(a=>a.username == username).map(u=>u.id)
+//    const id = admins.filter(a=>a.username == username).map(u=>u.id)
             //  setContactName(u.name)
-        function handleOnchange(e){
-            setLocalUrl(e.target.value)
-            var blob = new Blob (localUrl, {type: "image/jpg"})
-            const storageRef=firebase.storage().ref('flyers/')
-            const task = storageRef.put(blob)
 
-            task.on ('state_changed',function (snapshot){
-            console.log(snapshot)
-            }, function (error){
-                console.error(error)
-            }, function () {
-            setFbUrl(task.snapshot.downloadURL)
-            })
 
-console.log(fbUrl)
+            //         function handleOnchange(e){
+//             setLocalUrl(e.target.value)
+//             var blob = new Blob (localUrl, {type: "image/jpg"})
+//             const storageRef=firebase.storage().ref('flyers/')
+//             const task = storageRef.put(blob)
+
+//             task.on ('state_changed',function (snapshot){
+//             console.log(snapshot)
+//             }, function (error){
+//                 console.error(error)
+//             }, function () {
+//             setFbUrl(task.snapshot.downloadURL)
+//             })
+
+// console.log(fbUrl)
+//         }
+
+        // console.log(fbUrl)
+
+
+        function handleUploadStart(filename) {
+            setIsUploading(true)
+        }
+        function handleProgress(progress) {
+        }
+        function handleUploadError(error) {
+            setIsUploading(false)
         }
 
-        console.log(fbUrl)
+
+
+
+        function handleUploadSuccess(filename,e) {
+            setLocalUrl('')
+            setIsUploading(false)
+            firebase
+              .storage()
+              .ref("flyers")
+              .child(filename)
+              .getDownloadURL()
+              .then(url => {
+                  setPic(url)
+                })
+        }
+    
+
+
+
 
      
     function handlesubmit(e){
@@ -147,18 +181,18 @@ console.log({
 console.log(localUrl + " picurllocal")
 
 
-// regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id,lastAdminId ) //after signin we want to redirect to another page
-//         .then((resp)=>{
-//             //func to send the company
-//             // getOneC(compName)
-//             props.history.push("/test2")
+regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id,lastAdminId ) //after signin we want to redirect to another page
+        .then((resp)=>{
+            //func to send the company
+            // getOneC(compName)
+            props.history.push("/test2")
     
-//         }) 
-//         .catch(e => {
+        }) 
+        .catch(e => {
             
     
-//             console.log(e + " ERROR")
-//         })
+            console.log(e + " ERROR")
+        })
 
 
     }
@@ -186,13 +220,23 @@ console.log(localUrl + " picurllocal")
                                     {/* <input type="file" name ="logo" placeholder="logo url**" value={logo} onChange={e=>setLogo(e.target.value)}/>
                                     <img src="https://via.placeholder.com/150C/O https://placeholder.com/"/> */}
 
-                                    <input type="file" name ="pic" placeholder="pic url" value={""} onChange={e=>setPic(e.target.value)}/>
+                                    {/* <input type="file" name ="pic" placeholder="pic url" value={""} onChange={e=>setPic(e.target.value)}/> */}
+
+                                    <FileUploader
+                                        accept="image/*"
+                                        name="happy"
+                                        randomizeFilename
+                                        storageRef={firebase.storage().ref("flyers")}
+                                        onUploadStart={handleUploadStart}
+                                        onUploadError={handleUploadError}
+                                        onUploadSuccess={handleUploadSuccess}
+                                        onProgress={handleProgress}
+                                        value={localUrl}                    
+                                    />
+
                                     <img className="thumbpics" src={pic}/>
 
-                                    
-
-
-                                    <input type="file" onChange={e=>handleOnchange(e)}/>
+                                    {/* <input type="file" onChange={e=>handleOnchange(e)}/> */}
 
 
 

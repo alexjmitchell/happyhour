@@ -83,3 +83,13 @@
     font-size: 10px;
     text-decoration: underline;
 }
+
+.red{
+    border:1px solid red;
+    color:red;
+}
+.pred{
+    color:red;
+    font-size: 15px;
+    margin:0 10px;
+}
