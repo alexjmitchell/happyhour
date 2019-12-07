@@ -29,11 +29,11 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* position: absolute; */
-  background: rgb(46,41,37);
+  background: rgb(46, 41, 37);
 }
 
 .footerWrapper h2 {
-  color: rgb(91,91,91);
+  color: rgb(91, 91, 91);
   text-align: center;
 }
 
@@ -41,14 +41,14 @@ code {
 
 .footerAddress p {
   padding-left: 50px;
-  color: rgb(148,136,122);
+  color: rgb(148, 136, 122);
 }
 
 /* ---------- footerPhone Section 2 ---------- */
 
 .footerPhone p {
   padding-left: 50px;
-  color: rgb(148,136,122);
+  color: rgb(148, 136, 122);
 }
 
 /* ---------- media Section 3 ---------- */
@@ -134,7 +134,7 @@ a {
 .footerLinks a {
   padding-left: 50px;
   margin: 5px 0px 5px 0px;
-  color: rgb(148,136,122);
+  color: rgb(148, 136, 122);
 }
 
 /* ---------- footerLinks Section 4 ---------- */
@@ -146,5 +146,17 @@ a {
 
 .footerNewsletter p {
   padding-left: 50px;
-  color: rgb(148,136,122);
+  color: rgb(148, 136, 122);
+}
+
+.subsEmail {
+  width: 250px;
+  padding-left: 10px;
+  color: blue;
+}
+.subsForm {
+  padding-left: 60px;
+}
+.emailRequired {
+  color: rgb(148, 136, 122);
 }

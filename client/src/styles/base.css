@@ -24,6 +24,10 @@ code {
     monospace;
 }
 
+.slidePics {
+  height: 300px;
+}
+
 .pics {
   border: 1px solid green;
   margin: auto;
@@ -36,7 +40,7 @@ code {
 }
 
 .contactForm {
-  background: black;
+  background: rgb(41, 36, 33);
   text-align: center;
   color: white;
   padding-top: 10px;
@@ -46,19 +50,27 @@ code {
 .contactInputs {
   background: #eee;
 }
+
+.mainbutton {
+  margin-bottom: 20px;
+}
 .mainForm {
   width: 800px;
   background: #eee;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
   text-align: center;
-  height: 200px;
+  height: 400px;
 }
 input {
   width: 250px;
   height: 30px;
+}
+
+input::placeholder {
+  padding-left: 10px;
 }
 .mainNameEmailInputs {
   display: flex;
@@ -67,8 +79,13 @@ input {
 }
 .labelMain {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  /* padding-right: 58px; */
 }
+
+/* .labelMainName {
+  padding-right: 330px;
+} */
 input.setMessage {
   display: flex;
   height: 300px;
@@ -83,3 +100,12 @@ input.setMessage {
   text-align: center;
   font-size: 20px;
 }
+.nameF {
+  padding-left: 60px;
+}
+.emailF {
+  padding-left: 388px;
+}
+/* .pError {
+  color: red;
+} */

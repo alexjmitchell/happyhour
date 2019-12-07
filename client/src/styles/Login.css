@@ -31,13 +31,13 @@
 
 .toLogin {
     width: 300px;
-    margin-left: 100px;
     padding: 10px 0px;
+    margin-left: 100px;
     text-align: center;
     color: black;
     font-weight: bold;
     border: 1px solid black;
-    cursor: pointer;   
+    cursor: pointer;
   }
 
 /* ---------- loginRightSide ---------- */

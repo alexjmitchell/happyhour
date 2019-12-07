@@ -14,7 +14,6 @@ function ContactForm(props) {
   const [message, setMessage] = useState("")
   const [messageError, setMessageError] = useState("")
   const { sendF } = useUsers()
-  console.log(sendF, "first")
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -63,11 +62,17 @@ function ContactForm(props) {
   return (
     <div className="mainForm">
       <div className="contactForm"> Your Feedback - All fields required</div>
+      <br />
       <form onSubmit={handleSubmit} className="contactInputs">
         <div className="labelMain">
-          <label>Name {nameError}</label>
-
-          <label>Email {emailError}</label>
+          <label className="nameF">
+            Name
+            {nameError}
+          </label>
+          <label className="emailF">
+            Email
+            {emailError}
+          </label>
         </div>
         <br />
         <div className="mainNameEmailInputs">
@@ -81,6 +86,7 @@ function ContactForm(props) {
           <p></p>
 
           <br />
+
           <input
             className={emailError === "" ? "" : "error"}
             onChange={element => setEmail(element.target.value)}
@@ -95,8 +101,8 @@ function ContactForm(props) {
           <br />
           <br />
           <input
-            className="messageInput"
-            className={messageError === "" ? "da" : "error"}
+            // className="messageInput"
+            className={messageError === "" ? "da" : "da error"}
             onChange={element => setMessage(element.target.value)}
             value={message}
             type="text"
