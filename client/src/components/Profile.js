@@ -167,7 +167,7 @@ regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, co
         .then((resp)=>{
             //func to send the company
             // getOneC(compName)
-            // props.history.push("/test2")
+            props.history.push("/")
     
         }) 
         .catch(e => {
