@@ -15,6 +15,10 @@
     color: white;
   }
 
+  .logo img {
+    width:200px;
+  }
+
 .bannerMessage {
   padding: 5px 0px 0px 40px;
   font-size: 60px;
