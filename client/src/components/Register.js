@@ -15,6 +15,8 @@ const [contactName, setContactName]=useState('')
 const [cpassword, setCPassword]=useState('')
 const [email, setEmail]=useState('')
 const [phonenumber, setPhone]=useState('')
+
+//validation
 const [userExists, setUserExists]=useState(false)
 const [passError, setPassError]=useState(false)
 const [emailError, setEmailError]=useState(false)

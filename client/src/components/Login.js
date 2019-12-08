@@ -70,12 +70,12 @@ function handlesubmit(e){
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                                 { !loginmatch && !nameError? <p className="pred">User or password is incorrect</p> :"" }
+                                { nameError!="" ? 
+                                <p className="pred"> *All fields are required</p> :""}
                             <button className="loginButton" type="submit">Log  In</button>
                         </form>
                         <div className="forgotPswd">Forgot your password?</div>
-                        { nameError!="" ? 
-                        <p className="pred"> *All fields are required</p>
-                          :""}
+                        
                     </div>
                 </div>
             </div>

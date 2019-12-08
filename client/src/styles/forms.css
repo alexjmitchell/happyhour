@@ -62,19 +62,37 @@ flex-wrap: wrap;
     margin-top: 30px;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+  
   }
+  .buttons button:focus{
+  outline: none;
+
+}
+
+  .norev{
+    /* flex-direction: row;
+    justify-content: space-between; */
+    justify-content: space-between;  
+  border:none;
+
+}
+
+.days>div.hred{
+  border:1px solid red;
+}
+ .hred{
+  color:red;
+}
 
   fieldset{
   border:0;
 }
-  .thumbpics{
-    width:130px;
-  }
-
+  
   .middleBottom button{
     width: 350px;
     height: 50px;
-    background-color: rgb(199, 40, 23);
+    background-color: red;
     color:white;
     font-size: 25px;
     border:none;
@@ -125,4 +143,44 @@ flex-wrap: wrap;
     resize: none;
   }
 
- 
+  .loactioninputs textarea{
+    height:195px;
+  }
+
+ .st{
+   width:350px;
+   height: 30px;
+   font-size: 18px;
+ }
+ .sd{
+   width:140px;
+   font-size: 15px;
+   height:30px;
+ }
+
+ .fred{
+   border:1px solid red;
+  
+ }
+.file{
+  background-color: rgba(112, 106, 106, 0.13);
+  border:1px solid grey;
+  font-weight: bold;
+  color:grey;
+  border-radius: 5px;
+  padding:8px;
+  cursor:pointer;
+  width:145px;
+  margin:10px 0;
+}
+
+.uploadImgsection{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.uploadImgsection .thumbpics{
+  margin-bottom: 10px;
+  width:140px;
+}
