@@ -8,6 +8,7 @@ import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
 import config from './FbConfig'
 import validator from "validator"
+import { isatty } from 'tty';
 
 
 firebase.initializeApp(config)
@@ -18,12 +19,12 @@ export default props => {
     // const {username} = useAuth()
 
     const {admins, oneAdmin} = useAdmins()
-    const { companies, uploadPic, regProf } = useCompanies()
+    const { companies, regProf } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
     // const [admin_id, setAdmin_id]=useState(Number(oneAdmin.map(u=>u.id).join('')))
     let admin_id=Number(oneAdmin.map(u=>u.id).join(''))
     let lastAdminId = Number(admins[admins.length -1].id)
-    const [fromRegForm, setFromRegForm]=useState(oneAdmin.map(u=>u.justRegistered))
+    let fromRegForm=oneAdmin.map(u=>u.justRegistered)
     const thecompany = companies.filter(f=>f.admin_id==admin_id)
     const dd=thecompany.map(c =>c.hhdays).join()
     const ddarr=dd.split(",")
@@ -72,10 +73,8 @@ export default props => {
     const [iserror, setisanError]=useState(false)
     const [isAnumber, setIsAnumber]=useState(false)
 
-
 console.log(usstate + "usstate")
-
-
+console.log(fromRegForm)
 
         function handleUploadStart(filename) {
             setIsUploading(true)
@@ -131,6 +130,11 @@ if (fromRegForm=="r")
     
     admin_id=lastAdminId
     lastAdminId=0
+}else {
+    if (!thecompany.length){
+        fromRegForm="r"
+
+    }
 }
 
 
@@ -163,6 +167,11 @@ else {
         }
 
  }
+
+
+ console.log({
+    username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm, thecompany
+ })
 
  if (!error){
 
@@ -216,8 +225,8 @@ else {
                                         />
                                     </label>    
                                     <img className="thumbpics" src={pic}/>
-                                    {iserror?
-                                    <p className="pred">Image is required*</p>
+                                        {iserror?
+                                        <p className="pred">Image is required*</p>
 :""}
                                 </div>
                             </div>
@@ -411,8 +420,8 @@ else {
                                             <div className="buttons">
                                                 
                                                  <button type="submit">Update profile</button>
-                                                 {iserror ? 
-                                                <p className="red norev">{descError}</p>
+                                                 {iserror || isAnumber || emailError? 
+                                                <p className="hred norev">{descError}</p>
                                                 : "" }
 
                                             </div>
