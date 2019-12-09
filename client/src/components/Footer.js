@@ -38,6 +38,7 @@ function Footer() {
   }
   return (
     <footer className="footerWrapper">
+
       <div className="footerLinks">
         <h2>LINKS</h2>
         <Link to={"/AboutUs"}>About Us</Link>
@@ -60,7 +61,31 @@ function Footer() {
         <p>info-lv@happyhourfinder.com</p>
       </div>
 
-      <div className="media">
+      <div className="footerSocial">
+      <h2>SOCIAL</h2>
+        <div className="socialWrapper">
+          <a className="fb" href="https://www.facebook.com/Chilis/">
+            <i className="fa fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/accounts/login/?hl=en">
+            <i className="fa fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/">
+            <i className="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/">
+            <i className="fa fa-youtube"></i>
+          </a>
+          {/* <a href="https://www.yelp.com/login">
+            <i className="fa fa-yelp"></i>
+          </a>
+          <a href="https://www.pinterest.com/login/">
+            <i className="fa fa-pinterest"></i>
+          </a> */}
+        </div>
+      </div>
+
+      {/* <div className="media">
         <h2>SOCIAL</h2>
         <ul className="social">
           <li className="fb">
@@ -94,7 +119,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="footerNewsletter">
         <h2>JOIN OUR NEWSLETTER</h2>

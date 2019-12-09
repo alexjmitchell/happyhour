@@ -18,6 +18,7 @@ import SingleViewPage from "./SingleViewPage"
 import GoogleMaps1 from "./GoogleMaps1"
 import GoogleMaps2 from "./GoogleMaps2"
 import GoogleMaps3 from "./GoogleMaps3"
+import QRgenerator from "./QRgenerator"
 
 function App(props) {
   return (
@@ -41,6 +42,7 @@ function App(props) {
           <Route path="/GoogleMaps1" component={GoogleMaps1}/>
           <Route path="/GoogleMaps2" component={GoogleMaps2}/>
           <Route path="/GoogleMaps3" component={GoogleMaps3}/>
+          <Route path="/QRgenerator" component={QRgenerator}/>
           {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
         </Switch>
