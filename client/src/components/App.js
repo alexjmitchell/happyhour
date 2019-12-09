@@ -43,9 +43,6 @@ function App(props) {
           {/* <Route path="/GoogleMaps2" component={GoogleMaps2} /> */}
           {/* <Route path="/GoogleMaps3" component={GoogleMaps3} /> */}
           {/* <Route path="/QRgenerator" component={QRgenerator} /> */}
-          {/* <Route path="/GoogleMaps3" component={GoogleMaps3} /> */}
-
-          {/* <Route path = "/profile" component ={Profile}/> */}
           <Route path="*" component={CheckLogin} />
         </Switch>
       </Router>

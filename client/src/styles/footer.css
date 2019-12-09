@@ -11,7 +11,6 @@ html {
 
 body {
   margin: 0;
-  margin-bottom: 40px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -30,6 +29,7 @@ code {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* position: absolute; */
   background: rgb(46, 41, 37);
+  padding-bottom: 10px;
 }
 
 .footerWrapper h2 {
@@ -37,94 +37,7 @@ code {
   text-align: center;
 }
 
-/* ---------- footerAddress Section 1 ---------- */
-
-.footerAddress p {
-  padding-left: 50px;
-  color: rgb(148, 136, 122);
-}
-
-/* ---------- footerPhone Section 2 ---------- */
-
-.footerPhone p {
-  padding-left: 50px;
-  color: rgb(148, 136, 122);
-}
-
-/* ---------- media Section 3 ---------- */
-
-ul.social {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 0;
-}
-
-.social li {
-  margin: 5px 15px;
-  border: 1px solid white;
-  background-color: white;
-  color: rgba(124, 26, 86, 0.8);
-  width: 60px;
-  height: 60px;
-  font-size: 50px;
-  line-height: 60px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.social a li.fb {
-  color: #4267b2;
-}
-.social a li.fb:hover {
-  background: #4267b2;
-  color: white;
-}
-.social a li.rss {
-  color: #ee802f;
-}
-.social a li.rss:hover {
-  background: #ee802f;
-  color: white;
-}
-.social a li.tw {
-  color: #1da1f2;
-}
-.social a li.tw:hover {
-  background: #1da1f2;
-  color: white;
-}
-.social a li.yt {
-  color: #ff0000;
-}
-.social a li.yt:hover {
-  background: #ff0000;
-  color: white;
-}
-
-.social a li.yelp {
-  color: #c41200;
-}
-.social a li.yelp:hover {
-  background: #c41200;
-  color: white;
-}
-.social a li.pint {
-  color: #bd081c;
-}
-.social a li.pint:hover {
-  background: #bd081c;
-  color: white;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* ---------- footerLinks Section 4 ---------- */
+/* ---------- footerLinks Section 1 ---------- */
 
 .footerLinks {
   display: flex;
@@ -135,6 +48,63 @@ a {
   padding-left: 50px;
   margin: 5px 0px 5px 0px;
   color: rgb(148, 136, 122);
+}
+
+/* ---------- footerAddress Section 2 ---------- */
+
+.footerAddress p {
+  padding-left: 50px;
+  color: rgb(148, 136, 122);
+}
+
+/* ---------- footerPhone Section 3 ---------- */
+
+.footerPhone p {
+  padding-left: 50px;
+  color: rgb(148, 136, 122);
+}
+
+/* ---------- footerSocial Section 4 ---------- */
+
+.socialWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.socialWrapper a {
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  margin: 10px;
+  line-height: 1.5;
+  color: #cccc;
+  text-align: center;
+  border-bottom: 4px solid#C0c0c0;
+}
+
+/* Facebooke */
+.socialWrapper > a:nth-child(1) {
+  background-color:rgb(58,79,138);
+}
+/* Instagram */
+.socialWrapper > a:nth-child(2) {
+  background-color: rgb(196,130,51);
+}
+/* Twitter */
+.socialWrapper > a:nth-child(3) {
+  background-color: rgb(94,132,190);
+}
+/* YouTube */
+.socialWrapper > a:nth-child(4) {
+  background-color: rgb(167,45,33);
+}
+/* Yelp */
+.socialWrapper > a:nth-child(5) {
+  background-color: rgb(167,45,33);
+}
+/* Pinterest */
+.socialWrapper > a:nth-child(6) {
+  background-color: rgb(167,45,33);
 }
 
 /* ---------- footerLinks Section 4 ---------- */
