@@ -20,6 +20,8 @@
     "google-map-react": "^1.1.5",
     "react-coverflow": "^0.2.20",
     "react-firebase-file-uploader": "^2.4.3",
+    "react-google-maps-loader": "^4.2.6",
+    "react-google-places-suggest": "^3.9.0",
     "validator": "^12.1.0"
   },
   "boilerplate": {
