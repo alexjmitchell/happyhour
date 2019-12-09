@@ -3,9 +3,10 @@ import Coverflow from "react-coverflow"
 import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
+// import { start } from "repl"
 
 function Slider() {
-  const { users } = useUsers()
+  const { users, filter, hours } = useUsers()
   const { companyname } = useCompanies()
   const { liked } = useLiked()
 
@@ -45,6 +46,7 @@ function Slider() {
               key={i}
               className="slidePics"
               src={user.picture}
+              height={300}
               alt={
                 <a className="sliderImg" href={user.website}>
                   {user.companyname}
@@ -53,6 +55,13 @@ function Slider() {
             />
           ))}
         </Coverflow>
+        {/* <div className="naslov">
+          {hours.map((hour, i) => (
+            <button className="buttons" key={i} onClick={e => filter(hour)}>
+              {hour}
+            </button>
+          ))}
+        </div> */}
       </div>
     </div>
   )

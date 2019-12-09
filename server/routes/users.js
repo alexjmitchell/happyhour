@@ -80,7 +80,7 @@ router.get("/admins", (req, res, next) => {
 
 router.get("/companies", (req, res, next) => {
   const sql = `
-  SELECT picture, companyname, website FROM companies`
+  SELECT picture, companyname, website,starthour,endhour FROM companies`
 
   db.query(sql, (err, results, fields) => {
     res.json(results)

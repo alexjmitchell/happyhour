@@ -1,3 +1,14 @@
+// import React, { Component } from 'react';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import GoogleMapReact from 'google-map-react';
+// // import internal links
+// import Header from "./Header";
+// import Footer from "./Footer";
+// // import stylesheet
+// // import assets
+
+// // Our API key: AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
+
 import React, {Component} from "react"
 import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
@@ -96,11 +107,16 @@ export default class GoogleSuggest extends React.Component {
 //     },
 //     zoom: 15
 //   };
+
+
  
 //   render() {
 //     return (
 
 //       <div className="mapsMainContainer">
+
+//         <Route path="/" component={Header}></Route>
+
 
 //         <div className="Map1" style={{ height: '400px', width: '400px' }}>
 //           <GoogleMapReact
@@ -116,11 +132,16 @@ export default class GoogleSuggest extends React.Component {
 //           </GoogleMapReact>
 //         </div>
 
+//         <Route path="/" component={Footer}></Route>
+
 //       </div>
 
 //     );
 //   }
 // }
+
+// export default GoogleMaps2;
+
  
 // export default GoogleMaps2;
 
