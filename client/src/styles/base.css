@@ -16,7 +16,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 40px;
 }
 
 code {
@@ -24,7 +23,7 @@ code {
     monospace;
 }
 
-.slidePics {
+.slidePics picture {
   height: 300px;
 }
 
@@ -60,9 +59,9 @@ code {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   text-align: center;
-  height: 400px;
+  height: 450px;
 }
 input {
   width: 250px;
@@ -78,7 +77,8 @@ input::placeholder {
   font-size: 20px;
 }
 .labelMain {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   /* justify-content: space-around; */
   /* padding-right: 58px; */
 }
@@ -101,10 +101,10 @@ input.setMessage {
   font-size: 20px;
 }
 .nameF {
-  padding-left: 60px;
+  padding-right: 208px;
 }
 .emailF {
-  padding-left: 388px;
+  padding-right: 132px;
 }
 /* .pError {
   color: red;

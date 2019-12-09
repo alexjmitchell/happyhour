@@ -18,7 +18,9 @@ function Banner() {
       <div className="nav">
         <Link className="bannerSignUp" to={'/Register'}>Sign Up</Link>       
         <Link className="bannerLogIn" to={'/Login'}>Log In</Link>
-      </div>
+
+    //  <div className="bannerWrapper">
+        </div>
     </div>
   )
 }

@@ -13,6 +13,10 @@ function ContactForm(props) {
   const [emailError, setEmailError] = useState("")
   const [message, setMessage] = useState("")
   const [messageError, setMessageError] = useState("")
+
+  const [button, setButton] = useState("")
+  const [buttonError, setButtonError] = useState("")
+
   const { sendF } = useUsers()
 
   function handleSubmit(e) {
@@ -52,12 +56,23 @@ function ContactForm(props) {
       setMessageError("")
     }
 
-    sendF(message, email, name) // passing the function from ....(const sendF = (message, email, name) => {
+    if (!err) {
+      // err = true
+      setButtonError("Thank you for you Feedback. Message Sent")
+    } else {
+      setButtonError("Message Not Submited")
+    }
+
+    // sendF(message, email, name) // passing the function from ....(const sendF = (message, email, name) => {
     // return dispatch(sendFeedback(message, email, name)) from client/src/redux/ducks/users/index.js
 
-    setName("") // clears the field after submiting.It Set them up as empty field again
-    setEmail("")
-    setMessage("")
+    if (!err) {
+      sendF(message, email, name)
+      setName("") // clears the field after submiting.It Set them up as empty field again
+      setEmail("")
+      setMessage("")
+    } else {
+    }
   }
   return (
     <div className="mainForm">
@@ -65,15 +80,14 @@ function ContactForm(props) {
       <br />
       <form onSubmit={handleSubmit} className="contactInputs">
         <div className="labelMain">
-          <label className="nameF">
-            Name
-            {nameError}
-          </label>
-          <label className="emailF">
-            Email
-            {emailError}
-          </label>
+          <label className="nameF">Name </label>
+          <label className="nameF">Email </label>
         </div>
+        <div className="labelMain">
+          <span className="emailF">{nameError}</span>
+          <span className="emailF">{emailError}</span>
+        </div>
+
         <br />
         <div className="mainNameEmailInputs">
           <input
@@ -83,8 +97,6 @@ function ContactForm(props) {
             type="text"
             placeholder="Danilo"
           ></input>
-          <p></p>
-
           <br />
 
           <input
@@ -95,7 +107,7 @@ function ContactForm(props) {
             placeholder="your@email.com"
           />
         </div>
-        <p></p>
+        <br />
         <div>
           <label>Message {messageError}</label>
           <br />
@@ -115,6 +127,8 @@ function ContactForm(props) {
         <button className="mainbutton" type="submit" placeholder="Submit">
           Submit
         </button>
+        <p>{buttonError}</p>
+        <br />
       </form>
     </div>
   )

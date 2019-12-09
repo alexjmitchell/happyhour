@@ -18,6 +18,7 @@ import SingleViewPage from "./SingleViewPage"
 import GoogleMaps1 from "./GoogleMaps1"
 import GoogleMaps2 from "./GoogleMaps2"
 import GoogleMaps3 from "./GoogleMaps3"
+import QRgenerator from "./QRgenerator"
 
 function App(props) {
   return (
@@ -25,8 +26,8 @@ function App(props) {
       <Router>
         <Switch>
           {/* <Route exact path="/main" component={Maintest}/>  */}
-          <Route exact path="/login" component={Login}/> 
-         <Route path ="/register" component={Register}/>
+          <Route exact path="/login" component={Login} />
+          <Route path="/register" component={Register} />
 
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
@@ -38,10 +39,10 @@ function App(props) {
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
           {/* <Route path = "/profile" component ={Profile}/> */}
-          <Route path="/GoogleMaps1" component={GoogleMaps1}/>
-          <Route path="/GoogleMaps2" component={GoogleMaps2}/>
-          <Route path="/GoogleMaps3" component={GoogleMaps3}/>
-          {/* <Route path = "/profile" component ={Profile}/> */}
+          <Route path="/GoogleMaps1" component={GoogleMaps1} />
+          {/* <Route path="/GoogleMaps2" component={GoogleMaps2} /> */}
+          {/* <Route path="/GoogleMaps3" component={GoogleMaps3} /> */}
+          {/* <Route path="/QRgenerator" component={QRgenerator} /> */}
           <Route path="*" component={CheckLogin} />
         </Switch>
       </Router>

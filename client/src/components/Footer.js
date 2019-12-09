@@ -14,6 +14,7 @@ import { useUsers } from "../hooks"
 function Footer() {
   const [email, setEmail] = useState("")
   const [emailError, setEmailError] = useState("")
+  const [buttonError, setButtonError] = useState("")
   const { sendSubs } = useUsers()
 
   function handleSubmit(e) {
@@ -32,12 +33,21 @@ function Footer() {
       err = true
       setEmailError("Cannot be blank")
     }
-    sendSubs(email)
-    console.log(email, "pera")
-    setEmail("")
+    if (!err) {
+      // err = true
+      setButtonError("Subscription Completed")
+    } else {
+      setButtonError("Subscription Failed")
+    }
+    if (!err) {
+      sendSubs(email)
+      setEmail("")
+    } else {
+    }
   }
   return (
     <footer className="footerWrapper">
+
       <div className="footerLinks">
         <h2>LINKS</h2>
         <Link to={"/AboutUs"}>About Us</Link>
@@ -60,7 +70,31 @@ function Footer() {
         <p>info-lv@happyhourfinder.com</p>
       </div>
 
-      <div className="media">
+      <div className="footerSocial">
+      <h2>SOCIAL</h2>
+        <div className="socialWrapper">
+          <a className="fb" href="https://www.facebook.com/Chilis/">
+            <i className="fa fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/accounts/login/?hl=en">
+            <i className="fa fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/">
+            <i className="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/">
+            <i className="fa fa-youtube"></i>
+          </a>
+          {/* <a href="https://www.yelp.com/login">
+            <i className="fa fa-yelp"></i>
+          </a>
+          <a href="https://www.pinterest.com/login/">
+            <i className="fa fa-pinterest"></i>
+          </a> */}
+        </div>
+      </div>
+
+      {/* <div className="media">
         <h2>SOCIAL</h2>
         <ul className="social">
           <li className="fb">
@@ -94,7 +128,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="footerNewsletter">
         <h2>JOIN OUR NEWSLETTER</h2>
@@ -118,6 +152,7 @@ function Footer() {
           <button className="subsButton" type="submit" placeholder="Submit">
             Submit
           </button>
+          <p>{buttonError}</p>
         </form>
       </div>
     </footer>
