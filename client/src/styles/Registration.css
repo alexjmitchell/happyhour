@@ -86,7 +86,7 @@
 
 .red{
     border:1px solid red;
-    color:red;
+    /* color:red; */
 }
 .pred{
     color:red;

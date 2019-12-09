@@ -16,10 +16,6 @@ const initialState = {
   companies: [],
 //   oneCompany: [],
 oneCompany:'',
-uploadedPic:{
-  filename:"",
-  imgURL:""
-}
 //   company:{}
 
 }
@@ -82,10 +78,10 @@ console.log ("hooks " + companyname )
 
 //update profile
 
-function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, lastAdminId) {
-if (admin_id==0)
+function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, fromRegForm) {
+if (fromRegForm=="r")
 {
-  admin_id=lastAdminId
+
     console.log("company doesn't exist")
     return new Promise((resolve, reject) => {
         axios
@@ -139,8 +135,8 @@ export function useCompanies() {
 
 
 
-const regProf = (username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, lastAdminId) => {
-    return regProfile(username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id)
+const regProf = (username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, fromRegForm) => {
+    return regProfile(username,companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, fromRegForm)
 }
 
 

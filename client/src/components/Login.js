@@ -8,14 +8,15 @@ import Header from "./Header";
 import Footer from "./Footer";
 import admins from '../redux/ducks/admins'
 import "../styles/Login.css"
+import { get } from 'https'
 
 export default props => {
 const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
-const {oneAdmin, getone } = useAdmins ()
-const { getonc } = useCompanies()
+const {getone, getRegistered } = useAdmins ()
+// const { getonc } = useCompanies()
 const [nameError, setNameError] = useState('')
 
 
@@ -34,8 +35,8 @@ function handlesubmit(e){
     signin(username,password) //after signin we want to redirect to another page
     .then((resp)=>{
         setLoginmatch(true)
-
         getone(username)
+        
 
         props.history.push("/profile")
 
@@ -69,12 +70,12 @@ function handlesubmit(e){
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                                 { !loginmatch && !nameError? <p className="pred">User or password is incorrect</p> :"" }
+                                { nameError!="" ? 
+                                <p className="pred"> *All fields are required</p> :""}
                             <button className="loginButton" type="submit">Log  In</button>
                         </form>
                         <div className="forgotPswd">Forgot your password?</div>
-                        { nameError!="" ? 
-                        <p className="pred"> *All fields are required</p>
-                          :""}
+                        
                     </div>
                 </div>
             </div>

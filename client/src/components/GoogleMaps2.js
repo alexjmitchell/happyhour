@@ -9,6 +9,9 @@
 
 // // Our API key: AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
 
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+ 
+
 import React, {Component} from "react"
 import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
@@ -109,6 +112,7 @@ export default class GoogleSuggest extends React.Component {
 //   };
 
 
+
  
 //   render() {
 //     return (
@@ -116,6 +120,8 @@ export default class GoogleSuggest extends React.Component {
 //       <div className="mapsMainContainer">
 
 //         <Route path="/" component={Header}></Route>
+
+
 
 
 //         <div className="Map1" style={{ height: '400px', width: '400px' }}>
@@ -139,6 +145,8 @@ export default class GoogleSuggest extends React.Component {
 //     );
 //   }
 // }
+ 
+// export default GoogleMaps2; 
 
 // export default GoogleMaps2;
 
