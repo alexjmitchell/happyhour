@@ -14,6 +14,7 @@ import { useUsers } from "../hooks"
 function Footer() {
   const [email, setEmail] = useState("")
   const [emailError, setEmailError] = useState("")
+  const [buttonError, setButtonError] = useState("")
   const { sendSubs } = useUsers()
 
   function handleSubmit(e) {
@@ -32,9 +33,17 @@ function Footer() {
       err = true
       setEmailError("Cannot be blank")
     }
-    sendSubs(email)
-    console.log(email, "pera")
-    setEmail("")
+    if (!err) {
+      // err = true
+      setButtonError("Subscription Completed")
+    } else {
+      setButtonError("Subscription Failed")
+    }
+    if (!err) {
+      sendSubs(email)
+      setEmail("")
+    } else {
+    }
   }
   return (
     <footer className="footerWrapper">
@@ -118,6 +127,7 @@ function Footer() {
           <button className="subsButton" type="submit" placeholder="Submit">
             Submit
           </button>
+          <p>{buttonError}</p>
         </form>
       </div>
     </footer>
