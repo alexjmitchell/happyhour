@@ -87,6 +87,16 @@ router.get("/companies", (req, res, next) => {
   })
 })
 
+router.get("/specials/:company", (req, res, next) => {
+  const company = request.params.company
+  const sql = `
+  SELECT starthour, companyname FROM companies WHERE starthour = ?
+  `
+  db.query(sql, [company], (err, res, next) => {
+    res.json(results)
+  })
+})
+
 ///*********************** */
 
 router.post("/profile", (req, res, next) => {

@@ -19,6 +19,7 @@ import GoogleMaps1 from "./GoogleMaps1"
 import GoogleMaps2 from "./GoogleMaps2"
 import GoogleMaps3 from "./GoogleMaps3"
 import QRgenerator from "./QRgenerator"
+import Specials from "./Specials"
 
 function App(props) {
   return (
@@ -28,7 +29,7 @@ function App(props) {
           {/* <Route exact path="/main" component={Maintest}/>  */}
           <Route exact path="/login" component={Login} />
           <Route path="/register" component={Register} />
-
+          <Route path="/specials/:company" component={Specials} />
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
           <Route exact path="/liked" component={Liked}></Route>
