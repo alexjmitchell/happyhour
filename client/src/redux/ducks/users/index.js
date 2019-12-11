@@ -4,14 +4,11 @@ import axios from "axios"
 
 // action definitions
 const GET_PICTURES = "users/GET_PICTURES"
-
 const FILTER_PIC = "filter / FILTER_PIC"
-// const GET_HOURS = "hours/GET_HOURS"
+
 // initial state
 const initialState = {
   users: []
-  // filters: [],
-  // hours: []
 }
 
 // reducer
@@ -37,19 +34,6 @@ const getPic = () => {
         type: GET_PICTURES,
         payload: resp.data
       })
-      // dispatch(getHours(resp.data))
-      // console.log(getHours, "fff")
-    })
-  }
-}
-
-const getH = potato => {
-  return dispatch => {
-    axios.get("/specials/" + potato).then(resp => {
-      dispatch({
-        type: GET_HOURS,
-        payload: resp.data
-      })
     })
   }
 }
@@ -66,21 +50,6 @@ function sendSubscrib(email) {
   }
 }
 
-// const getHours = users => {
-//   let arr = []
-
-//   users.forEach(p => {
-//     arr = arr.concat(p.availableHours)
-//   })
-
-//   const unique = Array.from(new Set(arr))
-
-//   return {
-//     type: GET_HOURS,
-//     payload: unique
-//   }
-// }
-
 const filterHours = filter1 => {
   return {
     type: FILTER_PIC,
@@ -92,12 +61,9 @@ const filterHours = filter1 => {
 
 export function useUsers() {
   const users = useSelector(appState => appState.userState.users)
-  // const hours = useSelector(appState => appState.userState.hours)
   const dispatch = useDispatch()
   const filter = filt1 => dispatch(filterHours(filt1))
   const get = () => dispatch(getPic())
-  const time = potato => dispatch(getH(potato))
-
   const sendF = (message, email, name) => {
     return dispatch(sendFeedback(message, email, name))
   }
@@ -108,8 +74,7 @@ export function useUsers() {
 
   useEffect(() => {
     get()
-    // time()
   }, [dispatch])
 
-  return { users, sendF, sendSubs, time, filter }
+  return { users, sendF, sendSubs, filter }
 }

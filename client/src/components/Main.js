@@ -12,7 +12,7 @@ function Main() {
     <div>
       <MainBanner />
       <Slider />
-      <GoogleMaps1 />
+      {/* <GoogleMaps1 /> */}
       <ContactForm />
       <Footer />
     </div>
