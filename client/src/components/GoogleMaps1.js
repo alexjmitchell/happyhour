@@ -11,10 +11,10 @@ import "../styles/GoogleMaps1.css"
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 class GoogleMaps1 extends Component {
-  static defaultProps = {
-    center: { lat: 36.15847, lng: -115.15249 },
-    zoom: 15
-  }
+//   static defaultProps = {
+//     center: { lat: 36.15847, lng: -115.15249 },
+//     zoom: 15
+//   }
 
   render() {
     return (
@@ -27,8 +27,20 @@ class GoogleMaps1 extends Component {
               id="theMap"
               width="80%"
               height="800px"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
-              &q=WeWork,Las+Vegas,NV"
+
+              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ8-0pEYjDyIARB4jQJR4xnxs&q=place_id:ChIJSUIolZHDyIAR3ptYIczTgTs&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk">
+
+              {/* // src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
+              // &q=WeWork,Las+Vegas,NV"
+            // src=" https://www.google.com/maps/embed?36.1517458,-115.27189310000001"
+            // src="https://www.google.com/maps/embed/v1/search?q=bar%2C%20tapas%2C%20restaurant%20near%20me%89104&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"
+
+
+
+            
+            // src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=36.1517458,-115.27189310000001&radius=1500&type=restaurant&keyword=happy&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"
+
+            //  src="https://www.google.com/maps/embed/v1/search?q=bar+taverns+restaurants&key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"> */}
               allowFullScreen
           >
           </iframe>
