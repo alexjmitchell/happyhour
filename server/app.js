@@ -18,7 +18,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", userRouter)
 app.use("/map", mapRouter)
 
-
 app.use("/", jwt({ secret: config.get("secret") }), protectedRouter)
 
 

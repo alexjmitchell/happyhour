@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 // import PropTypes from 'prop-types';
 import {useMaps} from "../hooks"
+import {useCompanies} from "../hooks"
+
+
 import I from "../lib/Icon"
 import Placesmarker from './Markers';
 
@@ -88,7 +91,10 @@ let loc=null
 
 
 export default props => {
-  const {coordinates, places, getLocs} = useMaps()
+  const {coordinates} = useMaps()
+  const { companies } = useCompanies()
+
+
   const [clicked,setClick]=useState(false)
   const [currentPlace,setCurrentPlace]=useState({})
   const mycoords = [{
@@ -132,7 +138,7 @@ const AnyReactComponent = ({ text }) => (
         // transform: 'translate(-50%, -50%)'
     
 }}>
-{/* <img className="pinImg" src="http://pngimg.com/uploads/mouth_smile/mouth_smile_PNG27.png" /> */}
+<img className="pinImg" src="http://pngimg.com/uploads/mouth_smile/mouth_smile_PNG27.png" />
 {/* <div className={clicked ? "showpindesc": ""} >
   
 
@@ -147,19 +153,36 @@ const AnyReactComponent = ({ text }) => (
 
 
 
-
+let count=0
   // const [hover, setHover]=useState(false)
 //   const hover=false
   function handleOnClick (e,index) {
+    setClick(!clicked)
+
+    console.log(clicked + " al entrar en el click")
+    
+console.log (count, index, "tri")
+console.log(currentPlace.name)
+console.log(companies[index].companyname)
+   
+
+
+
+console.log(clicked + " despues del if")
   setCurrentPlace({
-    name: places[index].name
+    name: companies[index].companyname,
+    address:companies[index].address,
+    phone:companies[index].phone
+
     // lat:places[index].geometry.location.lat,
     // lng:places[index].geometry.location.lng
 
   })
-    setClick(!clicked)
+  
 
-console.log(e.target.x + " what4ever" + e.target.y)
+  const oldIndex=index
+
+console.log(e.target.x + " what4ever")
   
   }
 
@@ -237,23 +260,27 @@ console.log(e.target.x + " what4ever" + e.target.y)
 >
 
 
-          {places.map((p,i)=> 
+          {companies.map((p,i)=> 
             
             <AnyReactComponent
             key={i}
-          lat={p.geometry.location.lat} 
-          lng={p.geometry.location.lng} 
+          lat={Number(p.lat)} 
+          lng={Number(p.lng)}
           showballon={4}
           text={i} 
           
           />
             
             )}
-          <div className={clicked ? "showpindesc": ""} >
-  
-<p>{currentPlace.name}</p>
-  </div>
-  
+
+        {clicked ?
+          <div className="showpindesc" >
+            
+        <p>{currentPlace.name}</p>
+        <p>{currentPlace.address}</p>
+        <p>{currentPlace.phone}</p>
+       </div>
+      : ""}
 
 
   

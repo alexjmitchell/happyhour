@@ -111,7 +111,7 @@ input.setMessage {
 } */
 
 
-
+/* GOOGLE PINS */
 .pinContainer{
         width:55px;
         /* height: 35px; */
@@ -132,6 +132,7 @@ input.setMessage {
   height: 200px;
   color:white;
   background-color: black;
+  border:8px solid green;
 }
 
 .pinImg{

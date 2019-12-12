@@ -98,8 +98,10 @@ router.post("/profile", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
   const website = req.body.website
-  const coordinates = req.body.coordinates
-  const logo = req.body.logo
+  const lat = req.body.lat
+  const lng=req.body.lng
+  // const coordinates = req.body.coordinates
+  // const logo = req.body.logo
   const picture = req.body.picture
   const facebook = req.body.facebook
   const instagram = req.body.instagram
@@ -126,8 +128,8 @@ router.post("/profile", (req, res, next) => {
     facebook,
     instagram,
     twitter,
-    coordinates,
-    logo,
+    lat,
+    lng,
     picture,
     foodtype,
     menu,
@@ -140,7 +142,7 @@ router.post("/profile", (req, res, next) => {
 
   // *********************
   const sql =
-    "INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    "INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
   db.query(
     sql,
@@ -156,8 +158,8 @@ router.post("/profile", (req, res, next) => {
       facebook,
       instagram,
       twitter,
-      coordinates,
-      logo,
+      lat,
+      lng,
       picture,
       foodtype,
       menu,
@@ -182,7 +184,7 @@ router.post("/profile", (req, res, next) => {
 //getting all the companies profiles
 router.get("/gprofile", (req, res, next) => {
   const sql = `
-    SELECT companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, coordinates, logo, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
+    SELECT companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
   db.query(sql, (err, results, fields) => {
     res.json(results)
   })
@@ -197,7 +199,9 @@ router.put("/gprofile", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
   const website = req.body.website
-  const coordinates = req.body.coordinates
+  // const coordinates = req.body.coordinates
+  const lat = req.body.lat
+  const lng = req.body.lng
   const logo = req.body.logo
   const picture = req.body.picture
   const facebook = req.body.facebook
@@ -228,8 +232,8 @@ router.put("/gprofile", (req, res, next) => {
     facebook=?, 
     instagram=?, 
     twitter=?, 
-    coordinates=?, 
-    logo=?, 
+    lat=?, 
+    lng=?, 
     picture=?, 
     foodtype=?, 
     menu=?, 
@@ -254,8 +258,8 @@ router.put("/gprofile", (req, res, next) => {
       facebook,
       instagram,
       twitter,
-      coordinates,
-      logo,
+      lat,
+      lng,
       picture,
       foodtype,
       menu,

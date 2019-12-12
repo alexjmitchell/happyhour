@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
+import {useMaps} from "../hooks"
 import "../styles/forms.css"
 import Header from "./Header";
 import Footer from "./Footer";
@@ -17,9 +18,11 @@ firebase.initializeApp(config)
 
 export default props => {
     // const {username} = useAuth()
+ 
+   
 
     const {admins, oneAdmin} = useAdmins()
-    const { companies, regProf } = useCompanies()
+    const { companies, regProf, getOneC, getLoc, } = useCompanies()
     const [username, setUsername]=useState(oneAdmin.map(u=>u.username).toString())
     // const [admin_id, setAdmin_id]=useState(Number(oneAdmin.map(u=>u.id).join('')))
     let admin_id=Number(oneAdmin.map(u=>u.id).join(''))
@@ -38,7 +41,9 @@ export default props => {
     const [usstate, setUsState]=useState(thecompany.map(c=>c.state).join())
     const [city,setCity]=useState(thecompany.map(c=>c.city).join())
     const [zip, setZip]=useState(thecompany.map(c=>c.zip).join())
-    const [coordinates, setCoordinates]=useState(thecompany.map(c=>c.coordinates).join())
+   // const [coordinates, setCoordinates]=useState(thecompany.map(c=>c.coordinates).join())
+    const [lat, setLat]=useState(thecompany.map(c=>c.lat).join())
+   const [lng, setLng]=useState(thecompany.map(c=>c.lng).join())
     const [compEmail, setCompEmail]=useState(thecompany.map(c=>c.email).join())
     const [compPhone, setCompPhone]=useState(thecompany.map(c=>c.phone).join())
     const [compWeb,setCompWeb]=useState(thecompany.map(c=>c.website).join())
@@ -46,11 +51,11 @@ export default props => {
     const [ig,setIg]=useState(thecompany.map(c=>c.instagram).join())
     const [tw,setTw]=useState(thecompany.map(c=>c.twitter).join())
 
-    const [logo, setLogo]=useState(thecompany.map(c=>c.logo).join())
+    //const [logo, setLogo]=useState(thecompany.map(c=>c.logo).join())
     const [foodType, setFoodType]=useState(thecompany.map(c=>c.foodtype).join())
     const [pic,setPic]=useState(thecompany.map(c=>c.picture).join())
     const [desc, setDesc]=useState(thecompany.map(c=>c.descrip).join())
-    const [banner,setBanner]=useState(thecompany.map(c=>c.banner).join())
+   // const [banner,setBanner]=useState(thecompany.map(c=>c.banner).join())
     const [menu, setMenu]=useState(thecompany.map(c=>c.menu).join())
     const [startHr, setStartHr]=useState(thecompany.map(c=>c.starthour).join())
     const [endHr, setEndHr]=useState(thecompany.map(c=>c.endhour).join())
@@ -72,9 +77,12 @@ export default props => {
     let error = false
     const [iserror, setisanError]=useState(false)
     const [isAnumber, setIsAnumber]=useState(false)
+    // getLoc(compName)
+    // getLoc(compName)
+
 
 console.log(usstate + "usstate")
-console.log(fromRegForm)
+// console.log(fromRegForm)
 
         function handleUploadStart(filename) {
             setIsUploading(true)
@@ -124,19 +132,46 @@ console.log(fromRegForm)
 
 const d=days.join(',')
         
+// fromRegForm="r" //QUITAR DESPUES DE LAS PRUEBAS
+//////////////////////////
+///////////////////////////
+
+///////////////////////
+// console.log( lat, lng, "lat lng before")
+// getLoc(compName).then((coords) => {
+//     console.log( coords.lat, coords.lng, "lattt lnggg")
+// //     setLat(coords.lat)
+// //     setLng(coords.lng)
+// // // setLat(la)
+// // setLng(lo)
+// })
+
+// getOneC(compName)
+// getLoc(compName)
+
+   //or address + state etc
+    
+//    console.log( lat, lng, "lat lng after")
+
+
+
 
 if (fromRegForm=="r")
 {
-    
+    // getOneC(compName)
     admin_id=lastAdminId
     lastAdminId=0
 }else {
     if (!thecompany.length){
         fromRegForm="r"
+        // getLoc(compName)
+        // getOneC(compName)
+
 
     }
 }
 
+    
 
 
 if(compName=="" || address=="" || usstate=="" || city=="" || zip=="" || compEmail=="" || compWeb=="" || compPhone =="" || d=="" || pic=="" || startHr=="" || endHr=="" || !foodType){ 
@@ -170,24 +205,29 @@ else {
 
 
  console.log({
-    username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm, thecompany
+    username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, lat, lng, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm, thecompany
  })
 
  if (!error){
 
-        regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, coordinates, logo, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm ) //after signin we want to redirect to another page
-                .then((resp)=>{
-                    //func to send the company
-                    // getOneC(compName)
-                    props.history.push("/")
+    //     regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, lat, lng, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm ) //after signin we want to redirect to another page
+    //             .then((resp)=>{
+    //                 //func to send the company
+    //                 // getOneC(compName)
+    //                 props.history.push("/")
             
-                }) 
-                .catch(e => {
+    //             }) 
+    //             .catch(e => {
                     
             
-                    console.log(e + " ERROR")
-                })
+    //                 console.log(e + " ERROR")
+    //             })
       }
+
+      getLoc(compName).then(() => {
+ 
+    })
+    
 
     }
     
