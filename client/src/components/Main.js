@@ -1,6 +1,7 @@
 import React from "react"
 import "../styles/Maincss.css"
 import Slider from "../components/Slider.js"
+import Slider2 from "../components/Slider2.js"
 // import Header from "./Header"
 import Footer from "./Footer"
 import ContactForm from "./ContactForm"
@@ -12,6 +13,7 @@ function Main() {
     <div>
       <MainBanner />
       <Slider />
+      <Slider2 />
       {/* <GoogleMaps1 /> */}
       <ContactForm />
       <Footer />

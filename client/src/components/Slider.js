@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
 
+import Radium, { Style, StyleRoot } from "radium"
+
 function Slider() {
   const { users, filter } = useUsers()
   const { companyname } = useCompanies()
@@ -29,7 +31,7 @@ function Slider() {
   const newArray = users.filter(p => p.starthour == val)
   console.log(newArray)
   return (
-    <div>
+    <div className="sliderW">
       {/* <p>
         Check Your Liked List Here:{" "}
         <Link to="/liked">
@@ -75,7 +77,7 @@ function Slider() {
       <div>
         <Coverflow
           width="960"
-          height="800"
+          height="1000"
           displayQuantityOfSide={2.5}
           navigation={false}
           enableScroll={false}
@@ -83,6 +85,7 @@ function Slider() {
           // infiniteScroll={true}
           clickable={true}
           active={0}
+
           // media={{
           //   "@media (max-width: 900px)": {
           //     // width: "600px"
@@ -101,7 +104,7 @@ function Slider() {
                   key={i}
                   className="slidePics"
                   src={user.picture}
-                  height={300}
+                  height={450}
                   alt={
                     <a className="sliderImg" href={user.website}>
                       {user.companyname}
@@ -114,7 +117,7 @@ function Slider() {
                   key={i}
                   className="slidePics"
                   src={user.picture}
-                  height={300}
+                  height={450}
                   alt={
                     <a className="sliderImg" href={user.website}>
                       {user.companyname}
