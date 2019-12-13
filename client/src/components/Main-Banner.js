@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../styles/Main-Banner.css"
 import Register from "./Register"
 import Logiin from "./Login"
-import logo from "../assets/hhlogo3.png"
 
 function Banner() {
   return (
@@ -26,5 +25,3 @@ function Banner() {
   )
 }
 export default Banner
-
-

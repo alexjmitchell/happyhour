@@ -64,12 +64,9 @@ function handlesubmit(e){
                             <p className="pred">User already exists</p>: ""} */}
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
-
-
                             <div className="loginBottom">
                                 <button className="loginButton" type="submit">Log  In</button>
                                 <div className="loginBottomRight">
-
                                     <p className="loginToRegistration"> <Link to="/register">Sign Up</Link></p>
                                 </div>
                             </div>
