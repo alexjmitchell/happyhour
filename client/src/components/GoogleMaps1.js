@@ -11,10 +11,10 @@ import "../styles/GoogleMaps1.css"
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 class GoogleMaps1 extends Component {
-  static defaultProps = {
-    center: { lat: 36.15847, lng: -115.15249 },
-    zoom: 15
-  }
+//   static defaultProps = {
+//     center: { lat: 36.15847, lng: -115.15249 },
+//     zoom: 15
+//   }
 
   render() {
     return (
@@ -27,8 +27,6 @@ class GoogleMaps1 extends Component {
               id="theMap"
               width="80%"
               height="800px"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
-              &q=WeWork,Las+Vegas,NV"
               allowFullScreen
           >
           </iframe>
