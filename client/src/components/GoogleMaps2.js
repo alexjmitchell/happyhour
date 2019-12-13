@@ -1,3 +1,4 @@
+
 // // import React, { Component } from 'react';
 // // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // // import GoogleMapReact from 'google-map-react';
@@ -18,12 +19,17 @@
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // const MY_API_KEY = "AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"
- 
 // export default class GoogleSuggest extends React.Component {
 //     state = {
 //         search: "",
 //         value: "",
 //     }
+
+//     handleInputChange = e => {
+//         this.setState({search: e.target.value, value: e.target.value})
+//     }
+
+
  
 //     handleInputChange = e => {
 //         this.setState({search: e.target.value, value: e.target.value})
@@ -33,6 +39,16 @@
 //         console.log(geocodedPrediction, originalPrediction) // eslint-disable-line
 //         this.setState({search: "", value: geocodedPrediction.formatted_address})
 //     }
+
+//     handleNoResult = () => {
+//         console.log('No results for ', this.state.search)
+//     }
+
+//     handleStatusUpdate = (status) => {
+//         console.log(status)
+//     }
+
+
     
 //     handleNoResult = () => {
 //         console.log('No results for ', this.state.search)
@@ -121,9 +137,6 @@
 
 // //         <Route path="/" component={Header}></Route>
 
-
-
-
 // //         <div className="Map1" style={{ height: '400px', width: '400px' }}>
 // //           <GoogleMapReact
 // //             bootstrapURLKeys={{ key: "AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk"}}
@@ -153,6 +166,7 @@
  
 // // export default GoogleMaps2;
 
+// export default GoogleMaps2;
 
 
 
@@ -170,17 +184,6 @@
 // // Newer Code
 // // var x = document.getElementById("demo");
 
-// // function getLocation() {
-// //   if (navigator.geolocation) {
-// //     navigator.geolocation.getCurrentPosition(showPosition);
-// //   } else { 
-// //     x.innerHTML = "Geolocation is not supported by this browser.";
-// //   }
-// // }
-
-// // function showPosition(position) {
-// //   x.innerHTML = "Latitude: " + position.coords.latitude + 
-// //   "<br>Longitude: " + position.coords.longitude;
 // // }
 
 // // function showPosition(position) {
