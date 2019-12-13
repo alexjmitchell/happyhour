@@ -3,11 +3,10 @@ import GoogleMapReact from 'google-map-react';
 // import PropTypes from 'prop-types';
 import {useMaps} from "../hooks"
 import {useCompanies} from "../hooks"
-
-
-
 import I from "../lib/Icon"
-import Placesmarker from './Markers';
+// import Placesmarker from './Markers';
+import "../styles/base.css"
+
 
 let loc=null
 // const iconStyle = {  
@@ -25,12 +24,9 @@ let loc=null
 //   borderRadius: '10px'
 // }
 
-
-
 // const handleApiLoaded = (map, maps) => {
 //   // use map and maps objects
 // };
-
 
 export default props => {
   const {coordinates} = useMaps()
@@ -95,7 +91,6 @@ console.log(num,childprop, "WTF")
   })
   }
 
- 
   console.log(parseFloat(Number(coordinates.lat).toFixed(2)))
   // console.log(center)
   
@@ -122,25 +117,7 @@ console.log(num,childprop, "WTF")
               showballon={true}
               text={i} 
             />
-            
-            
           )}
-{/* quitar despues de styling */}
-          <AnyReactComponent
-              key={9}
-              lat={35} 
-              lng={-115}
-              showballon={4}
-              text={7} 
-            />
-            <AnyReactComponent
-              key={3}
-              lat={25} 
-              lng={-15}
-              showballon={4}
-              text={6} 
-            />
-
 
 {/* quitar despues de styling */}
         {clicked || hover ?
@@ -154,7 +131,6 @@ console.log(num,childprop, "WTF")
               <p>{currentPlace.phone}</p>
           </div>
         : ""}
-
         </GoogleMapReact>
       </div>
     )

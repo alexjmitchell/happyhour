@@ -1,0 +1,221 @@
+.regMainContainer {
+    width: 100%;
+}
+
+.regWrapper {
+    background-color: rgb(228, 233, 238);
+    border: 1px solid black;
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+/* ---------- regLeftSide ---------- */
+
+.regLeftSide {
+    background-image: url("./../assets/HappyHourPics/girltoasting.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.regLogo {
+    color: white;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 80px;
+    font-weight: bold;
+    margin: 1vw 0px 0 2vw;
+}
+
+/* ---------- regRightSide ---------- */
+
+.regRightSide {
+    align-content: center;
+    background-color: rgb(228, 233, 238);
+    display: flex;
+    flex-direction: column;
+    margin: 2vw 0;
+}
+
+a.regHouse {
+    color: royalblue;
+    font-size: 64px;
+    margin: 2vw 4vw 0 0;
+    padding: 0;
+    text-align: right;
+}
+
+.regForm {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 0;
+    width: 50%;   
+}
+
+.regForm input {
+    font-size: 1vw;
+    font-weight: bold;    
+    margin: 10px;
+    padding: 10px 0px 10px 10px;
+}
+
+.regPleaseSignIn {
+    font-size: 2vw;
+    font-weight: bold;    
+    margin: 40px 0 40px 0;
+    text-align: center;
+}
+
+.regUserExists {
+    color:red;
+    font-size: 15px;
+    margin:0 10px;
+}
+
+/* ----- loginBottom ----- */
+
+.regBottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.regButton {
+    background-color: #008CBA; /* Blue */
+    border-radius:7px;
+    /* border:1px solid #dcdcdc; */
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family:Arial;
+    font-size: 1vw;
+    font-weight:bold;
+    margin: .5vw .3vw;
+    padding: .6vw .9vw;
+    text-align: center;
+    text-decoration: none;
+    /* text-shadow:0px 1px 0px #ffffff; */
+}
+.regButton:hover {
+    background:linear-gradient(to bottom, yellow 5%, orange 100%);
+    background-color:#f6f6f6;
+}
+.regButton:active {
+    position:relative;
+    top:1px;
+}
+    /* ----- loginBottomRight ----- */
+
+.regBottomRight {
+    display: flex;
+}
+
+.regToLogin {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius:7px;
+    /* border:1px solid #dcdcdc; */
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1vw;
+    font-weight:bold;
+    margin: .5vw .3vw;
+    padding: .6vw .9vw;
+    text-align: center;
+    text-decoration: none;
+    /* text-shadow:0px 1px 0px #ffffff; */
+    }
+.regToLogin:hover {
+    background:linear-gradient(to bottom, yellow 5%, orange 100%);
+    background-color:#f6f6f6;
+}
+.regToLogin:active {
+    position:relative;
+    top:1px;
+}
+
+/* ----- */
+
+.regRegistrationValidation {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.regSpaceHolder {
+    margin: 0;
+    padding: 0;
+}
+
+.regValText {
+    color: red;    
+    font-size: .8vw;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+.regToTheOtherFormText {
+    font-size: 1vw;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+/* ********** Responsive Design ********** */
+
+@media screen and (max-width: 1000px) {
+
+    .regLogo {
+        color: white;
+        font-size: 7vw;
+        margin: 4vw;
+        padding: 0;
+        text-align: center;
+        /* font-family: 'Fontdiner Swanky', cursive;
+        font-family: 'Irish Grover', cursive;
+        font-family: 'Cherry Bomb', cursive; */
+    }
+
+    .regForm {
+        width: 80%;   
+    }
+
+    .regBottom {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .regButton {
+        display: inline-block;
+        font-family:Arial;
+        font-size: 1vw;
+        font-weight:bold;
+        margin: 1vw .3vw 3vw;
+        padding: .6vw .9vw;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .regBottomRight {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 1vw 0;
+        padding: 0;
+    }
+
+    .reToLogin {
+        margin: 0 auto;
+    }
+
+    .regRegistrationValidation {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+}
