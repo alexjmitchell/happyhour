@@ -1,74 +1,108 @@
 html, body {
-  height: 100%;
   margin: 0;
 }
 
-
 .banner {
-    background-image: url("./../assets/HappyHourPics/bannerPic.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-.bannerWrapper {
+  background-image: url("./../assets/HappyHourPics/bannerPic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  flex-direction: column;
+  height: 50vw;
   justify-content: space-between;
+  position: relative;  
+  width: 100vw;
 }
 
-/* ---------- Left Side ---------- */
-  .logo {
-    padding: 40px 0px 0px 40px;
-    font-size: 80px;
-    color: white;
-  }
+/* ----- bannerTop ----- */
 
-  .logo img {
-    width:200px;
-  }
+.bannerTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.bannerLogo {
+  color: white;  
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 6vw;
+  font-size: 6hw;
+  margin: 2vh 0 0 2vw;
+  padding: 0;
+}
+
+.nav {
+  display: inline-block;
+  margin: 2vh 2vw 0 0;
+  padding: 2vh 0 0 0;
+}
+
+.bannerSignUp {
+  background-color: #008CBA; /* Blue */
+  border-radius:7px;
+  /* border:1px solid #dcdcdc; */
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family:Arial;
+  font-size: 1.5vmax;
+  font-weight:bold;
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  text-decoration: none;
+}
+.bannerSignUp:hover {
+  background:linear-gradient(to bottom, yellow 5%, orange 100%);
+  background-color:#f6f6f6;
+}
+.bannerSignUp:active {
+  position:relative;
+  top:.1vh;
+}
+
+.bannerLogIn {
+  background-color: #4CAF50; /* Green */
+  border-radius:7px;
+  /* border:1px solid #dcdcdc; */
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family:Arial;
+  font-size: 1.5vmax;
+  font-weight:bold;
+  margin-left: 2vw;
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  text-decoration: none;
+}
+.bannerLogIn:hover {
+  background:linear-gradient(to bottom, yellow 5%, orange 100%);
+  background-color:#f6f6f6;
+}
+.bannerLogIn:active {
+  position:relative;
+  top:1vh;
+}
+
+  /* ----- bannerBottom ----- */
 
 .bannerMessage {
-  padding: 5px 0px 0px 40px;
-  font-size: 60px;
   color: white;
+  font-size: 6vw;  
+  margin: 0 0 0 2vw;
 }
 
 .bannerTagLine {
-  padding: 0px 0px 0px 40px;
-  font-size: 30px;
   color: white;
+  font-size: 3vw;
+  font-style: italic;  
+  margin: .5vh 0 3vmax 2vw;
 }
 
-/* ---------- Right Side ---------- */
+/* ********** Responsive Design ********** */
 
-  .nav {
-    padding: 40px 40px 0px 0px;
- 
-  }
+@media screen and (max-width: 1200px) {
 
-  .bannerSignUp {
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-
-  .bannerLogIn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+}

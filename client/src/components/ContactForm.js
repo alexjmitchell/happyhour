@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../styles/base.css"
+import "../styles/ContactForm.css"
 import validator from "validator"
 import { BrowserRouter as Router, Route, link } from "react-router-dom"
 // import sub from "../components/Submitted"
@@ -26,7 +26,8 @@ function ContactForm(props) {
     let err = false
 
     if (name !== "") {
-      if (!validator.isAlpha(name)) {
+      if (!validator.isAlpha(name) && 
+      validator.isEmpty(name, { ignore_whitespace: true } )) {
         err = true
         setNameError("Must be a valid text")
       } else {
@@ -34,7 +35,7 @@ function ContactForm(props) {
       }
     } else {
       err = true
-      setNameError("Cannot be blank")
+      setNameError("required")
     }
 
     if (email !== "") {
@@ -46,21 +47,21 @@ function ContactForm(props) {
       }
     } else {
       err = true
-      setEmailError("Cannot be blank")
+      setEmailError("required")
     }
 
     if (message === "") {
       err = true
-      setMessageError("Cannot be blank")
+      setMessageError("required")
     } else {
       setMessageError("")
     }
 
     if (!err) {
       // err = true
-      setButtonError("Thank you for you Feedback. Message Sent")
+      setButtonError("Thank you for you Feedback.")
     } else {
-      setButtonError("Message Not Submited")
+      setButtonError("Please complete required fields")
     }
 
     // sendF(message, email, name) // passing the function from ....(const sendF = (message, email, name) => {
@@ -76,59 +77,60 @@ function ContactForm(props) {
   }
   return (
     <div className="mainForm">
-      <div className="contactForm"> Your Feedback - All fields required</div>
-      <br />
-      <form onSubmit={handleSubmit} className="contactInputs">
-        <div className="labelMain">
-          <label className="nameF">Name </label>
-          <label className="nameF">Email </label>
-        </div>
-        <div className="labelMain">
-          <span className="emailF">{nameError}</span>
-          <span className="emailF">{emailError}</span>
+      <form onSubmit={handleSubmit}className="contactInputs">
+      <div className="contactForm"> We'd love to hear from you!</div>
+
+        <div className="contactTop">
+
+          {/* Top Left Section */}
+          <div className="contactTopLeft">
+            <div className="nameTop">
+              <div className="nameField">Name </div>
+              <span className="nameFieldError">{nameError}</span>
+            </div>
+            <input
+              className={nameError === "" ? "nameInputField" : "nameInputField"}
+              onChange={element => setName(element.target.value)}
+              value={name}
+              type="text"
+              placeholder=""
+            />
+          </div>
+
+          {/* Top Right Section */}
+          <div className="contactTopRight">
+            <div className="emailTop">
+              <div className="emailField">Email </div>
+              <span className="emailFieldError">{emailError}</span>
+            </div>
+            <input
+              className={emailError === "" ? "emailInputField" : "emailInputField"}
+              onChange={element => setEmail(element.target.value)}
+              value={email}
+              type=""
+              placeholder=""
+            />
+          </div>
         </div>
 
-        <br />
-        <div className="mainNameEmailInputs">
-          <input
-            className={nameError === "" ? "" : "error"}
-            onChange={element => setName(element.target.value)}
-            value={name}
-            type="text"
-            placeholder="Danilo"
-          ></input>
-          <br />
-
-          <input
-            className={emailError === "" ? "" : "error"}
-            onChange={element => setEmail(element.target.value)}
-            value={email}
-            type="email"
-            placeholder="your@email.com"
-          />
-        </div>
-        <br />
-        <div>
-          <label>Message {messageError}</label>
-          <br />
-          <br />
-          <input
-            // className="messageInput"
-            className={messageError === "" ? "da" : "da error"}
+        {/* Message Section */}
+        <div className="messageContainer">
+          <div className="messageTop">
+            <div className="messageText">Message</div>
+            <div className="messageFieldError">{messageError}</div>
+          </div>
+          <textarea
+            className={messageError === "" ? "messageInputField" : "messageInputField"}
             onChange={element => setMessage(element.target.value)}
             value={message}
             type="text"
-            placeholder="type your message"
-          ></input>
+            placeholder=""
+          ></textarea>
         </div>
-        <p></p>
-
-        <p></p>
-        <button className="mainbutton" type="submit" placeholder="Submit">
+        <button className="mainButton" type="submit" placeholder="Submit">
           Submit
         </button>
-        <p>{buttonError}</p>
-        <br />
+        <p className="contactConfirmation">{buttonError}</p>
       </form>
     </div>
   )

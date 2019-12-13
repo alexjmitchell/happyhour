@@ -35,9 +35,9 @@ export default props => {
         return (
             <div className="qrGeneratorContainer">
                 <div class="qrbox">
-                    <img src = {Default} alt="qr-code" />
-                    <textarea></textarea>
-                    <button onclick={generateQR}>Generate QR Code</button>
+                    <img className="qrImg" src = {Default} alt="qr-code" />
+                    <textarea className="qrTextarea"></textarea>
+                    <button className="qrBtn" onclick={generateQR}>Generate QR Code</button>
                 </div>
             </div>
         )

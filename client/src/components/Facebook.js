@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/Maincss.css"
+import "../styles/Facebook.css"
 
 function Facebook() {
   return (

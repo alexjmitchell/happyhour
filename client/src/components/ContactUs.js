@@ -52,7 +52,7 @@ export default props => {
               data-action="our link"
               style={{
                 display: "block",
-                width: "70%",
+                width: "100%",
                 height: "45%"
               }}
             />

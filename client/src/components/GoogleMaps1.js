@@ -25,7 +25,7 @@ class GoogleMaps1 extends Component {
 
         <iframe
               id="theMap"
-              width="80%"
+              width="100%"
               height="800px"
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk
               &q=WeWork,Las+Vegas,NV"

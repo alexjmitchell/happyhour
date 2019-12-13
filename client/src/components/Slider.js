@@ -3,6 +3,7 @@ import Coverflow from "react-coverflow"
 import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
+// import "../styles/Slider.css"
 // import { start } from "repl"
 
 function Slider() {
@@ -18,51 +19,45 @@ function Slider() {
   }
 
   return (
-    <div>
-      {/* <p>
-        Check Your Liked List Here:{" "}
-        <Link to="/liked">
-          {" "}
-          <Icon icon="heart" />
-        </Link>
-      </p> */}
-      {/* //--- test heart--- */}
-      {/* <button onClick={e => handleClick(e, "hello")}>
-        <Icon icon="heart" />
-      </button> */}
-      {/* //--- test heart--- */}
-      <div>
-        <Coverflow
-          width="960"
-          height="800"
-          displayQuantityOfSide={2.5}
-          navigation={false}
-          enableScroll={false}
-          clickable={true}
-          active={0}
-        >
-          {users.map((user, i) => (
-            <img
-              key={i}
-              className="slidePics"
-              src={user.picture}
-              height={300}
-              alt={
-                <a className="sliderImg" href={user.website}>
-                  {user.companyname}
-                </a>
-              }
-            />
-          ))}
-        </Coverflow>
-        {/* <div className="naslov">
-          {hours.map((hour, i) => (
-            <button className="buttons" key={i} onClick={e => filter(hour)}>
-              {hour}
-            </button>
-          ))}
-        </div> */}
-      </div>
+    <div className="CoverflowCarousel">
+          <Coverflow
+            width="960"
+            height="1000"
+            displayQuantityOfSide={2}
+            navigation={false}
+            enableScroll={false}
+            clickable={true}
+            active={0}
+            // enableHeading={false}
+            // initialScroll
+            // currentFigureScale={3}
+            // otherFigureScale={.8}
+            // media={{
+            //   '@media (max-width: 1200px)': {
+            //     width: '600px',
+            //     height: '300px'
+            //   },
+            //   '@media (min-width: 900px)': {
+            //     width: '960px',
+            //     height: '600px'
+            //   }
+            // }}
+          >
+            {users.map((user, i) => (
+              <img
+                key={i}
+                className="slidePics"
+                src={user.picture}
+                height={450}
+                alt={
+                  <a className="sliderImg" href={user.website}>
+                    {user.companyname}
+                  </a>
+                }
+              />
+            ))}
+          </Coverflow>
+
     </div>
   )
 }

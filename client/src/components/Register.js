@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import "../styles/Registration.css"
 import { set } from 'date-fns';
 import validator from "validator"
+import Icon from "../lib/Icon";
 
 export default props => {
 const [username, setUsername]=useState('')
@@ -89,22 +90,16 @@ else {
         setPassError(false) 
         setEmailError(false)
 
-
  }
 
  }
  
- 
-
-
 console.log( iserror + "variable iserror")
-
 
 if (!error){
     
     // setisanError(false)
         console.log(username + " entra en if...")
-
 
             reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
             .then((resp)=>{
@@ -118,7 +113,6 @@ if (!error){
                     }]
                 )
 
-
                 props.history.push("/profile")
 
             }) 
@@ -126,41 +120,44 @@ if (!error){
                 console.log("LOGIN ERROR")
             })
 
-
         // needs to be a promise because if not it will redirect before everything is done.
-            //the "/" takes us to "*" in app.js that take us to checklogin. this check if it's authenticated shows profile if not, redirect to login
+        //the "/" takes us to "*" in app.js that take us to checklogin. this check if it's authenticated shows profile if not, redirect to login
 }
-
 
 }
 
     return (
-
         <>
-            <Header/>
             <div className="regMainContainer">
                 <div className="regWrapper">
                     <div className="regLeftSide">
-                        <div className="regLogo">Listo?</div>
-                        <div className="toTheOtherForm">
-                            <p className="toTheOtherFormText">Already<br/> registered?</p>
-                            <p className="toReg"><Link to="/login">Log In</Link></p>
-                        </div>
+                        <div className="regLogo">HHFindr.com</div>
                     </div>
-                    <div className="loginRightSide">
-                        <p className="pleaseSignIn">Partner Registration</p>
-                        <form className="loginForm" onSubmit={handlesubmit}>
+                    <div className="regRightSide">
+                    <Link className="regHouse" to={'/'}><Icon icon="home"/></Link>
+                        <form className="regForm" onSubmit={handlesubmit}>
+                            <p className="regPleaseSignIn">Partner Registration</p>
                             {/* {userExists ? 
-                            <p className="pred">User already exists</p>: ""} */}
+                            <p className="regUserExists">User already exists</p>: ""} */}
                             <input className={userExists || iserror ? "red" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input className ={iserror ? "red" : ""} type="text" name = "contactname" placeholder="Contact name" value={contactName} onChange={e=>setContactName(e.target.value)}/>
                             <input className ={iserror || phoneError ? "red" : ""} type="text" name ="phonenumber" placeholder="Phone Number" value={phonenumber} onChange={e=>setPhone(e.target.value)}/>
-                            <input className ={emailError || iserror ? "red" : ""} type="email" name ="email" placeholder="email" value={email} onChange={e=>setEmail(e.target.value)}/>
-                            <input className={passError || iserror ? "red" : ""} type="password" name = "password" placeholder="password" value={password} onChange={e=>setPassword(e.target.value)}/>
-                            <input className={passError || iserror ? "red" : ""} type="password" name = "cpassword" placeholder="confirm password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
-                            {descError!=""?
-                            <p className="pred"> {descError}</p>: ""}
-                            <button className="loginButton" type="submit">Create Your Account</button>
+                            <input className ={emailError || iserror ? "red" : ""} type="email" name ="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/>
+                            <input className={passError || iserror ? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={passError || iserror ? "red" : ""} type="password" name = "cpassword" placeholder="Confirm Password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
+                            <div className="regBottom">
+                                <button className="regButton" type="submit">Sign Up</button>
+                                <div className="regBottomRight">
+
+                                    <p className="regToLogin"><Link to="/login">Log In</Link></p>
+                                </div>
+                            </div>
+                            <div className="regRegistrationValidation">
+                                {descError!=""?
+                                <p className="regValText"> {descError}</p>: ""}
+                                <div className="regSpaceHolder"></div>
+                                <p className="regToTheOtherFormText">Already registered?</p>
+                            </div>
                         </form>
                         {/* { nameError!="" ? 
                         <p className="pred"> *All fields are required</p>
