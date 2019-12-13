@@ -210,23 +210,24 @@ else {
 
  if (!error){
 
-    //     regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, lat, lng, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm ) //after signin we want to redirect to another page
-    //             .then((resp)=>{
-    //                 //func to send the company
-    //                 // getOneC(compName)
-    //                 props.history.push("/")
+        regProf(username,compName, address, city, usstate, zip, compPhone, compEmail, compWeb, fb, ig, tw, lat, lng, pic, foodType, menu, desc, d, startHr, endHr, admin_id, fromRegForm ) //after signin we want to redirect to another page
+                .then((resp)=>{
+                    //func to send the company
+                    // getOneC(compName)
+                    getLoc(compName).then(() => {
+                    console.log("coordinates updated")
+                     })
+                    // props.history.push("/")
             
-    //             }) 
-    //             .catch(e => {
+                }) 
+                .catch(e => {
                     
             
-    //                 console.log(e + " ERROR")
-    //             })
+                    console.log(e + " ERROR")
+                })
       }
 
-      getLoc(compName).then(() => {
- 
-    })
+      
     
 
     }
