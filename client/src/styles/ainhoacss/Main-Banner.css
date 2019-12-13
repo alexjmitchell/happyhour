@@ -1,0 +1,70 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+.banner {
+    background-image: url("./../assets/HappyHourPics/bannerPic.jpg");
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.bannerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------- Left Side ---------- */
+  .logo {
+    padding: 40px 0px 0px 40px;
+    font-size: 80px;
+    color: white;
+  }
+
+.bannerMessage {
+  padding: 5px 0px 0px 40px;
+  font-size: 60px;
+  color: white;
+}
+
+.bannerTagLine {
+  padding: 0px 0px 0px 40px;
+  font-size: 30px;
+  color: white;
+}
+
+/* ---------- Right Side ---------- */
+
+  .nav {
+    padding: 40px 40px 0px 0px;
+ 
+  }
+
+  .bannerSignUp {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .bannerLogIn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
