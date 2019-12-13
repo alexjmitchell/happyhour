@@ -132,7 +132,7 @@ input.setMessage {
   height:30px;
   height: 200px;
   color:white;
-  /* transform: translate(-20%, -20%); */
+        transform: translate(-20%, -20%);
 
 /* left:10px;
 top:25px; */

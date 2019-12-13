@@ -64,7 +64,7 @@
     //        <iframe width="600" height="450"
       //        src="https://www.googleapis.com/geolocation/v1/geolocate?
         //      key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk">
-            </iframe>"
+           // </iframe>"
 
 //             {/* Ainhoa: Please add code in the format  after ?q=near+{adfasdf}+{adsfafsd}+{asdfas} */}
 

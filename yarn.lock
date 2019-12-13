@@ -1688,6 +1688,11 @@ ua-parser-js@^0.7.18:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
   integrity sha512-8OaIKfzL5cpx8eCMAhhvTlft8GYF8b2eQr6JkCyVdrgjcytyOmPCXrqXFcUnhonRpLlh5yxEZVohm6mzaowUOw==
 
+use-position@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/use-position/-/use-position-0.0.6.tgz#e1b9db18cce2991a9db437f6cedcba4b8ebf3d59"
+  integrity sha512-iAibEtuA3o7ebx03eExIIysqNz2U/PZO2NA+KZfvAOPOrnwc2mWytV4HfpUN+onmhN6bdpiCSZY9U9IzUgNSag==
+
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"

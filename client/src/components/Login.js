@@ -68,7 +68,7 @@ function handlesubmit(e){
                         <p className="pleaseSignIn">Welcome Back</p>
                         <form className="loginForm" onSubmit={handlesubmit}>
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
-                            <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={!loginmatch && !nameError? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                                 { !loginmatch && !nameError? <p className="pred">User or password is incorrect</p> :"" }
                                 { nameError!="" ? 
                                 <p className="pred"> *All fields are required</p> :""}
