@@ -113,7 +113,7 @@ input.setMessage {
 
 /* GOOGLE PINS */
 .pinContainer{
-        width:55px;
+        width:50px;
         /* height: 35px; */
          background-color: pink;
         padding: 15px 10px;
@@ -121,20 +121,27 @@ input.setMessage {
         border-radius: 100%;
         text-align: center;
         justify-content: center;
-        transform: translate(-50%, -50%);
+        /* transform: translate(-50%, -50%); */
         position: relative;
 
 }
 
 .showpindesc{
   position: absolute;
-  width:100px;
+  width:180px;
+  height:30px;
   height: 200px;
   color:white;
+        transform: translate(-20%, -20%);
+
+/* left:10px;
+top:25px; */
   background-color: black;
   border:8px solid green;
 }
 
 .pinImg{
-  width: 80px;
+  width: 100px;
 }
+
+/* GOOGLE PINS */

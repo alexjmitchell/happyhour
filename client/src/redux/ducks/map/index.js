@@ -10,7 +10,6 @@ const initialState = {
     lat:0,
     lng:0
 
-    // onePlaceCoords:{}
    }
 // reducer(s)
 export default (state = initialState, action) => {
@@ -36,85 +35,12 @@ const getCoordinates = () => {
   }
 
 
-  // const getPlaces = (name) => {
-  //   console.log(name + " actionreduxname")
-  //   return dispatch => {
-  //     axios.get(`/map/places/${name}`).then(resp => {
-  //       console.log("ryan",resp.data)
-  //       dispatch({
-  //         type: GET_PLACES,
-  //         payload: resp.data
-  //       })
-  //     })
-  //   }
-  // }
-
-
-
-
-  function getPlace (name, dispatch) {
-          return new Promise((resolve, reject) => {
-              console.log(name + " actionreduxname")
-              axios.put(`/map/places/${name}`).then(resp => {
-                // console.log("ryan",resp.data)
-                    dispatch({
-                      type: GET_PLACE,
-                      lat: resp.data.lat,
-                      lng:resp.data.lng
-                    })
-                    resolve()
-          
-                 }).catch(e=>{
-                    console.log("didn't find the place")
-                    reject()
-                    })
-              })
-      }
-
-
-
-
-      
-
-
-    
-  
-
-
-
-  // const getPlaces = (coordinates) => {
-  //   const lat = coordinates.lat
-  //   const lng = coordinates.lng
-  //   return dispatch => {
-  //     axios.get(`/map/places/${lat}/${lng}`).then(resp => {
-  //       console.log("ryan",resp.data)
-  //       dispatch({
-  //         type: GET_PLACES,
-  //         payload: resp.data
-  //       })
-  //     })
-  //   }
-  // }
-
-
-
-  
-  
-
 
 export function useMaps() {
     const dispatch = useDispatch()
     const coordinates = useSelector(appState => appState.mapState.coordinates)
-    // const onePlaceCoords = useSelector(appState => appState.mapState.onePlaceCoords)
-    // const getLoc = name=>dispatch(getPlaces(name))
-    const getLoc = (name) => getPlace(name, dispatch)
-
-    // console.log(onePlaceCoords + "oneplaceCoords")
-
-
     useEffect(() => {
         dispatch(getCoordinates())
-      //  dispatch(getPlaces(coordinates))
       }, [dispatch])
-    return { coordinates, getLoc }
+    return { coordinates }
 }
