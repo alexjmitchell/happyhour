@@ -55,8 +55,16 @@ function Slider2() {
       </select>
 
       <button onClick={e => setVal(hr)}>happy hour now</button>
+
       <div>
-        <Carousel autoPlay={true}>
+        {/* infiniteLoop={true} makes autoPlay to run new circle from the begining */}
+        <Carousel
+          autoPlay={true}
+          useKeyboardArrows
+          infiniteLoop={true}
+          interval={4000}
+          transitionTime={350}
+        >
           {newArray.length === 0
             ? users.map((user, i) => (
                 <>

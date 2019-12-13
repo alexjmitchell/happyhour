@@ -8,22 +8,56 @@ const FILTER_PIC = "filter / FILTER_PIC"
 
 // initial state
 const initialState = {
-  users: []
+  users: [],
+  filteredUsers: []
 }
 
 // reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_PICTURES:
-      return { ...state, users: action.payload }
+      return { ...state, users: action.payload, filteredUsers: action.payload }
     case FILTER_PIC:
       return {
         ...state,
-        users: state.users.filter(p => p.starthour == action.filter1)
+        filteredUsers: filterCompanies(action.payload, state.users)
       }
     default:
       return state
   }
+}
+
+function filterCompanies(filterobj, users) {
+  let { search, val } = filterobj
+
+  if (!search) {
+    search = ""
+  }
+
+  if (!val) {
+    val = ""
+  }
+  // bar.companyname
+  // bar.starthoure
+  // bar.endhour
+
+  let f = users.filter(bar => {
+    if (search && val) {
+      return (
+        bar.companyname == search && val > bar.starthour && val < bar.endhour
+      )
+    }
+
+    if (search && !val) {
+      return bar.companyname == search
+    }
+
+    if (val && !search) {
+      return val > bar.starthour && val < bar.endhour
+    }
+  })
+
+  return f
 }
 
 // action creators
@@ -50,10 +84,10 @@ function sendSubscrib(email) {
   }
 }
 
-const filterHours = filter1 => {
+const filterBarsAction = filterobj => {
   return {
     type: FILTER_PIC,
-    filter1: filter1
+    payload: filterobj
   }
 }
 
@@ -61,8 +95,11 @@ const filterHours = filter1 => {
 
 export function useUsers() {
   const users = useSelector(appState => appState.userState.users)
+  const filteredUsers = useSelector(
+    appState => appState.userState.filteredUsers
+  )
   const dispatch = useDispatch()
-  const filter = filt1 => dispatch(filterHours(filt1))
+  const filterBars = filteredobj => dispatch(filterBarsAction(filteredobj))
   const get = () => dispatch(getPic())
   const sendF = (message, email, name) => {
     return dispatch(sendFeedback(message, email, name))
@@ -76,5 +113,5 @@ export function useUsers() {
     get()
   }, [dispatch])
 
-  return { users, sendF, sendSubs, filter }
+  return { users, sendF, sendSubs, filterBars, filteredUsers }
 }
