@@ -1,0 +1,16 @@
+.CoverflowCarousel {
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+/* ********** Responsive Design ********** */
+
+@media screen and (max-width: 1200px) {
+
+    .CoverflowCarousel {
+        background-color: red;
+    }
+
+}

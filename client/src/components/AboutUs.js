@@ -21,17 +21,14 @@ const { signin } = useAuth();
 const { getone } = useAdmins ();
 
     return (
-
         <div className="aboutUsMainContainer">
-            
-<Header/>
+            <Header/>
             <div className="aboutUsStoryContainer">
                 <div className="aboutUsStoryWrapper">
                     <h1>Our Story</h1>
                     <h2>Our Mission</h2>
                 </div>
             </div>
-
             <div className="row">
                 <div className="column">
                     <div className="card">
@@ -53,7 +50,6 @@ const { getone } = useAdmins ();
                         </div>
                     </div>
                 </div>
-
                 <div className="column">
                     <div className="card">
                         <img
@@ -74,7 +70,6 @@ const { getone } = useAdmins ();
                         </div>
                     </div>
                 </div>
-
                 <div className="column">
                     <div className="card">
                         <img
@@ -95,11 +90,8 @@ const { getone } = useAdmins ();
                         </div>
                     </div>
                 </div>
-
             </div>
-
-<Footer/>
+        <Footer/>
         </div>
-
     )
 }

@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import admins from '../redux/ducks/admins'
 import "../styles/Login.css"
 import { get } from 'https'
+import Icon from "../lib/Icon";
 
 export default props => {
 const [username, setUsername]=useState('')
@@ -19,10 +20,8 @@ const {getone, getRegistered } = useAdmins ()
 // const { getonc } = useCompanies()
 const [nameError, setNameError] = useState('')
 
-
 function handlesubmit(e){
     e.preventDefault()
-
 
     if(!username || !password){
         setNameError("All fields are required")
@@ -31,13 +30,11 @@ function handlesubmit(e){
     setNameError("")
         }
     
-
     signin(username,password) //after signin we want to redirect to another page
     .then((resp)=>{
         setLoginmatch(true)
         getone(username)
         
-
         props.history.push("/profile")
 
     }) 
@@ -54,28 +51,35 @@ function handlesubmit(e){
 
     return (
         <>
-            <Header/>
             <div className="loginMainContainer">
                 <div className="loginWrapper">
                     <div className="loginLeftSide">
-                        <div className="loginLogo">Listo?</div>
-                        <div className="toTheOtherForm">
-                            <p className="toTheOtherFormText"> Don't<br/>have an<br/> account?</p>
-                            <p className="toLogin"> <Link to="/register">Create Account</Link></p>
-                        </div>
+                        <div className="loginLoginLogo">HHFindr.com</div>
                     </div>
                     <div className="loginRightSide">
-                        <p className="pleaseSignIn">Welcome Back</p>
+                    <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
                         <form className="loginForm" onSubmit={handlesubmit}>
+                            <p className="loginPleaseSignIn">Welcome Back</p>
+                            {/* {userExists ? 
+                            <p className="pred">User already exists</p>: ""} */}
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
-                            <input className={!loginmatch && !nameError? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <div className="loginBottom">
+                                <button className="loginButton" type="submit">Log  In</button>
+                                <div className="loginBottomRight">
+                                    <p className="loginToRegistration"> <Link to="/register">Sign Up</Link></p>
+                                </div>
+                            </div>
+                            <div className="loginRegistrationValidation">
                                 { !loginmatch && !nameError? <p className="pred">User or password is incorrect</p> :"" }
-                                { nameError!="" ? 
-                                <p className="pred"> *All fields are required</p> :""}
-                            <button className="loginButton" type="submit">Log  In</button>
+                                { nameError!="" ? <p className="pred"> *All fields are required</p> :""}
+                                <div className="losingSpaceHolder"></div>
+                                <p className="loginToTheOtherFormText"> Don't have an account?</p>
+                            </div>
                         </form>
-                        <div className="forgotPswd">Forgot your password?</div>
-                        
+                        {/* { nameError!="" ? 
+                        <p className="pred"> *All fields are required</p>
+                          :""} */}
                     </div>
                 </div>
             </div>

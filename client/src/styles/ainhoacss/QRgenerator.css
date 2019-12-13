@@ -1,3 +1,6 @@
+<<<<<<< HEAD:client/src/styles/QRgenerator.css
+.qrGeneratorContainer {
+=======
 /* *,
 *::before,
 *::after {
@@ -7,6 +10,7 @@
 }
 html,
 body {
+>>>>>>> master:client/src/styles/ainhoacss/QRgenerator.css
     width: 100%;
     height: 100%;
     display: grid;
@@ -18,15 +22,15 @@ body {
     grid-template-columns: 1fr auto;
     grid-row-gap: 10px;
 }
-img {
+.qrImg {
     height: 300px;
-    width: 300px;
+    width: 100%;
     padding: 1rem;
     border: 2px solid #BADA55;
     border-radius: 0.5rem;
     grid-column: 1 / -1;
 }
-textarea {
+.qrTextarea {
     outline: none;
     height: 100px;
     padding: 1rem;
@@ -34,7 +38,7 @@ textarea {
     border-radius: 0.5rem;
     grid-column: 1 / -1;
 }
-button {
+.qrBtn {
     font-size: 1rem;
     border: none;
     outline: none;
@@ -43,6 +47,6 @@ button {
     border-radius: 2rem;
     transition: background-color 0.2s;
 }
-button:hover {
+.qrBtn:hover {
     background-color: #A4BE4B;
 } */

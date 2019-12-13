@@ -11,7 +11,7 @@
     "react": "^16.11.0",
     "react-coverflow": "^0.2.20",
     "react-dom": "^16.11.0",
-    "react-goolge-maps":"^9.4.5",
+    "react-goolge-maps": "^9.4.5",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",

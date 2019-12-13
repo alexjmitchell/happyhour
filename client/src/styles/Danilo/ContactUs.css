@@ -3,14 +3,13 @@ html {
     /* background-color: beige; */
 }
 
-
 body {
     margin: 0;
     padding: 0;
 }
 
 #contactUs {
-    background: black;
+    background: rgb(32,73,117);
     color: white;
     width: 100%;
     margin: 0 auto;
@@ -39,7 +38,7 @@ body {
 }
 
 .GoogleMapsWrapper {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     border: 2px solid  rgb(51,51,51);
@@ -50,8 +49,7 @@ body {
     /* ----- Start: contactUsInfo Section ----- */
 
 .contactUsInfo {
-    width: 70%;
-    height: 200px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     display: flex;
@@ -116,7 +114,7 @@ body {
 .textPicWrapper {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
     margin-bottom: 50px;
     background-color: rgb(51,51,51);
 }
@@ -164,7 +162,7 @@ body {
 .contactUsForm {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
     margin-bottom: 50px;
     background-color: rgb(51,51,51);
 }
@@ -177,7 +175,7 @@ body {
 }
 
 .upperWrapper {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -201,7 +199,7 @@ input#fname, input#lname, input#email, input#company {
 }
 
 .lowerWrapper {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -215,7 +213,7 @@ input#fname, input#lname, input#email, input#company {
 }
 
 .submitButton {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0px auto;

@@ -1,24 +1,20 @@
 import React from "react"
-import "../styles/Maincss.css"
-import Slider from "../components/Slider.js"
-import Slider2 from "../components/Slider2.js"
-// import Header from "./Header"
-import Footer from "./Footer"
-import ContactForm from "./ContactForm"
+import "../styles/Main.css"
 import MainBanner from "./Main-Banner"
-import GoogleMaps1 from "./GoogleMaps1"
+import Slider from "../components/Slider.js"
+// import GoogleMaps1 from "./GoogleMaps1"
+import ContactForm from "./ContactForm"
+import Footer from "./Footer"
 
 function Main() {
   return (
-    <div>
+    <div className="mainContainer">
       <MainBanner />
       <Slider />
-      <Slider2 />
       {/* <GoogleMaps1 /> */}
       <ContactForm />
       <Footer />
     </div>
   )
 }
-
 export default Main

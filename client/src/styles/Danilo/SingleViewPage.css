@@ -1,6 +1,6 @@
 /* ---------- Start: singlePageViewMainContainer Section ---------- */
 .singlePageViewMainContainer {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 /* ---------- End: singlePageViewMainContainer Section ---------- */
@@ -17,7 +17,7 @@
 
 /* ---------- Start: menuContainer ---------- */
 .menuContainer {
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: rgb(38,42,49);
@@ -27,7 +27,7 @@
 
     /* ----- Start: menuTop Section ----- */
 .menuTop {
-    width: 95%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin: 0 auto;
@@ -36,14 +36,14 @@
     /* ----- End: menuTop Section ----- */
         /* ----- Start: locationName Section ----- */
 .locationName {
-    width: 30%;
+    width: 100%;
     background-color: orange;
 }
         /* ----- End: locationName Section ----- */
         /* ----- Start: singleViewPageBanner Section ----- */
 
 .singlePageViewBanner {
-    width: 70%;
+    width: 100%;
     height: 100px;
     text-align: center;
     color: rgb(232,220,165);
@@ -54,7 +54,7 @@
  /* ----- Start: menuBody ----- */
 
  .menuBody {
-     width: 95%;
+     width: 100%;
      margin: 0 auto;
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -84,7 +84,7 @@
 }
 
 .right1 {
-    width: 300px;
+    width: 100%;
     height: 300px;
     background-color: purple;
 }
@@ -98,40 +98,16 @@
 }
 
 .GoogleMap {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     background-color: blue;
 }
     /* ----- End: menuRightSide Section ----- */
 
     /* ----- Start: menuBottom Section ----- */
 .menuBottom {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     background-color: indigo;
 }
     /* ----- End: menuBottom Section ----- */
-
-
-/* ---------- Start: menuContainer Section ---------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

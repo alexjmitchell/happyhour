@@ -16,10 +16,10 @@ import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
-import GoogleMaps1 from "./GoogleMaps1"
-import GoogleMaps2 from "./GoogleMaps2"
-import GoogleMaps3 from "./GoogleMaps3"
-import QRgenerator from "./QRgenerator"
+// import GoogleMaps1 from "./GoogleMaps1"
+// import GoogleMaps2 from "./GoogleMaps2"
+// import GoogleMaps3 from "./GoogleMaps3"
+// import QRgenerator from "./QRgenerator"
 
 function App(props) {
   return (
@@ -32,14 +32,11 @@ function App(props) {
           <Route exact path="/" component={Main} />
           <Route path="/test2" component={Test2} />
           <Route path="/test3" component={Test3} />
-
           <Route exact path="/liked" component={Liked}></Route>
-
           <Route path="/Facebook" component={Facebook}></Route>
           <Route path="/AboutUs" component={AboutUs} />
           <Route path="/ContactUs" component={ContactUs} />
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
-        
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
           {/* <Route path = "/profile" component ={Profile}/> */}
           {/* <Route path="/GoogleMaps1" component={GoogleMaps1} /> */}

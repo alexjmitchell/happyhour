@@ -6,58 +6,54 @@ body, html{
   font-size: 18px;
     padding-left: 10px;
     margin:5px 0;
-    width:350px;
+    width:100%;
   
 }
-
 
   .inputs input{
     font-size: 18px;
     padding-left: 10px;
     border:none;
-  
   }
   
   .prof{
     display: flex;
     flex-direction: column;
     margin: auto;
-
     width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 
   .prof form{
-    width:1200px;
-  display:flex;
-  flex-direction: column;
-  margin-bottom: 100px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 100px;
   }
 
-  .prof .profInputs{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-  }
+.prof .profInputs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
   #profileLeft{
-    width:390px;
+    width:100%;
     margin-bottom: 60px;
   }
 
   #right, #middlebottom{
-    width:790px;
+    width:100%;
   }
 #rightTop{
   display: flex;
 }
   #rightTop div{
-    width: 390px;
+    width: 100%;
   }
   
-
   .buttons{
     margin-top: 30px;
     display: flex;
@@ -90,7 +86,7 @@ flex-wrap: wrap;
 }
   
   .middleBottom button{
-    width: 350px;
+    width: 100%;
     height: 50px;
     background-color: red;
     color:white;
@@ -100,16 +96,14 @@ flex-wrap: wrap;
     align-items: right;
   }
 
-
-
 .dayshr{
   display: flex;
-  width:750px;
+  width:100%;
   margin:10px 0;
 }
   .happydays{
     display: flex;
-    width:390px;
+    width:100%;
     flex-direction: row;
     justify-content: start;
 flex-wrap: wrap;
@@ -117,15 +111,15 @@ flex-wrap: wrap;
 .hr{
   display: flex;
   justify-content: space-evenly;
-  width: 390px;
+  width: 100%;
 }
 
 .hr input{
-  width:145px;
+  width:100%;
 }
 
   .happydays label{
-    width: 48px;
+    width: 100%;
     height: 48px;
     padding: 0 10px;
     margin:0;
@@ -133,7 +127,7 @@ flex-wrap: wrap;
     font-size: 18px;
   }
   .happydays input{
-    width:30px;
+    width:100%;
     height: 30px;
     margin: 0px;
   }
@@ -148,12 +142,12 @@ flex-wrap: wrap;
   }
 
  .st{
-   width:350px;
+   width:100%;
    height: 30px;
    font-size: 18px;
  }
  .sd{
-   width:140px;
+   width:100%;
    font-size: 15px;
    height:30px;
  }
@@ -170,7 +164,7 @@ flex-wrap: wrap;
   border-radius: 5px;
   padding:8px;
   cursor:pointer;
-  width:145px;
+  width:100%;
   margin:10px 0;
 }
 
@@ -182,7 +176,5 @@ flex-wrap: wrap;
 
 .uploadImgsection .thumbpics{
   margin-bottom: 10px;
-  width:140px;
+  width:100%;
 }
-
-

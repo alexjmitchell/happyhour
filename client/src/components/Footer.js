@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Icon from "../lib/Icon"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import "../styles/footer.css"
+import "../styles/Footer.css"
 import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
@@ -25,7 +25,7 @@ function Footer() {
     if (email !== "") {
       if (!validator.isEmail(email)) {
         err = true
-        setEmailError("Must be a valid email")
+        setEmailError("Not a valid email")
       } else {
         setEmailError("")
       }
@@ -35,9 +35,9 @@ function Footer() {
     }
     if (!err) {
       // err = true
-      setButtonError("Subscription Completed")
+      setButtonError("Thank you!")
     } else {
-      setButtonError("Subscription Failed")
+      setButtonError("")
     }
     if (!err) {
       sendSubs(email)
@@ -53,21 +53,24 @@ function Footer() {
         <Link to={"/AboutUs"}>About Us</Link>
         <Link to={"/ContactUs"}>Contact Us</Link>
         <Link to={"/ParnterWithUs"}>Partner With Us</Link>
-        <Link to={"/SingleViewPage"}>Single View Page</Link>
-        <Link to={"/GoogleMaps1"}>Google Maps 1</Link>
+        {/* <Link to={"/SingleViewPage"}>Single View Page</Link>
+        <Link to={"/GoogleMaps1"}>Google Maps 1</Link> */}
+        <br/>
       </div>
 
       <div className="footerAddress">
         <h2>ADDRESS</h2>
         <p>WeWork</p>
-        <p>10845 Griffith Peak Dr #2</p>
+        <p>10845 Griffith Peak Dr</p>
         <p>Las Vegas, NV 89101</p>
+        <br/>
       </div>
 
       <div className="footerPhone">
         <h2>CONTACT US</h2>
         <p>702-837-0309</p>
-        <p>info-lv@happyhourfinder.com</p>
+        <p>info@HHfindr.com</p>
+        <br/>
       </div>
 
       <div className="footerSocial">
@@ -92,67 +95,28 @@ function Footer() {
             <i className="fa fa-pinterest"></i>
           </a> */}
         </div>
+        <br/>
       </div>
-
-      {/* <div className="media">
-        <h2>SOCIAL</h2>
-        <ul className="social">
-          <li className="fb">
-            <a href="https://www.facebook.com/Chilis/">
-              <i className="fa fa-facebook"></i>
-            </a>
-          </li>{" "}
-          <li className="rss">
-            <a href="https://www.instagram.com/accounts/login/?hl=en">
-              <i className="fa fa-instagram"></i>
-            </a>
-          </li>{" "}
-          <li className="tw">
-            <a href="https://twitter.com/">
-              <i className="fa fa-twitter"></i>
-            </a>
-          </li>{" "}
-          <li className="yt">
-            <a href="https://www.youtube.com/">
-              <i className="fa fa-youtube"></i>
-            </a>
-          </li>{" "}
-          <li className="yelp">
-            <a href="https://www.yelp.com/login">
-              <i className="fa fa-yelp"></i>
-            </a>
-          </li>{" "}
-          <li className="pint">
-            <a href="https://www.pinterest.com/login/">
-              <i className="fa fa-pinterest"></i>
-            </a>
-          </li>
-        </ul>
-      </div> */}
 
       <div className="footerNewsletter">
         <h2>JOIN OUR NEWSLETTER</h2>
-
         <form className="subsForm" onSubmit={handleSubmit}>
-          <label className="emailRequired">
-            Email Address Required {emailError}
-          </label>
-          <br />
-          <br />
-
+        <div className="newsletterTop">
+            <div className="emailRequired">
+              Email address <span className="r">*</span> 
+            </div>
+            <div className="newsletterConfirmation">{emailError}{buttonError}</div>
+          </div>
           <input
-            className={emailError === "" ? "subsEmail" : "error"}
+            className={emailError === "" ? "subsEmail" : "subsEmail"}
             onChange={element => setEmail(element.target.value)}
             value={email}
             type="email"
-            placeholder="your@email.com"
+            placeholder=""
           />
-          <br />
-          <br />
           <button className="subsButton" type="submit" placeholder="Submit">
             Submit
-          </button>
-          <p>{buttonError}</p>
+          </button><br/>
         </form>
       </div>
     </footer>
