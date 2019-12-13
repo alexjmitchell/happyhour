@@ -55,7 +55,7 @@ const getCoordinates = () => {
   function getPlace (name, dispatch) {
           return new Promise((resolve, reject) => {
               console.log(name + " actionreduxname")
-              axios.get(`/map/places/${name}`).then(resp => {
+              axios.put(`/map/places/${name}`).then(resp => {
                 // console.log("ryan",resp.data)
                     dispatch({
                       type: GET_PLACE,
