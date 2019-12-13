@@ -1,15 +1,12 @@
+// Correct Code
+
 import React, { useState } from "react"
 import Coverflow from "react-coverflow"
 import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
-<<<<<<< HEAD
 // import "../styles/Slider.css"
 // import { start } from "repl"
-=======
-
-import Radium, { Style, StyleRoot } from "radium"
->>>>>>> master
 
 function Slider() {
   const { users, filter } = useUsers() //all the companies
