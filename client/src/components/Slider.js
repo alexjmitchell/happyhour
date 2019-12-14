@@ -1,31 +1,45 @@
 // Correct Code
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Coverflow from "react-coverflow"
 import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
+import { filterBars } from "../redux/ducks/users/"
 // import "../styles/Slider.css"
 // import { start } from "repl"
 
 function Slider() {
-  const { users, filter } = useUsers() //all the companies
+  const { users, filter, usersS } = useUsers() //all the companies
+
   const { companyname } = useCompanies()
   const { liked } = useLiked()
+
   const [val, setVal] = useState("")
+  const [search, setSearch] = useState("")
+
   var d = new Date()
   var hr = d.getHours()
   const fn = function() {} // slider library
+
+  useEffect(() => {
+    filterBars(val, search, users)
+  }, [val, search, users])
 
   function handleClick(e, liked) {
     e.preventDefault()
     // props.history.push("/CompanyPage/" + liked)   je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
   }
+  console.log(filterBars(val, search, users) + "hfhdsadlkf")
+  // useEffect(() => {
+  //   filterBars
+  // }, [val, search])
 
-  console.log(hr, "eee")
+  // const newArray = users.filter(p => p.starthour == val)
+  const newSearch = users.filter(p => p.companyname == search)
 
-  const newArray = users.filter(p => p.starthour >= val)
-  console.log(newArray)
+  // const newerArray = newArray.filter(i => i.name === SVGPathSegCurve)
+  // console.log(newArray)
   return (
     <div className="sliderW">
       {/* <p>
@@ -41,7 +55,7 @@ function Slider() {
       {/* // ovde prosledjujemo e.target.value u setVal() i to je sad u stvari val  */}
       {/* // e.target.value je u stvari value bilo koja od 00 do 23 koji prenosimo preko setVal u val i komperujemo je sa starthour u filter i prenosimo u newArray */}
       <select onChange={e => setVal(e.target.value)}>
-        <option value="default"> Select</option>
+        <option value=""> Select</option>
         <option value="00">12:00 am</option>
         <option value="01">01:00 am</option>
         <option value="02">02:00 am</option>
@@ -68,8 +82,8 @@ function Slider() {
         <option value="23">11:00 pm</option>
       </select>
       {/* // ovde prosledjujemo hr u setVal() i to je sad u stvari val  koji je jednak sa data koji komperujemo u ovom slucaju starthour gore u filter */}
-      <button onClick={e => setVal(hr)}>happy hour now</button>
-
+      <button onClick={e => filter(hr)}>happy hour now</button>
+      <input type="text" onChange={e => setSearch(e.target.value)} />
       <div>
         <Coverflow
           width="960"
@@ -94,7 +108,7 @@ function Slider() {
           // }}
         >
           {/* // ternary operator // {newArray.length === 0 ? "" : ""} // if and else na istoj liniji u ovom slucaju je prvi map ili drugi */}
-          {newArray.length === 0
+          {/* {newSearch.length === 0
             ? users.map((user, i) => (
                 <img
                   key={i}
@@ -108,7 +122,7 @@ function Slider() {
                   }
                 />
               ))
-            : newArray.map((user, i) => (
+            : newSearch.map((user, i) => (
                 <img
                   key={i}
                   className="slidePics"
@@ -120,7 +134,20 @@ function Slider() {
                     </a>
                   }
                 />
-              ))}
+              ))} */}
+          {filterBars(val, search, users).map((user, i) => (
+            <img
+              key={i}
+              className="slidePics"
+              src={user.picture}
+              height={450}
+              alt={
+                <a className="sliderImg" href={user.website}>
+                  {user.companyname}
+                </a>
+              }
+            />
+          ))}
         </Coverflow>
       </div>
     </div>

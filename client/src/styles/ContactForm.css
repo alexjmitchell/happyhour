@@ -1,5 +1,5 @@
 .mainForm {
-  background: rgb(32,73,117);
+  background: rgb(32, 73, 117);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,17 +11,17 @@
 .contactInputs {
   background-color: white;
   display: flex;
-  flex-direction: column;  
-  justify-content: center;  
+  flex-direction: column;
+  justify-content: center;
   margin: 5vw auto;
-  width: 80%;  
+  width: 80%;
 }
 
 .contactForm {
   color: black;
   font-size: 4vw;
   margin: 2vh;
-  padding: .5vh 0;
+  padding: 0.5vh 0;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@
   display: grid;
   gap: 1vw;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 90%;
 }
 
@@ -41,7 +41,9 @@
   justify-content: center;
 }
 
-.nameTop, .emailTop, .messageTop {
+.nameTop,
+.emailTop,
+.messageTop {
   display: flex;
   justify-content: space-between;
 }
@@ -52,23 +54,23 @@
   color: black;
   font-size: 2vw;
   margin: 1vw;
-  padding: .25vw .25vw .25vw .25vw;
+  padding: 0.25vw 0.25vw 0.25vw 0.25vw;
 }
 
 .nameFieldError {
   color: red;
   height: 1.25vh;
   margin: 1vw;
-  padding: .25vw .25vw .25vw 0;
+  padding: 0.25vw 0.25vw 0.25vw 0;
 }
 
 .nameInputField {
   background-color: white;
-  border: .1vw solid black;
+  border: 0.1vw solid black;
   color: black;
   font-size: 1.25vw;
   margin: 0 auto;
-  padding: .25vw 0 .25vw .25vw;
+  padding: 0.25vw 0 0.25vw 0.25vw;
   width: 100%;
 }
 
@@ -84,23 +86,23 @@
   color: black;
   font-size: 2vw;
   margin: 1vw;
-  padding: .25vw 0 .25vw .25vw;
+  padding: 0.25vw 0 0.25vw 0.25vw;
 }
 
 .emailFieldError {
   color: red;
   height: 1.25vw;
   margin: 1vw;
-  padding: .25vw .25vw .25vw 0;
+  padding: 0.25vw 0.25vw 0.25vw 0;
 }
 
 .emailInputField {
   background-color: white;
-  border: .1vw solid black;
+  border: 0.1vw solid black;
   color: black;
   font-size: 1.25vw;
   margin: 0 auto;
-  padding: .25vw 0 .25vw .25vw;
+  padding: 0.25vw 0 0.25vw 0.25vw;
   width: 100%;
 }
 
@@ -110,21 +112,21 @@
   color: black;
   font-size: 2vw;
   margin: 1vw;
-  padding: .25vw 0 .25vw .25vw;
+  padding: 0.25vw 0 0.25vw 0.25vw;
 }
 
 .messageTop {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 90%;
 }
 
 .messageInputField {
   background-color: white;
-  border: .1vw solid black;
+  border: 0.1vw solid black;
   color: black;
   height: 4vw;
   margin: 0 auto;
-  padding: .25vw 0 .25vw .25vw;
+  padding: 0.25vw 0 0.25vw 0.25vw;
   width: 90%;
 }
 
@@ -132,15 +134,15 @@
   color: red;
   height: 1.25vw;
   margin: 1vw;
-  padding-left: .25vw;
+  padding-left: 0.25vw;
 }
 
 /* ---------- button ---------- */
 
 .mainButton {
   align-items: center;
-  background-color: #008CBA;
-  border: none;  
+  background-color: #008cba;
+  border: none;
   border-radius: 1vw;
   color: white;
   cursor: pointer;
@@ -148,30 +150,60 @@
   font-size: 1vw;
   justify-content: center;
   margin: 2vw auto;
-  padding: .75vh 1.5vw;
+  padding: 0.75vh 1.5vw;
   text-align: center;
   text-decoration: none;
 }
 
 .contactConfirmation {
-  color: red;  
+  color: red;
   text-align: center;
 }
 
 /* ********** RESPONSIVE DESIGN ********** */
 
 @media screen and (max-width: 1200px) {
-
   .contactTop {
     display: block;
   }
 
-  .nameInputField, .emailInputField {
+  .nameInputField,
+  .emailInputField {
     font-size: 2vw;
   }
 
   .messageInputField {
     height: 10vw;
   }
-
 }
+
+/* .mainNameEmailInputs {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+.labelMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+input.setMessage {
+  display: flex;
+  height: 300px;
+}
+.error {
+  border: 1px solid red;
+}
+
+.da {
+  height: 150px;
+  width: 530px;
+  text-align: center;
+  font-size: 20px;
+}
+.nameF {
+  padding-right: 208px;
+}
+.emailF {
+  padding-right: 132px;
+} */

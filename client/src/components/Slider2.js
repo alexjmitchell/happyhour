@@ -4,7 +4,7 @@ import { useUsers, useCompanies, useLiked } from "../hooks"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Radium, { Style, StyleRoot } from "radium"
-
+import "../styles/Slider2.css"
 function Slider2() {
   const { users, filter } = useUsers()
   const { companyname } = useCompanies()

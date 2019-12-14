@@ -5,10 +5,12 @@ import axios from "axios"
 // action definitions
 const GET_PICTURES = "users/GET_PICTURES"
 const FILTER_PIC = "filter / FILTER_PIC"
+const FILTER_S = "filter1 / FILTER_S"
 
 // initial state
 const initialState = {
-  users: []
+  users: [],
+  usersS: []
 }
 
 // reducer
@@ -16,6 +18,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case GET_PICTURES:
       return { ...state, users: action.payload }
+    case FILTER_S:
+      return { ...state, usersS: action.payload }
     case FILTER_PIC:
       return {
         ...state,
@@ -25,13 +29,46 @@ export default (state = initialState, action) => {
       return state
   }
 }
+// custom  actions
 
+export function filterBars(time, name, data) {
+  let results = []
+  data.forEach(datee => {
+    if (time !== "" && name !== "") {
+      if (datee.starthour === time && datee.companyname.includes(name)) {
+        results.push(datee)
+      }
+    } else if (time !== "" && name === "") {
+      if (datee.starthour === time) {
+        results.push(datee)
+      }
+    } else if (time === "" && name !== "") {
+      if (datee.companyname.includes(name)) {
+        results.push(datee)
+      }
+    } else if (time === "" && name === "") {
+      results.push(datee)
+    }
+  })
+  return results
+}
 // action creators
 const getPic = () => {
   return dispatch => {
     axios.get("/companies").then(resp => {
       dispatch({
         type: GET_PICTURES,
+        payload: resp.data
+      })
+    })
+  }
+}
+
+const getP = () => {
+  return dispatch => {
+    axios.get("/companies").then(resp => {
+      dispatch({
+        type: FILTER_S,
         payload: resp.data
       })
     })
@@ -61,9 +98,11 @@ const filterHours = filter1 => {
 
 export function useUsers() {
   const users = useSelector(appState => appState.userState.users)
+  const usersS = useSelector(appState => appState.userState.usersS)
   const dispatch = useDispatch()
   const filter = filt1 => dispatch(filterHours(filt1))
   const get = () => dispatch(getPic())
+  const getF = () => dispatch(getP())
   const sendF = (message, email, name) => {
     return dispatch(sendFeedback(message, email, name))
   }
@@ -74,9 +113,10 @@ export function useUsers() {
 
   useEffect(() => {
     get()
+    getF()
   }, [dispatch])
 
-  return { users, sendF, sendSubs, filter }
+  return { users, sendF, sendSubs, filter, usersS }
 }
 // import { useEffect } from "react"
 // import { useSelector, useDispatch } from "react-redux"
