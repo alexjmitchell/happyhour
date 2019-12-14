@@ -42,16 +42,18 @@ export default props => {
   console.log(clicked + " clicked or not")
 
   const AnyReactComponent = ({ text }) => (
-  <div className="pinContainer" onClick={e=>handleOnClick(e,text)} >
-    {/* <img className="pinImg" src="http://pngimg.com/uploads/mouth_smile/mouth_smile_PNG27.png" /> */}
+  <div className="pinContainer"  onClick={e=>handleOnClick(e,text)}>
+    <img className="pinImg" src="https://firebasestorage.googleapis.com/v0/b/happy-717c5.appspot.com/o/flyers%2F79cbf552-d272-4c39-b0ba-d1ebb4e1c74b.png?alt=media&token=c81554f5-3809-4a70-b2ee-5ec3c78aef1f" />
   </div>
   )
 
+    
   function handleOnClick (e,index) {
     setClick(!clicked)
-    setX(e.target.x - 150)
-    setY(e.target.y - 500)
-    setCurrentPlace({
+    // setX(0)
+    // setY(0)
+   
+     setCurrentPlace({
       name: companies[index].companyname,
       address:companies[index].address,
       phone:companies[index].phone,
@@ -63,45 +65,23 @@ export default props => {
       endhour:companies[index].endhour,
 
   })
+
   }
-
-function handleMouseLeave(){
-  setHover(!hover)
-  
-}
-
-  function handleMouseOver(num,childprop){
-
-    setHover(!hover)
-    setCurrentPlace({
-    
-      name: companies[childprop["text"]].companyname,
-      address:companies[num].address,
-      phone:companies[num].phone,
-      city:companies[num].city,
-      state:companies[num].state,
-      zip:companies[num].zip,
-      hhdays:companies[num].hhdays,
-      starthour:companies[num].starthour,
-      endhour:companies[num].endhour
-  })
-  }
-
-  
   
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '800px', width: '100%' }}>
+      <div style={{ height: '800px', width: '100%' }} className="mapContainer">
         <GoogleMapReact
           bootstrapURLKeys={{ 
               key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
               libraries: ['places','directions']
             }}
-          defaultCenter={ {lat:36.16, lng:115.15}}
+          defaultCenter={ {lat:36.16, lng:-115.15}}
           center={coordinates}
-          defaultZoom={14}
-          onChildMouseEnter={handleMouseOver}
-          onChildMouseLeave={handleMouseLeave}
+          // center={{lat:36.16, lng:-115.1546902}}
+          defaultZoom={15}
+          // onChildMouseEnter={handleMouseOver}
+          // onChildMouseLeave={handleMouseLeave}
         >
         {companies.map((p,i)=> 
             <AnyReactComponent
@@ -116,8 +96,8 @@ function handleMouseLeave(){
         {clicked || hover ?
           < div className="showpindesc" style=
           {{
-            right:posX,
-            top:posY
+            // right:posX,
+            // top:posY
           }}> 
               <div className="cardImg"><img src="https://cdn.pixabay.com/photo/2017/12/29/16/58/background-3048067_960_720.jpg"/>
               </div>
