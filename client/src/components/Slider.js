@@ -9,10 +9,11 @@ import { useUsers, useCompanies, useLiked } from "../hooks"
 // import { start } from "repl"
 
 function Slider() {
-  const { users, filter } = useUsers() //all the companies
+  const { users, filter, filtered } = useUsers() //all the companies
   const { companyname } = useCompanies()
   const { liked } = useLiked()
   const [val, setVal] = useState("")
+  const [compName, setCompName]=useState('')
   var d = new Date()
   var hr = d.getHours()
   const fn = function() {} // slider library
@@ -23,9 +24,30 @@ function Slider() {
   }
 
   console.log(hr, "eee")
+  function handleHours(e){
+    setVal(e)
+    setCompName("")
+  }
 
-  const newArray = users.filter(p => p.starthour >= val)
-  console.log(newArray)
+  function handleNames(e){
+    setVal("")
+    setCompName(e)
+  }
+
+  const newArray = users.filter(p => val >= p.starthour && val <= p.endhour || p.companyname == compName)
+  const compsArray = users.filter(c=>c.companyname == compName)
+// let filtered = []
+//   if (newArray.length == 0 && compsArray.length==0){
+//     filtered = users
+//   }else if (newArray && !compsArray){
+//       filtered=newArray
+//   }else{
+//     filtered=compsArray
+//   }
+
+// console.log(filtered, "filtered")
+  // console.log(val, " testing")
+  // console.log("newArray")
   return (
     <div className="sliderW">
       {/* <p>
@@ -68,8 +90,8 @@ function Slider() {
         <option value="23">11:00 pm</option>
       </select>
       {/* // ovde prosledjujemo hr u setVal() i to je sad u stvari val  koji je jednak sa data koji komperujemo u ovom slucaju starthour gore u filter */}
-      <button onClick={e => setVal(hr)}>happy hour now</button>
-
+      <button onClick={e => filter(hr)}>happy hour now</button>
+      <input type="text" placeholder="Search company name" onChange={e=>setCompName(e.target.value)}></input>
       <div>
         <Coverflow
           width="960"
@@ -94,6 +116,26 @@ function Slider() {
           // }}
         >
           {/* // ternary operator // {newArray.length === 0 ? "" : ""} // if and else na istoj liniji u ovom slucaju je prvi map ili drugi */}
+
+          
+          {/* {users.map((user, i) => (
+                <img
+                  key={i}
+                  className="slidePics"
+                  src={user.picture}
+                  height={450}
+                  alt={
+                    <a className="sliderImg" href={user.website}>
+                      {user.companyname}
+                    </a>
+                  }
+                />
+              ))
+              } */}
+
+
+
+
           {newArray.length === 0
             ? users.map((user, i) => (
                 <img
@@ -108,7 +150,7 @@ function Slider() {
                   }
                 />
               ))
-            : newArray.map((user, i) => (
+            :newArray.map((user, i) => (
                 <img
                   key={i}
                   className="slidePics"

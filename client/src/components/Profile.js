@@ -110,19 +110,23 @@ export default props => {
         {days.push("Su")}
         const d=days.join(',')     
 
+        console.log(fromRegForm, lastAdminId, admin_id, "before if FROM REG FORMlastadminid - admin id")
 
         // depending on what form the user is coming from
-        if (fromRegForm==="r")
+        if (fromRegForm && fromRegForm.join()==="r")
         {
+            console.log("r exsists")
             admin_id=lastAdminId
             lastAdminId=0
+            fromRegForm="r"
         }else {
             if (!thecompany.length){
                 fromRegForm="r"
             }
         }
 
-        
+        console.log (fromRegForm, "fromregform")
+        console.log(lastAdminId, admin_id, "after if lastadminid - admin id")
 
 
         if(compName==="" || address==="" || usstate==="" || city==="" || zip==="" || compEmail==="" || compWeb==="" || compPhone ==="" || d==="" || pic==="" || startHr==="" || endHr==="" || !foodType){ 

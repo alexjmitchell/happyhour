@@ -8,7 +8,8 @@ const FILTER_PIC = "filter / FILTER_PIC"
 
 // initial state
 const initialState = {
-  users: []
+  users: [],
+  filtered: []
 }
 
 // reducer
@@ -19,7 +20,7 @@ export default (state = initialState, action) => {
     case FILTER_PIC:
       return {
         ...state,
-        users: state.users.filter(p => p.starthour == action.filter1)
+        filtered: state.users.filter(p => action.filter1 >= p.starthour && action.filter1 <= p.endhour)
       }
     default:
       return state
@@ -62,6 +63,7 @@ const filterHours = filter1 => {
 export function useUsers() {
   const users = useSelector(appState => appState.userState.users)
   const dispatch = useDispatch()
+  const filtered = useSelector(appState => appState.userState.filtered)
   const filter = filt1 => dispatch(filterHours(filt1))
   const get = () => dispatch(getPic())
   const sendF = (message, email, name) => {
@@ -76,7 +78,7 @@ export function useUsers() {
     get()
   }, [dispatch])
 
-  return { users, sendF, sendSubs, filter }
+  return { users, sendF, sendSubs, filter, filtered }
 }
 // import { useEffect } from "react"
 // import { useSelector, useDispatch } from "react-redux"
