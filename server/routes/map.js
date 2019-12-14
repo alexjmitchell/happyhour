@@ -3,11 +3,11 @@ const axios = require('axios')
 const db = require("../db")
 
 router.post("/coordinates", (req, res, next) => {
-    axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk').then(resp =>{
-//grabing the coordinates from the api. only post      //
-      const coord=resp.data.location
-      res.json(coord)
-    })
+//     axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk').then(resp =>{
+// //grabing the coordinates from the api. only post      //
+//       const coord=resp.data.location
+//       res.json(coord)
+//     })
     
   })
 

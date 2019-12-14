@@ -52,7 +52,7 @@ code {
 
 /* .labelMainName {
   padding-right: 330px;
-} */
+}
 input.setMessage {
   display: flex;
   height: 300px;
@@ -79,37 +79,6 @@ input.setMessage {
 
 
 /* GOOGLE PINS */
-.pinContainer{
-        width:50px;
-        /* height: 35px; */
-         background-color: pink;
-        padding: 15px 10px;
-        display: inline-flex;
-        border-radius: 100%;
-        text-align: center;
-        justify-content: center;
-        /* transform: translate(-50%, -50%); */
-        position: relative;
-
-}
-
-.showpindesc{
-  position: absolute;
-  width:180px;
-  height:30px;
-  height: 200px;
-  color:white;
-        transform: translate(-20%, -20%);
-
-/* left:10px;
-top:25px; */
-  background-color: black;
-  border:8px solid green;
-}
-
-.pinImg{
-  width: 100px;
-}
 
 /* GOOGLE PINS */
 
@@ -163,4 +132,4 @@ p.legend {
 .carousel .slide .legend {
   background: transparent !important;
   width: 50% !important;
-}
+} 

@@ -1,11 +1,13 @@
+
 import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 // import PropTypes from 'prop-types';
 import {useMaps} from "../hooks"
 import {useCompanies} from "../hooks"
 import I from "../lib/Icon"
-// import Placesmarker from './Markers';
+import "../styles/Gmap.css"
 import "../styles/base.css"
+
 
 
 let loc=null
@@ -41,37 +43,27 @@ export default props => {
 
   const AnyReactComponent = ({ text }) => (
   <div className="pinContainer" onClick={e=>handleOnClick(e,text)} >
-    <img className="pinImg" src="http://pngimg.com/uploads/mouth_smile/mouth_smile_PNG27.png" />
+    {/* <img className="pinImg" src="http://pngimg.com/uploads/mouth_smile/mouth_smile_PNG27.png" /> */}
   </div>
   )
 
-  let count=0
   function handleOnClick (e,index) {
     setClick(!clicked)
-    setX(e.target.x - 350)
-    setY(e.target.y - 400)
-    console.log(e.target.width, "googlereact")
-const x = e.target.x
-const y = e.target.y
-const t = e.target.coordinates
-const wi = e.target.width
-console.log(x,y, "x y")
-console.log(wi, " wi")
-console.log(t, " coordinates t")
-    console.log(clicked + " al entrar en el click") 
-    console.log (count, index, "tri")
-    console.log(currentPlace.name)
-    console.log(companies[index].companyname)
-    console.log(clicked + " despues del if")
+    setX(e.target.x - 150)
+    setY(e.target.y - 500)
     setCurrentPlace({
       name: companies[index].companyname,
       address:companies[index].address,
-      phone:companies[index].phone
-  })
-  const oldIndex=index
-  console.log(e.target.x + " what4ever")
-  }
+      phone:companies[index].phone,
+      city:companies[index].city,
+      state:companies[index].state,
+      zip:companies[index].zip,
+      hhdays:companies[index].hhdays,
+      starthour:companies[index].starthour,
+      endhour:companies[index].endhour,
 
+  })
+  }
 
 function handleMouseLeave(){
   setHover(!hover)
@@ -79,24 +71,27 @@ function handleMouseLeave(){
 }
 
   function handleMouseOver(num,childprop){
-console.log("holi")
-console.log(num,childprop, "WTF")
+
     setHover(!hover)
     setCurrentPlace({
     
       name: companies[childprop["text"]].companyname,
       address:companies[num].address,
-      phone:companies[num].phone
-      
+      phone:companies[num].phone,
+      city:companies[num].city,
+      state:companies[num].state,
+      zip:companies[num].zip,
+      hhdays:companies[num].hhdays,
+      starthour:companies[num].starthour,
+      endhour:companies[num].endhour
   })
   }
 
-  console.log(parseFloat(Number(coordinates.lat).toFixed(2)))
-  // console.log(center)
+  
   
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '800px', width: '80%' }}>
+      <div style={{ height: '800px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ 
               key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
@@ -104,8 +99,7 @@ console.log(num,childprop, "WTF")
             }}
           defaultCenter={ {lat:36.16, lng:115.15}}
           center={coordinates}
-          defaultZoom={15}  
-          
+          defaultZoom={14}
           onChildMouseEnter={handleMouseOver}
           onChildMouseLeave={handleMouseLeave}
         >
@@ -119,16 +113,23 @@ console.log(num,childprop, "WTF")
             />
           )}
 
-{/* quitar despues de styling */}
         {clicked || hover ?
           < div className="showpindesc" style=
           {{
-            left:posX,
+            right:posX,
             top:posY
           }}> 
-              <p>{currentPlace.name}</p>
-              <p>{currentPlace.address}</p>
-              <p>{currentPlace.phone}</p>
+              <div className="cardImg"><img src="https://cdn.pixabay.com/photo/2017/12/29/16/58/background-3048067_960_720.jpg"/>
+              </div>
+              
+              <div className="cardName">
+                <h2>{currentPlace.name}</h2>
+                <p><span className="cardBold"> Address: </span>{currentPlace.address},               {currentPlace.city}, {currentPlace.state} - {currentPlace.zip}</p>
+                  <p><span className="cardBold"> Phone: </span>{currentPlace.phone}</p>
+                  <p><span className="cardBold"> Happy hour days: </span> {currentPlace.hhdays}</p>
+                  <p><span className="cardBold"> From: </span> {currentPlace.starthour >= 12? currentPlace.starthour==12? currentPlace.starthour + "pm": currentPlace.starthour - 12 + "pm": currentPlace.starthour + "am"} to {currentPlace.endhour >= 12? currentPlace.endhour==12? currentPlace.endhour + "pm": currentPlace.endhour - 12 + "pm": currentPlace.endhour + "am"}</p>
+              </div>
+                  
           </div>
         : ""}
         </GoogleMapReact>
