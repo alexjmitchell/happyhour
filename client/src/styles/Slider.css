@@ -2,13 +2,41 @@
   height: 300px;
 }
 
-.pics {
+/* .pics {
   border: 1px solid green;
   margin: auto;
   width: 200px;
   height: 200px;
-}
+} */
 
 .sliderImg {
   color: white;
+}
+
+.dropDown {
+  width: 200px;
+  background: green;
+  height: 40px;
+  margin: 20px;
+  font-size: 20px;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+.currentHH {
+  height: 100px;
+  margin: 20px;
+  border-radius: 50px;
+  background: blue;
+  color: white;
+  font-size: 20px;
+}
+.searchBar {
+  height: 40px;
+  background: red;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  width: 200px;
 }
