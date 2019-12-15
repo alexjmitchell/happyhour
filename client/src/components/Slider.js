@@ -96,13 +96,13 @@ function Slider() {
         <Coverflow
           width="960"
           height="1000"
-          displayQuantityOfSide={2.5}
+          displayQuantityOfSide={2}
           navigation={false}
-          enableScroll={false}
+          // enableScroll={false}
           // enableHeading={true}
           // infiniteScroll={true}
           clickable={true}
-          active={0}
+          active={5}
 
           // media={{
           //   "@media (max-width: 900px)": {
@@ -143,10 +143,14 @@ function Slider() {
                   className="slidePics"
                   src={user.picture}
                   height={450}
+                  
                   alt={
-                    <a className="sliderImg" href={user.website}>
-                      {user.companyname}
-                    </a>
+                    // <a className="sliderImg" href={user.website}>
+                    //   {user.companyname}
+                    // </a>
+                    <Link to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+
+
                   }
                 />
               ))
@@ -157,9 +161,11 @@ function Slider() {
                   src={user.picture}
                   height={450}
                   alt={
-                    <a className="sliderImg" href={user.website}>
-                      {user.companyname}
-                    </a>
+                    // <a className="sliderImg" href={user.website}>
+                    //   {user.companyname}
+                    // </a>
+
+                  <Link to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
                   }
                 />
               ))}

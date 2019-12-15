@@ -5,8 +5,8 @@ import { useAdmins } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./Header"
 import Footer from "./Footer"
-import GoogleMapReact from 'google-map-react';
-import GoogleMaps1 from "./GoogleMaps1"
+// import GoogleMapReact from 'google-map-react';
+// import GoogleMaps1 from "./GoogleMaps1"
 import "../styles/ContactUs.css"
 import ResearchPic from "../assets/research.jpg"
 

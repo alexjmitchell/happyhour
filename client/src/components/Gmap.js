@@ -77,8 +77,8 @@ export default props => {
               libraries: ['places','directions']
             }}
           defaultCenter={ {lat:36.16, lng:-115.15}}
-          center={coordinates}
-          // center={{lat:36.16, lng:-115.1546902}}
+          // center={coordinates}
+          center={{lat:36.16, lng:-115.1546902}}
           defaultZoom={15}
           // onChildMouseEnter={handleMouseOver}
           // onChildMouseLeave={handleMouseLeave}

@@ -12,10 +12,15 @@ html {
 
 
 /* GOOGLE PINS */
-.mapContainer{
+.mapContainer1{
 position: relative;
 }
 
+.mapContainer1>div:first-child
+{
+    margin:0;
+    border:2px solid #444;
+}
 
 .pinContainer{
     width:50px;
@@ -47,6 +52,8 @@ top:-330px;
 left:-650px;
 padding: 0;
 background-color: white;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px; 
 }
 
 
