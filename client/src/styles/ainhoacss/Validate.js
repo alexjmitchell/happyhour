@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import {useCompanies} from "../hooks"
+import {useCompanies} from "../../hooks"
 
 if(compName=="" || address=="" || usstate=="" || city=="" || zip=="" || compEmail=="" || compWeb=="" || compPhone =="" || days=="" || pic=="" || startHr=="" || endHr==""){ 
     console.log("vacios") 

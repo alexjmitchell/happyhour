@@ -6,8 +6,8 @@ import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
-import GoogleMaps1 from "./GoogleMaps1"
-import GoogleMaps2 from "./GoogleMaps2"
+// import GoogleMaps1 from "./GoogleMaps1"
+// import GoogleMaps2 from "./GoogleMaps2"
 import validator from "validator"
 import { useUsers } from "../hooks"
 
@@ -52,7 +52,7 @@ function Footer() {
         <h2>LINKS</h2>
         <Link to={"/AboutUs"}>About Us</Link>
         <Link to={"/ContactUs"}>Contact Us</Link>
-        <Link to={"/ParnterWithUs"}>Partner With Us</Link>
+        <Link to={"/PartnerWithUs"}>Partner With Us</Link>
         {/* <Link to={"/SingleViewPage"}>Single View Page</Link>
         <Link to={"/GoogleMaps1"}>Google Maps 1</Link> */}
         <br/>

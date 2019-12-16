@@ -1,113 +1,138 @@
-/* ---------- Start: singlePageViewMainContainer Section ---------- */
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+    position: relative;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    border:none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+
+
 .singlePageViewMainContainer {
     width: 100%;
-    margin: 0 auto;
+    
+    /* background-color: pink;; */
 }
-/* ---------- End: singlePageViewMainContainer Section ---------- */
 
-/* ---------- Start: redBackground ---------- */
-.redBackground {
-    width: 100%;
-    background-color: rgb(173,0,32);
+a{
+    text-decoration: none;
+    color:black;
+}
+.singleContent{
+    width:100%;
+    margin:0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* display:grid; */
+    /* grid-template-columns: 3fr 1fr; */
 }
-/* ---------- End: redBackground ---------- */
 
-/* ---------- Start: menuContainer ---------- */
-.menuContainer {
-    width: 100%;
+.singleContent div{
+}
+
+.svpLeft{
     display: flex;
     flex-direction: column;
-    background-color: rgb(38,42,49);
-    border: 2px solid rgb(239,186,168);
-}
-/* ---------- End: menuContainer ---------- */
-
-    /* ----- Start: menuTop Section ----- */
-.menuTop {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin: 0 auto;
-    background-color: orange;
-}
-    /* ----- End: menuTop Section ----- */
-        /* ----- Start: locationName Section ----- */
-.locationName {
-    width: 100%;
-    background-color: orange;
-}
-        /* ----- End: locationName Section ----- */
-        /* ----- Start: singleViewPageBanner Section ----- */
-
-.singlePageViewBanner {
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    color: rgb(232,220,165);
-    background-color: red;
-}
-        /* ----- End: singleViewPageBanner Section ----- */
-
- /* ----- Start: menuBody ----- */
-
- .menuBody {
-     width: 100%;
-     margin: 0 auto;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
- }
-
- /* ----- End: menuBody ----- */
-
-    /* ----- Start: menuLeftSide Section ----- */
-
-.menuLeftSide {
-    background-color: yellow;
-}
-
-.happyHourMenu {
+    justify-content: space-between;
+    width:50%;
+    margin: 0;
+    background-color:#fff;
 
 }
-    /* ----- End: menuLeftSide Section ----- */
+.topLeftsvp{
+/* background-color:rgb(112, 126, 112); */
 
-    /* ----- Start: menuRightSide Section ----- */
-
-.menuRightSide {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    background-color: green;
 }
 
-.right1 {
-    width: 100%;
-    height: 300px;
-    background-color: purple;
+.topLeftsvp h1{
+    font-size: 3vw;
+    width:100%;
+    color:white;
+    margin:0 0 0 0;
+    padding:1.2vw 0;
+    /* border: 1px solid blue; */
+    text-align:center;
+    background: -webkit-linear-gradient(to right, #4B134F, #C94B4B); 
+    background: linear-gradient(to right, #4B134F, #C94B4B); 
+}
+.topLeftsvp p, .middleLeftsvp p{
+    font-size: 1.5vw;
+    margin:0;
+    padding: 1vh 1vw;
+    color:black;
+    /* margin: 1vh 1vw;  */
 }
 
-.right2 {
-    text-align: center;
+.svpInfo{
+    margin:2vh 0;
 }
 
-.right3 {
-    text-align: center;
+.middleLeftsvp{
+    /* background-color: #835b5bbe;  */
+    margin:0;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.GoogleMap {
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-}
-    /* ----- End: menuRightSide Section ----- */
+.middleLeftsvp .mapContainer{
+    padding: 0;
+    /* margin:0.7vh auto; */
+    margin: 0;;
+    width:100%;
+    height: 50vh;
 
-    /* ----- Start: menuBottom Section ----- */
-.menuBottom {
-    width: 100%;
-    margin: 0 auto;
-    background-color: indigo;
 }
-    /* ----- End: menuBottom Section ----- */
+
+.middleLeftsvp>div.mapContainer>div:first-child
+{
+    /* margin:30px; */
+    margin:0;
+    /* border:2px solid #4B134F; */
+    
+}
+
+
+
+.topLeftsvp.gmnoprint{
+    display: none;
+}
+
+
+
+
+.boldP{
+    font-weight: bold;
+}
+
+.topRightsvp{
+    /* background-color: blue; */
+    width:50%;
+    margin:0;
+    padding: 0;
+    background-color: black;
+    /* border:1px solid green; */
+
+}
+
+.svpImg{
+    width:100%;
+    margin:0;
+    padding: 0;
+    object-fit: cover;
+    /* border: 1px solid greenyellow; */
+}

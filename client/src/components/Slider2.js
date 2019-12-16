@@ -4,29 +4,59 @@ import { useUsers, useCompanies, useLiked } from "../hooks"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Radium, { Style, StyleRoot } from "radium"
-
+import "../styles/Slider2.css"
 function Slider2() {
-  const { users, filter } = useUsers()
-  const { companyname } = useCompanies()
-  const { liked } = useLiked()
-  const [val, setVal] = useState("")
+  const { users, filter, usersS } = useUsers() //all the companies
+  // const comp = props.match.params.id
+
+  const [time, setTime] = useState("")
+  const [search, setSearch] = useState("")
+
   var d = new Date()
   var hr = d.getHours()
+  const fn = function() {} // slider library
 
-  const fn = function() {}
+  // useEffect(() => {
+  //   filterBars(val, search, users)
+  // }, [val, search, users])
 
-  function handleClick(e, liked) {
+  function handleClick(e) {
     e.preventDefault()
+    // props.history.push("/CompanyPage/")
+    // je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
   }
 
-  console.log(hr, "eee")
+  // useEffect(() => {
+  //   filterBars
+  // }, [val, search])
+  //  const thecompany = companies.filter(e => e.companyname == comp)
+  const newTime = users.filter(p => time >= p.starthour && time <= p.endhour)
+  const newSearch = users.filter(p => p.companyname.toLowerCase() == search)
 
-  const newArray = users.filter(p => p.starthour == val)
-  console.log(newArray)
+  // const newerArray = newArray.filter(i => i.name === SVGPathSegCurve)
+  // console.log(newArray)
+  // const { users, filter } = useUsers()
+  // const { companyname } = useCompanies()
+  // const { liked } = useLiked()
+  // const [val, setVal] = useState("")
+  // var d = new Date()
+  // var hr = d.getHours()
+
+  // const fn = function() {}
+
+  // function handleClick(e, liked) {
+  //   e.preventDefault()
+  // }
+
+  // console.log(hr, "eee")
+
+  // const newArray = users.filter(p => p.starthour == val)
+  // console.log(newArray)
   return (
     <div className="sliderResponsive">
-      <select onChange={e => setVal(e.target.value)}>
-        <option value="default"> Select</option>
+      <label>Select Happy Hour Time </label>
+      <select className="dropDown" onChange={e => setTime(e.target.value)}>
+        <option value=""> Select</option>
         <option value="00">12:00 am</option>
         <option value="01">01:00 am</option>
         <option value="02">02:00 am</option>
@@ -52,9 +82,32 @@ function Slider2() {
         <option value="22">10:00 pm</option>
         <option value="23">11:00 pm</option>
       </select>
+      <button className="currentHH" onClick={e => setTime(hr)}>
+        happy hour now
+      </button>
+      <input
+        className="searchBar"
+        placeholder="Search Company Name"
+        type="text"
+        onChange={e => setSearch(e.target.value)}
+      />
+      {newSearch.map((user, i) => (
+        <Link to={`/SingleViewPage/${user.companyname}`}>
+          {user.companyname}
 
-      <button onClick={e => setVal(hr)}>happy hour now</button>
-
+          <img
+            key={i}
+            className="slidePics"
+            src={user.picture}
+            height={100}
+            alt={
+              <a className="sliderImg" href={user.website}>
+                {user.companyname}
+              </a>
+            }
+          />
+        </Link>
+      ))}
       <div>
         {/* infiniteLoop={true} makes autoPlay to run new circle from the begining */}
         <Carousel
@@ -64,7 +117,7 @@ function Slider2() {
           interval={4000}
           transitionTime={350}
         >
-          {newArray.length === 0
+          {newTime.length === 0
             ? users.map((user, i) => (
                 <>
                   <img
@@ -82,7 +135,7 @@ function Slider2() {
                   </a>
                 </>
               ))
-            : newArray.map((user, i) => (
+            : newTime.map((user, i) => (
                 <>
                   <img
                     key={i}
