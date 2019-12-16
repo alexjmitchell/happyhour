@@ -1,53 +1,46 @@
 // Correct Code
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Coverflow from "react-coverflow"
 import { Link } from "react-router-dom"
 import Icon from "../lib/Icon"
 import { useUsers, useCompanies, useLiked } from "../hooks"
-// import "../styles/Slider.css"
+import { filterBars } from "../redux/ducks/users/"
+import "../styles/Slider.css"
 // import { start } from "repl"
 
-function Slider() {
-  const { users, filter, filtered } = useUsers() //all the companies
-  const { companyname } = useCompanies()
-  const { liked } = useLiked()
-  const [val, setVal] = useState("")
-  const [compName, setCompName]=useState('')
+
+function Slider(props) {
+  const { users, filter, usersS } = useUsers() //all the companies
+  // const comp = props.match.params.id
+
+  const [time, setTime] = useState("")
+  const [search, setSearch] = useState("")
+
   var d = new Date()
   var hr = d.getHours()
   const fn = function() {} // slider library
 
-  function handleClick(e, liked) {
+  // useEffect(() => {
+  //   filterBars(val, search, users)
+  // }, [val, search, users])
+
+  function handleClick(e) {
     e.preventDefault()
-    // props.history.push("/CompanyPage/" + liked)   je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
+    // props.history.push("/CompanyPage/")
+    // je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
   }
 
-  console.log(hr, "eee")
-  function handleHours(e){
-    setVal(e)
-    setCompName("")
-  }
 
-  function handleNames(e){
-    setVal("")
-    setCompName(e)
-  }
+  // useEffect(() => {
+  //   filterBars
+  // }, [val, search])
+  //  const thecompany = companies.filter(e => e.companyname == comp)
+  const newTime = users.filter(p => time >= p.starthour && time <= p.endhour)
+  const newSearch = users.filter(p => p.companyname.toLowerCase() == search)
 
-  const newArray = users.filter(p => val >= p.starthour && val <= p.endhour || p.companyname == compName)
-  const compsArray = users.filter(c=>c.companyname == compName)
-// let filtered = []
-//   if (newArray.length == 0 && compsArray.length==0){
-//     filtered = users
-//   }else if (newArray && !compsArray){
-//       filtered=newArray
-//   }else{
-//     filtered=compsArray
-//   }
-
-// console.log(filtered, "filtered")
-  // console.log(val, " testing")
-  // console.log("newArray")
+  // const newerArray = newArray.filter(i => i.name === SVGPathSegCurve)
+  // console.log(newArray)
   return (
     <div className="sliderW">
       {/* <p>
@@ -57,13 +50,13 @@ function Slider() {
           <Icon icon="heart" />
         </Link>
       </p> */}
-
       {/* // onChange={e => filter(e.target.value)}  */}
-
       {/* // ovde prosledjujemo e.target.value u setVal() i to je sad u stvari val  */}
       {/* // e.target.value je u stvari value bilo koja od 00 do 23 koji prenosimo preko setVal u val i komperujemo je sa starthour u filter i prenosimo u newArray */}
-      <select onChange={e => setVal(e.target.value)}>
-        <option value="default"> Select</option>
+
+      <label>Select Happy Hour Time </label>
+      <select className="dropDown" onChange={e => setTime(e.target.value)}>
+        <option value=""> Select</option>
         <option value="00">12:00 am</option>
         <option value="01">01:00 am</option>
         <option value="02">02:00 am</option>
@@ -90,8 +83,32 @@ function Slider() {
         <option value="23">11:00 pm</option>
       </select>
       {/* // ovde prosledjujemo hr u setVal() i to je sad u stvari val  koji je jednak sa data koji komperujemo u ovom slucaju starthour gore u filter */}
-      <button onClick={e => filter(hr)}>happy hour now</button>
-      <input type="text" placeholder="Search company name" onChange={e=>setCompName(e.target.value)}></input>
+      <button className="currentHH" onClick={e => setTime(hr)}>
+        happy hour now
+      </button>
+      <input
+        className="searchBar"
+        placeholder="Search Company Name"
+        type="text"
+        onChange={e => setSearch(e.target.value)}
+      />
+      {newSearch.map((user, i) => (
+        <Link to={`/SingleViewPage/${user.id}`}>
+          {user.companyname}
+
+          <img
+            key={i}
+            className="slidePics"
+            src={user.picture}
+            height={100}
+            alt={
+              <a className="sliderImg" href={user.website}>
+                {user.companyname}
+              </a>
+            }
+          />
+        </Link>
+      ))}
       <div>
         <Coverflow
           width="960"
@@ -116,9 +133,8 @@ function Slider() {
           // }}
         >
           {/* // ternary operator // {newArray.length === 0 ? "" : ""} // if and else na istoj liniji u ovom slucaju je prvi map ili drugi */}
-
-          
-          {/* {users.map((user, i) => (
+          {newTime.length === 0
+            ? users.map((user, i) => (
                 <img
                   key={i}
                   className="slidePics"
@@ -131,30 +147,7 @@ function Slider() {
                   }
                 />
               ))
-              } */}
-
-
-
-
-          {newArray.length === 0
-            ? users.map((user, i) => (
-                <img
-                  key={i}
-                  className="slidePics"
-                  src={user.picture}
-                  height={450}
-                  
-                  alt={
-                    // <a className="sliderImg" href={user.website}>
-                    //   {user.companyname}
-                    // </a>
-                    <Link to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
-
-
-                  }
-                />
-              ))
-            :newArray.map((user, i) => (
+            : newTime.map((user, i) => (
                 <img
                   key={i}
                   className="slidePics"
@@ -169,6 +162,19 @@ function Slider() {
                   }
                 />
               ))}
+          {/* {newTime.map((user, i) => (
+            <img
+              key={i}
+              className="slidePics"
+              src={user.picture}
+              height={450}
+              alt={
+                <a className="sliderImg" href={user.website}>
+                  {user.companyname}
+                </a>
+              }
+            />
+          ))} */}
         </Coverflow>
       </div>
     </div>
