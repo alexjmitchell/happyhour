@@ -24,7 +24,7 @@ function handlesubmit(e){
     e.preventDefault()
 
     if(!username || !password){
-        setNameError("All fields are required")
+        setNameError("All fields required")
     }
         else {
     setNameError("")
@@ -54,16 +54,24 @@ function handlesubmit(e){
             <div className="loginMainContainer">
                 <div className="loginWrapper">
                     <div className="loginLeftSide">
-                        <div className="loginLoginLogo">HHFindr.com</div>
+                        <div className="loginLogo">HHFindr.com</div>
+                        {/* <div className="loginLeftSidePics">
+                            <div className="loginLeftSidePic1"></div>
+                            <div className="loginLeftSidePic2"></div>
+                            <div className="loginLeftSidePic3"></div>
+                            <div className="loginLeftSidePic4"></div>
+                        </div> */}
                     </div>
                     <div className="loginRightSide">
-                    <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
+                        <div className="loginHouseContainer">
+                            <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
+                        </div>
                         <form className="loginForm" onSubmit={handlesubmit}>
-                            <p className="loginPleaseSignIn">Welcome Back</p>
+                            <p className="loginPleaseSignIn">Welcome Back!</p>
                             {/* {userExists ? 
                             <p className="pred">User already exists</p>: ""} */}
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
-                            <input className={!loginmatch && !nameError? "red" : ""} type="text" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={!loginmatch && !nameError? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                             <div className="loginBottom">
                                 <button className="loginButton" type="submit">Log  In</button>
                                 <div className="loginBottomRight">
@@ -71,19 +79,23 @@ function handlesubmit(e){
                                 </div>
                             </div>
                             <div className="loginRegistrationValidation">
-                                { !loginmatch && !nameError? <p className="pred">User or password is incorrect</p> :"" }
-                                { nameError!="" ? <p className="pred"> *All fields are required</p> :""}
-                                <div className="losingSpaceHolder"></div>
+                                { !loginmatch && !nameError? <p className="loginValText">User or password is incorrect</p> :"" }
+                                { nameError!="" ? <p className="loginValText">All fields required</p> :""}
+                                <div className="loginSpaceHolder"></div>
                                 <p className="loginToTheOtherFormText"> Don't have an account?</p>
                             </div>
                         </form>
                         {/* { nameError!="" ? 
-                        <p className="pred"> *All fields are required</p>
+                        <p className="pred">All fields required</p>
                           :""} */}
                     </div>
                 </div>
+                <div className="loginBottomSection">
+                        <div className="loginBottomSectionPic1"></div>
+                        <div className="loginBottomSectionPic2"></div>
+                    </div>
+                <Footer/>                
             </div>
-            <Footer/>
         </>
     )
 }

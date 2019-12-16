@@ -12,7 +12,6 @@ import DaniloPic from "../assets/ipa.jpg"
 import AinhoaPic from "../assets/foosballqueen.jpg"
 import LazPic from "../assets/teamMember1.jpg"
 
-
 export default props => {
 const [username, setUsername]=useState('');
 const [password, setPassword]=useState('');

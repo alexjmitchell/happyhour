@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../styles/Main-Banner.css"
 import Register from "./Register"
 import Logiin from "./Login"
+import Slider from "./Slider"
 
 function Banner() {
   return (
-
     <div className="banner">
         <div className="bannerTop">
           <div className="bannerLogo">HHFindr.com</div>
@@ -16,12 +16,14 @@ function Banner() {
           </div>
         </div>
         <div className="bannerBottom">
-          <div className="bannerMessage">Find Your Favorite Happy Hour</div>
+          <div className="bannerMessageDiv">
+            <div className="bannerMessage">Find Your Favorite Happy Hour</div>
+            <Link className="bannerGoBtn" to={'/Slider'}>Go!</Link>
+            {/* <button className="bannerGoBtn">Go!</button> */}
+          </div>
           <div className="bannerTagLine">Because it's just not the same without YOU!</div>
         </div>
-
     </div>
-
   )
 }
 export default Banner
