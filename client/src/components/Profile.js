@@ -195,7 +195,7 @@ export default props => {
     return (
         <>
         {/* <Header/> */}
-                        <div className="loginHouseContainer">
+                        <div className="ProfloginHouseContainer">
                             <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
                         </div>
                     
