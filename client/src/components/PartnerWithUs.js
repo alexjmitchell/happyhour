@@ -8,10 +8,15 @@ import Footer from "./Footer";
 // import stylesheet
 import "../styles/PartnerWithUs.css"
 // import assets
-import Step1 from "../assets/step1.png"
-import Step2 from "../assets/step2.png"
-import Step3 from "../assets/step3.png"
-import Step4 from "../assets/step4.png"
+// import Step1 from "../assets/step1.png"
+// import Step2 from "../assets/step2.png"
+// import Step3 from "../assets/step3.png"
+// import Step4 from "../assets/step4.png"
+import Step1 from "../assets/s-1.png"
+import Step2 from "../assets/s-2.png"
+import Step3 from "../assets/s-3.png"
+import Step4 from "../assets/s-4.png"
+
 import Happy from "../assets/happy.png"
 import Happier from "../assets/happier.png"
 import Happiest from "../assets/happiest.png"
@@ -39,7 +44,7 @@ const { getone } = useAdmins ();
                                 <div class="flip-card-front">
                                     <img
                                         src={Step1}
-                                        alt="Avatar"
+                                        alt="Step 1"
                                         data-action="our link"
                                         style={{
                                         display: "block",
@@ -62,7 +67,7 @@ const { getone } = useAdmins ();
                                 <div class="flip-card-front">
                                     <img
                                         src={Step2}
-                                        alt="Avatar"
+                                        alt="Step 2"
                                         data-action="our link"
                                         style={{
                                         display: "block",
@@ -85,7 +90,7 @@ const { getone } = useAdmins ();
                                 <div class="flip-card-front">
                                 <img
                                         src={Step3}
-                                        alt="Avatar"
+                                        alt="Step 3"
                                         data-action="our link"
                                         style={{
                                         display: "block",
@@ -110,7 +115,7 @@ const { getone } = useAdmins ();
                                 <div class="flip-card-front">
                                 <img
                                         src={Step4}
-                                        alt="Avatar"
+                                        alt="Step 4"
                                         data-action="our link"
                                         style={{
                                         display: "block",

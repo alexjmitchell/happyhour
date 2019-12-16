@@ -80,7 +80,7 @@ router.get("/admins", (req, res, next) => {
 
 router.get("/companies", (req, res, next) => {
   const sql = `
-  SELECT picture, companyname, website,starthour,endhour FROM companies`
+  SELECT id, picture, companyname, website,starthour,endhour FROM companies`
 
   db.query(sql, (err, results, fields) => {
     res.json(results)
@@ -184,7 +184,7 @@ router.post("/profile", (req, res, next) => {
 //getting all the companies profiles
 router.get("/gprofile", (req, res, next) => {
   const sql = `
-    SELECT companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
+    SELECT id, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
   db.query(sql, (err, results, fields) => {
     res.json(results)
   })

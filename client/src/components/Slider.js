@@ -9,6 +9,7 @@ import { filterBars } from "../redux/ducks/users/"
 import "../styles/Slider.css"
 // import { start } from "repl"
 
+
 function Slider(props) {
   const { users, filter, usersS } = useUsers() //all the companies
   // const comp = props.match.params.id
@@ -29,6 +30,7 @@ function Slider(props) {
     // props.history.push("/CompanyPage/")
     // je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
   }
+
 
   // useEffect(() => {
   //   filterBars
@@ -91,7 +93,7 @@ function Slider(props) {
         onChange={e => setSearch(e.target.value)}
       />
       {newSearch.map((user, i) => (
-        <Link to={`/SingleViewPage/${user.companyname}`}>
+        <Link to={`/SingleViewPage/${user.id}`}>
           {user.companyname}
 
           <img
@@ -111,13 +113,13 @@ function Slider(props) {
         <Coverflow
           width="960"
           height="1000"
-          displayQuantityOfSide={2.5}
+          displayQuantityOfSide={2}
           navigation={false}
-          enableScroll={false}
+          // enableScroll={false}
           // enableHeading={true}
           // infiniteScroll={true}
           clickable={true}
-          active={0}
+          active={5}
 
           // media={{
           //   "@media (max-width: 900px)": {
@@ -152,9 +154,11 @@ function Slider(props) {
                   src={user.picture}
                   height={450}
                   alt={
-                    <a className="sliderImg" href={user.website}>
-                      {user.companyname}
-                    </a>
+                    // <a className="sliderImg" href={user.website}>
+                    //   {user.companyname}
+                    // </a>
+
+                  <Link to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
                   }
                 />
               ))}

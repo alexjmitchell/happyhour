@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { useAuth } from "../hooks"
 import { useAdmins, useCompanies } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import GoogleMapReact from 'google-map-react';
+
 // import internal links
 import Header from "./Header"
 import Footer from "./Footer"
@@ -9,75 +11,87 @@ import Footer from "./Footer"
 import "../styles/SingleViewPage.css"
 
 export default props => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [loginmatch, setLoginmatch] = useState(true)
-  const { signin } = useAuth()
-  const { getone } = useAdmins()
   const { companies, oneCompany } = useCompanies()
-  const comp = props.match.params.id
-  const thecompany = companies.filter(e => e.companyname == comp)
-  console.log(thecompany, "daaa")
-  return (
-    <div class="singlePageViewMainContainer">
-      <Header />
-      <div>
-        <h1> company: {comp} </h1>
-        {thecompany.map(c => (
-          <>
-            <p>{c.companyname}</p>
-            {/* <img src={c.picture} /> */}
-            <p>{c.descrip}</p>
-            <p>{c.menu}</p>
+  const compId = props.match.params.id
+  console.log (compId, "prop id")
+  const thecompany = companies.filter(e => e.id == compId)
+  if (thecompany.length===0){
+      return <></>  
+  }else {
 
-            <div class="redBackground">
-              <div class="menuContainer">
-                <div class="menuTop">
-                  <div class="locationName">
-                    <p>Company logo</p>
-                    <p>ClaimJumper</p>
-                    <p>Restaurant & Saloon</p>
-                  </div>
-                  <div class="singlePageViewBanner">
-                    <p>Happy Hour</p>
-                    <p>Appetizers</p>
-                    <p>Available in Saloon only</p>
-                  </div>
-                </div>
-
-                <div class="menuBody">
-                  <div class="menuLeftSide">
-                    <div class="happyHourMenu">
-                      <h2>Happy Hour Menu</h2>
-                    </div>
-                  </div>
-
-                  <div class="menuRightSide">
-                    <div class="right1">
-                      <img src={c.picture} width="300px" height="300px" />
-                    </div>
-                    <div class="right2">
-                      <h2>Right 2</h2>
-                    </div>
-                    <div class="right3">
-                      <h2>Right 3</h2>
-                    </div>
-                    <div class="GoogleMap">
-                      <h2>MAP</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="menuBottom">
-                  <h1 class="bottomText">Bottom section</h1>
-                </div>
-              </div>
-            </div>
-
-            <Footer />
-          </>
-        ))}
+  const AnyReactComponent = ({ text }) => (
+      <div className="pinContainer">
+        <img className="pinImg" src="https://firebasestorage.googleapis.com/v0/b/happy-717c5.appspot.com/o/flyers%2F79cbf552-d272-4c39-b0ba-d1ebb4e1c74b.png?alt=media&token=c81554f5-3809-4a70-b2ee-5ec3c78aef1f" />
       </div>
+      )
+  console.log(thecompany, "daaa")
+  
+  return (
+    <>
+    
+
+    <div class="singlePageViewMainContainer">
+    {/* <Header /> */}
+
+      <div className="singleContent">
+        <div className="svpLeft">
+            <div className="topLeftsvp">
+              <h1>{thecompany[0].companyname}</h1>
+              <div className="svpInfo">
+                  {thecompany[0].descrip!=""? 
+                  <p> {thecompany[0].descrip}</p>
+                  
+                  :""
+                }
+                  <p> <span className="boldP">Email: </span> {thecompany[0].email}</p>
+                  <p> <span className="boldP">Phone Number: </span> {thecompany[0].phone}</p>
+                  <p> <span className="boldP">Web: </span><a href={thecompany[0].website} target="blank">Hogs & Heifers</a> </p>
+
+                  <p> <span className="boldP">Happy hour days: </span> {thecompany[0].hhdays}</p>
+                  <p> <span className="boldP">From </span> {thecompany[0].starthour>=12? thecompany[0].starthour==12 ? thecompany[0].starthour + "pm" : thecompany[0].starthour  - 12 + "pm" : thecompany[0].starthour + "am"} <span className="boldP">to</span> {thecompany[0].endhour>=12? thecompany[0].endhour==12 ? thecompany[0].endhour + "pm" : thecompany[0].endhour  - 12 + "pm" : thecompany[0].endhour + "am"}</p>
+                  <p> <span className="boldP">Address: </span> {thecompany[0].address}</p>
+                  <p> <span className="boldP">Distance: </span> {thecompany[0].address}</p>
+
+
+                  </div>
+              </div>
+            <div className="middleLeftsvp">
+              <div  className="mapContainer">
+                      <GoogleMapReact
+                        bootstrapURLKeys={{ 
+                            key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
+                            libraries: ['places','directions']
+                          }}
+                        defaultCenter={ {lat:36.16, lng:-115.15}}
+                        center={{lat:Number(Number(thecompany[0].lat).toFixed(2)), lng:Number(Number(thecompany[0].lng).toFixed(2))}}
+                        defaultZoom={15.4}
+                      >
+                      <AnyReactComponent
+                          key={""}
+                          lat={Number(thecompany[0].lat)} 
+                          lng={Number(thecompany[0].lng)}
+                          showballon={true}
+                          text={""} 
+                        />
+
+                      </GoogleMapReact>
+                </div>
+          </div>
+        </div>
+        <div className="topRightsvp">
+            <img className="svpImg" src={thecompany[0].picture}/>
+        </div>
+        {/* <div className="bottomLeft">
+              
+        </div>
+        <div className="bottomRight"></div> */}
+
+      </div>
+
     </div>
+          <Footer/>
+
+    </>
   )
+}
 }

@@ -17,13 +17,6 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA:
       return { ...state, users: action.payload }
-    // case FILTER_BAR:
-    //   return { ...state, usersS: action.payload }
-    // case FILTER_TIME:
-    //   return {
-    //     ...state,
-    //     users: state.users.filter(p => p.starthour == action.filter1)
-    //   }
     default:
       return state
   }

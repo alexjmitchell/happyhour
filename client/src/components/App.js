@@ -5,8 +5,7 @@ import Maintest from "./Maintest"
 import Main from "./Main"
 import CheckLogin from "./CheckLogin"
 import Register from "./Register"
-import Test2 from "./Test2"
-import Test3 from "./Test3"
+import Gmap from "./Gmap"
 import Profile from "./Profile"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -30,20 +29,13 @@ function App(props) {
           <Route exact path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path="/" component={Main} />
-          <Route path="/test2" component={Test2} />
-          <Route path="/test3" component={Test3} />
-          <Route exact path="/liked" component={Liked}></Route>
-          <Route path="/Facebook" component={Facebook}></Route>
+          {/* <Route path="/gmap" component={Gmap} /> */}
+          {/* <Route exact path="/liked" component={Liked}></Route> */}
+          {/* <Route path="/Facebook" component={Facebook}></Route> */}
           <Route path="/AboutUs" component={AboutUs} />
-          <Route path="/ContactUs" component={ContactUs} />
+          {/* <Route path="/ContactUs" component={ContactUs} /> */}
           <Route path="/PartnerWithUs" component={PartnerWithUs} />
           <Route path="/SingleViewPage/:id" component={SingleViewPage} />
-          {/* <Route path = "/profile" component ={Profile}/> */}
-          {/* <Route path="/GoogleMaps1" component={GoogleMaps1} /> */}
-          {/* <Route path="/GoogleMaps2" component={GoogleMaps2} /> */}
-          {/* <Route path="/GoogleMaps3" component={GoogleMaps3} /> */}
-          {/* <Route path="/QRgenerator" component={QRgenerator} /> */}
-          {/* test */}
           <Route path="*" component={CheckLogin} />
         </Switch>
       </Router>
