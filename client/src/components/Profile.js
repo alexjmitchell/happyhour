@@ -3,6 +3,9 @@ import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
 import "../styles/Profile.css"
 import Header from "./Header";
+import { Link } from 'react-router-dom'
+import Icon from "../lib/Icon";
+
 import Footer from "./Footer";
 import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
@@ -21,11 +24,9 @@ export default props => {
     const thecompany = companies.filter(f=>f.admin_id==admin_id)
     const dd=thecompany.map(c =>c.hhdays).join()
     const ddarr=dd.split(",")
-
     const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
     const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
     const [phonenumber, setPhone]=useState(oneAdmin.map(u=>u.phone).toString())
-
     const [compName,setCompName]=useState(thecompany.map(c=>c.companyname).join())
     const [address,setAddress]=useState(thecompany.map(c=>c.address).join())
     const [usstate, setUsState]=useState(thecompany.map(c=>c.state).join())
@@ -193,8 +194,11 @@ export default props => {
             
     return (
         <>
-        <Header/>
-
+        {/* <Header/> */}
+                        <div className="loginHouseContainer">
+                            <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
+                        </div>
+                    
         <div className="prof">
             <h1> Welcome, {username}</h1> 
             <form onSubmit={handlesubmit}>
