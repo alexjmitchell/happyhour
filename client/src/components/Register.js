@@ -49,6 +49,7 @@ else {
     setisanError(false)
     if (admins.filter(u=>u.username == username).length>0) { 
         setDescError("User already exists") // setisanError(true)
+        setUsername('')
          setUserExists(true)  
          setPassError(false) 
          setEmailError(false) 
@@ -58,6 +59,7 @@ else {
     } else if (!validator.isNumeric(phonenumber))
         { 
             setDescError("only numbers allowed") // setisanError(true)
+            setPhone('')
             setPhoneError(true) 
             setEmailError(false) 
             setUserExists(false)
@@ -67,6 +69,7 @@ else {
     } else if (!validator.isEmail(email))
         { 
          setDescError("Must enter a valid email") // setisanError(true)
+         setEmail('')
          setEmailError(true) 
          setUserExists(false)
          setPassError(false) 
@@ -76,7 +79,9 @@ else {
         console.log("email mal")
     } else if (password !== cpassword)
         {
-         setDescError("passwords does not match") // setisanError(true)
+        setDescError("passwords do not match") // setisanError(true)
+        setPassword('')
+        setCPassword('')
         setPassError(true) 
         setEmailError(false) 
         setUserExists(false)
@@ -141,12 +146,12 @@ if (!error){
                             <p className="regPleaseSignIn">Partner Registration</p>
                             {/* {userExists ? 
                             <p className="regUserExists">User already exists</p>: ""} */}
-                            <input className={userExists || iserror ? "red" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>
-                            <input className ={iserror ? "red" : ""} type="text" name = "contactname" placeholder="Contact name" value={contactName} onChange={e=>setContactName(e.target.value)}/>
-                            <input className ={iserror || phoneError ? "red" : ""} type="text" name ="phonenumber" placeholder="Phone Number" value={phonenumber} onChange={e=>setPhone(e.target.value)}/>
-                            <input className ={emailError || iserror ? "red" : ""} type="email" name ="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/>
-                            <input className={passError || iserror ? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
-                            <input className={passError || iserror ? "red" : ""} type="password" name = "cpassword" placeholder="Confirm Password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
+                          <input className={userExists || iserror ? "redstar" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>   
+                            <input className ={iserror ? "redstar" : ""} type="text" name = "contactname" placeholder="Contact name" value={contactName} onChange={e=>setContactName(e.target.value)}/>
+                            <input className ={iserror || phoneError ? "redstar" : ""} type="text" name ="phonenumber" placeholder="Phone Number" value={phonenumber} onChange={e=>setPhone(e.target.value)}/>
+                            <input className ={emailError || iserror ? "redstar" : ""} type="email" name ="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/>
+                            <input className={passError || iserror ? "redstar" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+                            <input className={passError || iserror ? "redstar" : ""} type="password" name = "cpassword" placeholder="Confirm Password" value={cpassword} onChange={e=>setCPassword(e.target.value)}/>
                             <div className="regBottom">
                                 <button className="regButton" type="submit">Sign Up</button>
                                 <div className="regBottomRight">

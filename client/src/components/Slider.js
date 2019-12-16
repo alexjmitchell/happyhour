@@ -42,7 +42,7 @@ function Slider(props) {
   // const newerArray = newArray.filter(i => i.name === SVGPathSegCurve)
   // console.log(newArray)
   return (
-    <div className="sliderW">
+    <div id="go" className="sliderW">
       {/* <p>
         Check Your Liked List Here:{" "}
         <Link to="/liked">
@@ -102,9 +102,7 @@ function Slider(props) {
             src={user.picture}
             height={100}
             alt={
-              <a className="sliderImg" href={user.website}>
-                {user.companyname}
-              </a>
+              <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
             }
           />
         </Link>
@@ -141,9 +139,7 @@ function Slider(props) {
                   src={user.picture}
                   height={450}
                   alt={
-                    <a className="sliderImg" href={user.website}>
-                      {user.companyname}
-                    </a>
+                    <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
                   }
                 />
               ))
@@ -158,7 +154,7 @@ function Slider(props) {
                     //   {user.companyname}
                     // </a>
 
-                  <Link to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+                  <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
                   }
                 />
               ))}

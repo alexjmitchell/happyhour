@@ -30,7 +30,7 @@ export default props => {
     <>
     
 
-    <div class="singlePageViewMainContainer">
+    <div className="singlePageViewMainContainer">
     {/* <Header /> */}
 
       <div className="singleContent">
@@ -50,7 +50,6 @@ export default props => {
                   <p> <span className="boldP">Happy hour days: </span> {thecompany[0].hhdays}</p>
                   <p> <span className="boldP">From </span> {thecompany[0].starthour>=12? thecompany[0].starthour==12 ? thecompany[0].starthour + "pm" : thecompany[0].starthour  - 12 + "pm" : thecompany[0].starthour + "am"} <span className="boldP">to</span> {thecompany[0].endhour>=12? thecompany[0].endhour==12 ? thecompany[0].endhour + "pm" : thecompany[0].endhour  - 12 + "pm" : thecompany[0].endhour + "am"}</p>
                   <p> <span className="boldP">Address: </span> {thecompany[0].address}</p>
-                  <p> <span className="boldP">Distance: </span> {thecompany[0].address}</p>
 
 
                   </div>

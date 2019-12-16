@@ -63,6 +63,7 @@ export default props => {
       hhdays:companies[index].hhdays,
       starthour:companies[index].starthour,
       endhour:companies[index].endhour,
+      website:companies[index].website
 
   })
 
@@ -77,8 +78,8 @@ export default props => {
               libraries: ['places','directions']
             }}
           defaultCenter={ {lat:36.16, lng:-115.15}}
-          // center={coordinates}
-          center={{lat:36.16, lng:-115.1546902}}
+          center={coordinates}
+          // center={{lat:36.16, lng:-115.1546902}}
           defaultZoom={15}
           // onChildMouseEnter={handleMouseOver}
           // onChildMouseLeave={handleMouseLeave}
@@ -108,6 +109,8 @@ export default props => {
                   <p><span className="cardBold"> Phone: </span>{currentPlace.phone}</p>
                   <p><span className="cardBold"> Happy hour days: </span> {currentPlace.hhdays}</p>
                   <p><span className="cardBold"> From: </span> {currentPlace.starthour >= 12? currentPlace.starthour==12? currentPlace.starthour + "pm": currentPlace.starthour - 12 + "pm": currentPlace.starthour + "am"} to {currentPlace.endhour >= 12? currentPlace.endhour==12? currentPlace.endhour + "pm": currentPlace.endhour - 12 + "pm": currentPlace.endhour + "am"}</p>
+                  <p><span className="cardBold"> Website: </span><a href={currentPlace.website}>{currentPlace.name}</a></p>
+
               </div>
                   
           </div>

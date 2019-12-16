@@ -37,10 +37,10 @@ position: relative;
     }
     
 
-.fa{
+/* .fa{
     font-size: 50px;
     color: red;
-}
+} */
 
 
 .showpindesc{
@@ -50,6 +50,8 @@ color:black;
 transform: translate(-20%, -20%);
 top:-330px;
 left:-650px;
+
+
 padding: 0;
 background-color: white;
 border-top-left-radius: 5px;

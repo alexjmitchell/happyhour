@@ -78,13 +78,22 @@ body, html{
   
   }
   
-  .days>div.hred{
+  /* .days>div.hred{
     border:1px solid red;
-  }
-   .hred{
-    color:red;
-  }
+  } */
+.hred{
+  color:red;
+}
+   /* .hred{ */
+    /* color:red;
+  } */
   
+.red::placeholder{
+  color:red;
+}
+select.red{
+  color:red;
+}
     fieldset{
     border:0;
   }
@@ -181,8 +190,9 @@ body, html{
   }
   
   .uploadImgsection .thumbpics{
+    margin-top: 10px;
     margin-bottom: 10px;
-    width:140px;
+    width:350px;
   }
   
   

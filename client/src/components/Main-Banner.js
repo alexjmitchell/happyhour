@@ -4,6 +4,8 @@ import "../styles/Main-Banner.css"
 import Register from "./Register"
 import Logiin from "./Login"
 import Slider from "./Slider"
+import { HashLink as Link2 } from 'react-router-hash-link';
+
 
 function Banner() {
   return (
@@ -18,7 +20,9 @@ function Banner() {
         <div className="bannerBottom">
           <div className="bannerMessageDiv">
             <div className="bannerMessage">Find Your Favorite Happy Hour</div>
-            <Link className="bannerGoBtn" to={'/Slider'}>Go!</Link>
+            {/* <Link className="bannerGoBtn" to={'/Slider'}>Go!</Link> */}
+            <Link2 smooth to="#go" className="bannerGoBtn">Go!</Link2>
+
             {/* <button className="bannerGoBtn">Go!</button> */}
           </div>
           <div className="bannerTagLine">Because it's just not the same without YOU!</div>

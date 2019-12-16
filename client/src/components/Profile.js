@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
-import "../styles/forms.css"
+import "../styles/Profile.css"
 import Header from "./Header";
 import Footer from "./Footer";
 import FileUploader from 'react-firebase-file-uploader'
@@ -63,6 +63,7 @@ export default props => {
     let error = false
     const [iserror, setisanError]=useState(false)
     const [isAnumber, setIsAnumber]=useState(false)
+    const [isPhoneError, setIsPhoneError]=useState(false)
 
     function handleUploadStart(filename) {
         setIsUploading(true)
@@ -137,20 +138,35 @@ export default props => {
             } 
         else { 
                 setisanError(false)
-                if (!validator.isNumeric(zip) || !validator.isNumeric(compPhone))  { 
+                if (!validator.isNumeric(zip)) { 
                     setDescError("Only Numbers allowed") 
+                    setZip('')
                     setEmailError(false) 
                     setIsAnumber(true) 
+                    setIsPhoneError(false)
                     error=true
-                } else if (!validator.isEmail(compEmail))
+                }else if(!validator.isNumeric(compPhone))
+                {
+                    setDescError("Only Numbers allowed") 
+                    setCompPhone('')
+                    setEmailError(false) 
+                    setIsAnumber(false) 
+                    setIsPhoneError(true)
+                    error=true
+
+                }else if (!validator.isEmail(compEmail))
                     { 
                     setDescError("Must be a valid email") 
+                    setCompEmail('')
                     setEmailError(true) 
                     setIsAnumber(false) 
+                    setIsPhoneError(false)
                     error=true
                 } else{ 
                     setEmailError(false) 
                     setIsAnumber(false) 
+                    setIsPhoneError(false)
+
                 }
 
         }
@@ -207,9 +223,7 @@ export default props => {
                                     />
                                 </label>    
                                 <img className="thumbpics" src={pic}/>
-                                    {iserror?
-                                    <p className="pred">Image is required*</p>
-    :""}
+                                
                             </div>
                         </div>
                         <div id="right">

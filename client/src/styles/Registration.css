@@ -172,6 +172,13 @@ a.regHouse {
     padding: 0;
 }
 
+.redstar::placeholder{
+    color:red; 
+}
+
+.white{
+     color: rgb(224, 230, 235)   
+}
 /* ********** Responsive Design ********** */
 
 @media screen and (max-width: 1200px) {
@@ -288,4 +295,5 @@ a.regHouse {
         display: none;
     }
 
+    
 }

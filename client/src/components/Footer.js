@@ -3,7 +3,6 @@ import Icon from "../lib/Icon"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../styles/Footer.css"
 import AboutUs from "./AboutUs"
-import ContactUs from "./ContactUs"
 import PartnerWithUs from "./PartnerWithUs"
 import SingleViewPage from "./SingleViewPage"
 // import GoogleMaps1 from "./GoogleMaps1"
@@ -51,7 +50,6 @@ function Footer() {
       <div className="footerLinks">
         <h2>LINKS</h2>
         <Link to={"/AboutUs"}>About Us</Link>
-        <Link to={"/ContactUs"}>Contact Us</Link>
         <Link to={"/PartnerWithUs"}>Partner With Us</Link>
         {/* <Link to={"/SingleViewPage"}>Single View Page</Link>
         <Link to={"/GoogleMaps1"}>Google Maps 1</Link> */}
