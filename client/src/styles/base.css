@@ -38,77 +38,9 @@ code {
   color: white;
 }
 
-.contactForm {
-  background: rgb(41, 36, 33);
-  text-align: center;
-  color: white;
-  padding-top: 10px;
-  line-height: 60px;
-}
-
-.contactInputs {
-  background: #eee;
-}
-
-.mainbutton {
-  margin-bottom: 20px;
-}
-.mainForm {
-  width: 800px;
-  background: #eee;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
-  text-align: center;
-  height: 450px;
-}
-input {
-  width: 250px;
-  height: 30px;
-}
-
-input::placeholder {
-  padding-left: 10px;
-}
-.mainNameEmailInputs {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 20px;
-}
-.labelMain {
+/* .labelMain {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* justify-content: space-around; */
-  /* padding-right: 58px; */
-}
-
-/* .labelMainName {
-  padding-right: 330px;
-} */
-input.setMessage {
-  display: flex;
-  height: 300px;
-}
-.error {
-  border: 1px solid red;
-}
-
-.da {
-  height: 150px;
-  width: 530px;
-  text-align: center;
-  font-size: 20px;
-}
-.nameF {
-  padding-right: 208px;
-}
-.emailF {
-  padding-right: 132px;
-}
-/* .pError {
-  color: red;
-} */
+  grid-template-columns: 1fr 1fr; */
 
 
 /* GOOGLE PINS */

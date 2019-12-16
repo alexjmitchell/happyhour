@@ -7,7 +7,6 @@
     border: 1px solid black;
     display: grid;    
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
     margin: 0 auto;
     padding: 0;
     width: 100%;
@@ -41,11 +40,16 @@
     margin: 2vw 0;
 }
 
+.regHouseContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2vw 4vw 0 0;
+    padding: 0;
+}
+
 a.regHouse {
     color: royalblue;
     font-size: 64px;
-    margin: 2vw 4vw 0 0;
-    padding: 0;
     text-align: right;
 }
 
@@ -54,18 +58,18 @@ a.regHouse {
     flex-direction: column;
     margin: 50px auto;
     padding: 0;
-    width: 50%;   
+    width: 60%;   
 }
 
 .regForm input {
-    font-size: 1vw;
-    font-weight: bold;    
+    font-size: 2vw;
+    font-weight: bold;
     margin: 10px;
     padding: 10px 0px 10px 10px;
 }
 
 .regPleaseSignIn {
-    font-size: 2vw;
+    font-size: 2.75vw;
     font-weight: bold;    
     margin: 40px 0 40px 0;
     text-align: center;
@@ -82,24 +86,23 @@ a.regHouse {
 .regBottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px;
 }
 
 .regButton {
     background-color: #008CBA; /* Blue */
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: white;
     cursor: pointer;
     display: inline-block;
     font-family:Arial;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight:bold;
-    margin: .5vw .3vw;
+    margin: 10px 0 0 0;
     padding: .6vw .9vw;
     text-align: center;
     text-decoration: none;
-    /* text-shadow:0px 1px 0px #ffffff; */
 }
 .regButton:hover {
     background:linear-gradient(to bottom, yellow 5%, orange 100%);
@@ -119,18 +122,21 @@ a.regHouse {
     background-color: #4CAF50; /* Green */
     border: none;
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight:bold;
-    margin: .5vw .3vw;
+    margin: 10px 0 0 0;
     padding: .6vw .9vw;
     text-align: center;
     text-decoration: none;
-    /* text-shadow:0px 1px 0px #ffffff; */
-    }
+}
+
+.regToLogin a {
+    text-decoration: none;
+}
+
 .regToLogin:hover {
     background:linear-gradient(to bottom, yellow 5%, orange 100%);
     background-color:#f6f6f6;
@@ -155,48 +161,80 @@ a.regHouse {
 
 .regValText {
     color: red;    
-    font-size: .8vw;
+    font-size: 1.3vw;
     margin: 0 0 0 10px;
     padding: 0;
 }
 
 .regToTheOtherFormText {
-    font-size: 1vw;
+    font-size: 1.3vw;
     margin: 0 10px 0 0;
     padding: 0;
 }
 
 /* ********** Responsive Design ********** */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+
+    .regWrapper {
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .regLeftSide {
+        color: red;
+        height: 450px;
+    }
+
+    .regRightSide {
+        margin: 0;
+    }
 
     .regLogo {
         color: white;
-        font-size: 7vw;
-        margin: 4vw;
+        font-size: 60px;
+        margin: 0;
         padding: 0;
         text-align: center;
-        /* font-family: 'Fontdiner Swanky', cursive;
-        font-family: 'Irish Grover', cursive;
-        font-family: 'Cherry Bomb', cursive; */
     }
 
     .regForm {
-        width: 80%;   
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .regForm input {
+        font-size: 24px;
+        font-weight: bold;    
+        margin: 10px;
+        padding: 10px 0px 10px 10px;
+    }
+
+    .regPleaseSignIn {
+        font-size: 30px;
+        font-weight: bold;    
+        margin: 10px 0 10px 0;
+        text-align: center;
     }
 
     .regBottom {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        align-items: center;
     }
 
     .regButton {
+        background-color: #008CBA; /* Blue */
+        border-radius: 7px;
+        color: white;
+        cursor: pointer;
         display: inline-block;
         font-family:Arial;
-        font-size: 1vw;
+        font-size: 20px;
         font-weight:bold;
-        margin: 1vw .3vw 3vw;
-        padding: .6vw .9vw;
+        margin: .5vh .3vw;
+        padding: 12px 24px;
         text-align: center;
         text-decoration: none;
     }
@@ -204,18 +242,50 @@ a.regHouse {
     .regBottomRight {
         display: flex;
         justify-content: center;
-        margin: 0 0 1vw 0;
-        padding: 0;
+        align-items: center;
     }
 
-    .reToLogin {
-        margin: 0 auto;
+    .regToLogin {
+        background-color: #4CAF50; /* Green */
+        border: 1px solid white;
+        border-radius: 7px;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        font-family:Arial;
+        font-size: 20px;
+        font-weight:bold;
+        margin: .5vh .3vw;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .regToLogin a {
+        text-decoration: none;
     }
 
     .regRegistrationValidation {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
         padding: 0;
+    }
+
+    .regValText {
+        color: red;
+        font-size: 14px;
+    }
+
+    .regToTheOtherFormText {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /* ---------- loginBottom ---------- */
+
+    .loginBottom {
+        display: none;
     }
 
 }

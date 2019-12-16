@@ -1,28 +1,24 @@
 .loginMainContainer {
     width: 100%;
 }
-
 .loginWrapper {
     background-color: rgb(228, 233, 238);
     border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;    
     margin: 0 auto;
     padding: 0;
     width: 100%;
 }
 
 /* ---------- regLeftSide ---------- */
-
 .loginLeftSide {
-    background-image: url("./../assets/HappyHourPics/welcomeback.jpeg");
+    background-image: url("./../assets/loginLeftSidePic2.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-
 .loginLogo {
     color: white;
     font-family: 'Lakki Reddy', cursive;
@@ -35,17 +31,22 @@
 
 .loginRightSide {
     align-content: center;
-    background-color: rgb(228, 233, 238); 
+    background-color: rgb(228, 233, 238);
     display: flex;
     flex-direction: column;
     margin: 2vw 0;
 }
 
+.loginHouseContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2vw 4vw 0 0;
+    padding: 0;
+}
+
 a.loginHouse {
     color: royalblue;
     font-size: 64px;
-    margin: 2vw 4vw 0 0;
-    padding: 0;
     text-align: right;
 }
 
@@ -54,24 +55,24 @@ a.loginHouse {
     flex-direction: column;
     margin: 50px auto;
     padding: 0;
-    width: 50%;   
+    width: 60%;   
 }
 
 .loginForm input {
-    font-size: 1vw;
-    font-weight: bold;    
+    font-size: 2vw;
+    font-weight: bold;
     margin: 10px;
     padding: 10px 0px 10px 10px;
 }
 
 .loginPleaseSignIn {
-    font-size: 2vw;
+    font-size: 2.75vw;
     font-weight: bold;    
     margin: 40px 0 40px 0;
     text-align: center;
 }
 
-.pred {
+.loginUserExists {
     color:red;
     font-size: 15px;
     margin:0 10px;
@@ -82,24 +83,23 @@ a.loginHouse {
 .loginBottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px;
 }
 
 .loginButton {
     background-color: #008CBA; /* Blue */
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: white;
     cursor: pointer;
     display: inline-block;
     font-family:Arial;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight:bold;
-    margin: .5vw .3vw;
+    margin: 10px 0 0 0;
     padding: .6vw .9vw;
     text-align: center;
     text-decoration: none;
-    /* text-shadow:0px 1px 0px #ffffff; */
 }
 .loginButton:hover {
     background:linear-gradient(to bottom, yellow 5%, orange 100%);
@@ -119,18 +119,21 @@ a.loginHouse {
     background-color: #4CAF50; /* Green */
     border: none;
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight:bold;
-    margin: .5vw .3vw;
+    margin: 10px 0 0 0;
     padding: .6vw .9vw;
     text-align: center;
     text-decoration: none;
-    /* text-shadow:0px 1px 0px #ffffff; */
-    }
+}
+
+.loginToRegistration a {
+    text-decoration: none;
+}
+
 .loginToRegistration:hover {
     background:linear-gradient(to bottom, yellow 5%, orange 100%);
     background-color:#f6f6f6;
@@ -154,46 +157,110 @@ a.loginHouse {
 }
 
 .loginValText {
-    font-size: .8vw;
-    color: red;
+    color: red;    
+    font-size: 1.3vw;
     margin: 0 0 0 10px;
     padding: 0;
 }
 
 .loginToTheOtherFormText {
-    font-size: 1vw;
+    font-size: 1.3vw;
     margin: 0 10px 0 0;
     padding: 0;
 }
 
+/* ---------- loginBottomSection ---------- */
+
+.loginBottomSection {
+    background-color: rgb(228, 233, 238);
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    height: 55vh;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.loginBottomSectionPic1 {
+    background-image: url("./../assets/foodanddrinks/square/food.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;  
+}
+
+.loginBottomSectionPic2 {
+    background-image: url("./../assets/foodanddrinks/square/drinks.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;  
+}
+
 /* ********** Responsive Design ********** */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+
+    .loginWrapper {
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .loginLeftSide {
+        color: red;
+        height: 450px;
+    }
+
+    .loginRightSide {
+        height: 650px;
+        margin: 0;
+    }
 
     .loginLogo {
         color: white;
-        font-size: 7vw;
-        margin: 4vw;
+        font-size: 60px;
+        margin: 0;
         padding: 0;
         text-align: center;
     }
 
     .loginForm {
-        width: 80%;   
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .loginForm input {
+        font-size: 24px;
+        font-weight: bold;    
+        margin: 10px;
+        padding: 10px 0px 10px 10px;
+    }
+
+    .loginPleaseSignIn {
+        font-size: 30px;
+        font-weight: bold;    
+        margin: 10px 0 10px 0;
+        text-align: center;
     }
 
     .loginBottom {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        align-items: center;
     }
 
     .loginButton {
+        background-color: #008CBA; /* Blue */
+        border-radius: 7px;
+        color: white;
+        cursor: pointer;
         display: inline-block;
         font-family:Arial;
-        font-size: 1vw;
+        font-size: 20px;
         font-weight:bold;
-        margin: 1vw .3vw 3vw;
-        padding: .6vw .9vw;
+        margin: .5vh .3vw;
+        padding: 12px 24px;
         text-align: center;
         text-decoration: none;
     }
@@ -201,18 +268,50 @@ a.loginHouse {
     .loginBottomRight {
         display: flex;
         justify-content: center;
-        margin: 0 0 1vw 0;
-        padding: 0;
+        align-items: center;
     }
 
-    .loginToRegistraction {
-        margin: 0 auto;
+    .loginToRegistration {
+        background-color: #4CAF50; /* Green */
+        border: 1px solid white;
+        border-radius: 7px;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        font-family:Arial;
+        font-size: 20px;
+        font-weight:bold;
+        margin: .5vh .3vw;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .loginToRegistration a {
+        text-decoration: none;
     }
 
     .loginRegistrationValidation {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
         padding: 0;
+    }
+
+    .loginValText {
+        color: red;
+        font-size: 14px;
+    }
+
+    .loginToTheOtherFormText {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /* ---------- loginBottomSection ---------- */
+
+    .loginBottomSection {
+        display: none;
     }
 
 }

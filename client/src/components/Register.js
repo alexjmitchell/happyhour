@@ -40,7 +40,7 @@ function handlesubmit(e){
 
 if(username=="" || password=="" || contactName=="" || password=="" || cpassword=="" || email==""){ 
     console.log("vacios") 
-    setDescError("All fields are required") 
+    setDescError("All fields required") 
     setisanError(true)
     error=true
 
@@ -134,7 +134,9 @@ if (!error){
                         <div className="regLogo">HHFindr.com</div>
                     </div>
                     <div className="regRightSide">
-                    <Link className="regHouse" to={'/'}><Icon icon="home"/></Link>
+                    <div className="regHouseContainer">
+                        <Link className="regHouse" to={'/'}><Icon icon="home"/></Link>
+                    </div>
                         <form className="regForm" onSubmit={handlesubmit}>
                             <p className="regPleaseSignIn">Partner Registration</p>
                             {/* {userExists ? 
@@ -148,7 +150,6 @@ if (!error){
                             <div className="regBottom">
                                 <button className="regButton" type="submit">Sign Up</button>
                                 <div className="regBottomRight">
-
                                     <p className="regToLogin"><Link to="/login">Log In</Link></p>
                                 </div>
                             </div>
@@ -160,12 +161,12 @@ if (!error){
                             </div>
                         </form>
                         {/* { nameError!="" ? 
-                        <p className="pred"> *All fields are required</p>
+                        <p className="regValText">All fields required</p>
                           :""} */}
                     </div>
                 </div>
+                <Footer/>
             </div>
-            <Footer/>
         </>
     )
 }

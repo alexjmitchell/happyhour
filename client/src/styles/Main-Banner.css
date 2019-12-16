@@ -63,7 +63,7 @@ html, body {
   }
   
   .bannerLogIn {
-    background-color: #4CAF50; /* Green */
+    background-color: #b800e6;
     border-radius:7px;
     /* border:1px solid #dcdcdc; */
     color: white;
@@ -88,21 +88,57 @@ html, body {
   
     /* ----- bannerBottom ----- */
   
-  .bannerMessage {
-    color: white;
-    font-size: 6vw;  
-    margin: 0 0 0 2vw;
-  }
-  
-  .bannerTagLine {
-    color: white;
-    font-size: 3vw;
-    font-style: italic;  
-    margin: .5vh 0 3vmax 2vw;
-  }
-  
+.bannerMessage {
+  color: white;
+  font-size: 6vw;  
+  margin: 0 0 0 2vw;
+}
+
+.bannerMessageDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bannerGoBtn {
+  background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+  background-color:#b8e356;
+  border:.5vw solid #83c41a;
+  border-radius: 20%;
+  box-shadow:inset .05vh .25vw .75vh -.25vw #d9fbbe;
+  box-shadow: 5px 10px black;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 5vw;
+  font-weight:bold;
+  margin: 0 5vw 0 0;
+  padding: .25vw .5vw;
+  text-decoration:none;
+  text-shadow: 0 .2vw .15vh #86ae47;
+
+}
+
+.bannerGoBtn:hover {
+  background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+  background-color:#a5cc52;
+}
+.bannerGoBtn:active {
+  position:relative;
+  top:.05vw;
+}
+
+.bannerTagLine {
+  color: white;
+  font-size: 3vw;
+  font-style: italic;  
+  margin: .5vh 0 3vmax 2vw;
+}
+
   /* ********** Responsive Design ********** */
   
   @media screen and (max-width: 1200px) {
   
+
   }

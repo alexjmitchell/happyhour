@@ -88,12 +88,6 @@ function Footer() {
           <a href="https://www.youtube.com/">
             <i className="fa fa-youtube"></i>
           </a>
-          {/* <a href="https://www.yelp.com/login">
-            <i className="fa fa-yelp"></i>
-          </a>
-          <a href="https://www.pinterest.com/login/">
-            <i className="fa fa-pinterest"></i>
-          </a> */}
         </div>
         <br/>
       </div>
