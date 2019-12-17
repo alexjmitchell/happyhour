@@ -19,8 +19,10 @@ function ContactForm(props) {
     let err = false
 
     if (name !== "") {
-      if (!validator.isAlpha(name) && 
-      validator.isEmpty(name, { ignore_whitespace: true } )) {
+      if (
+        !validator.isAlpha(name) &&
+        validator.isEmpty(name, { ignore_whitespace: true })
+      ) {
         err = true
         setNameError("Must be a valid text")
       } else {
@@ -87,7 +89,9 @@ function ContactForm(props) {
               <span className="emailFieldError">{emailError}</span>
             </div>
             <input
-              className={emailError === "" ? "emailInputField" : "emailInputField"}
+              className={
+                emailError === "" ? "emailInputField" : "emailInputField"
+              }
               onChange={element => setEmail(element.target.value)}
               value={email}
               type=""
@@ -101,7 +105,9 @@ function ContactForm(props) {
             <div className="messageFieldError">{messageError}</div>
           </div>
           <textarea
-            className={messageError === "" ? "messageInputField" : "messageInputField"}
+            className={
+              messageError === "" ? "messageInputField" : "messageInputField"
+            }
             onChange={element => setMessage(element.target.value)}
             value={message}
             type="text"

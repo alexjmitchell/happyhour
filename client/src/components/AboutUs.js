@@ -4,7 +4,7 @@ import Footer from "./Footer"
 // import stylesheet
 import "../styles/AboutUs.css"
 // import assets
-import DaniloPic from "../assets/Daniloo.jpg"
+import DaniloPic from "../assets/Danilo.jpg"
 import AinhoaPic from "../assets/Ainhoa.jpg"
 import LazPic from "../assets/teamMember1.jpg"
 
