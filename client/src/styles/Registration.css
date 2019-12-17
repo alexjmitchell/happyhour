@@ -1,4 +1,5 @@
 .regMainContainer {
+    height: 100vh;
     width: 100%;
 }
 
@@ -291,9 +292,8 @@ a.regHouse {
 
     /* ---------- loginBottom ---------- */
 
-    .loginBottom {
+    /* .loginBottom {
         display: none;
-    }
+    } */
 
-    
 }

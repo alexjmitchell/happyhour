@@ -5,13 +5,10 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div>
-      <header className="Header">
-        <Link className="house" to={'/'}><Icon icon="home"/></Link>
-        <div className="topRight">
-          {/* <p className="headerToLogin"> <Link to="/register">Create Account</Link></p>
-          <p className="headerToReg"><Link to="/login">Log In</Link></p>           */}
-        </div>
+    <div className="headerContainer">
+      <header>
+        <Link className="headerHouse" to={'/'}><Icon icon="home"/></Link>
+        <div className="topRight"></div>
       </header>
     </div>
   )

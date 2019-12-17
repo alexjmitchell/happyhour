@@ -24,71 +24,61 @@ export default props => {
         <img className="pinImg" src="https://firebasestorage.googleapis.com/v0/b/happy-717c5.appspot.com/o/flyers%2F79cbf552-d272-4c39-b0ba-d1ebb4e1c74b.png?alt=media&token=c81554f5-3809-4a70-b2ee-5ec3c78aef1f" />
       </div>
       )
-  console.log(thecompany, "daaa")
   
   return (
     <>
-    
+      <Header />   
+    <div className="svpMainContainer">
 
-    <div className="singlePageViewMainContainer">
-    {/* <Header /> */}
+      <div className="svpLeftSide">
 
-      <div className="singleContent">
-        <div className="svpLeft">
-            <div className="topLeftsvp">
-              <h1>{thecompany[0].companyname}</h1>
-              <div className="svpInfo">
-                  {thecompany[0].descrip!=""? 
-                  <p> {thecompany[0].descrip}</p>
-                  
-                  :""
-                }
-                  <p> <span className="boldP">Email: </span> {thecompany[0].email}</p>
-                  <p> <span className="boldP">Phone Number: </span> {thecompany[0].phone}</p>
-                  <p> <span className="boldP">Web: </span><a href={thecompany[0].website} target="blank">Hogs & Heifers</a> </p>
+        <div className="svpInfo">
+          <h1>{thecompany[0].companyname}</h1>
+            {thecompany[0].descrip!=""? 
+              <p> {thecompany[0].descrip}</p>
+              : ""
+            }
+            <p> <span className="boldP">Email: </span> {thecompany[0].email}</p>
+            <p> <span className="boldP">Phone Number: </span> {thecompany[0].phone}</p>
+            <p> <span className="boldP">Web: </span><a href={thecompany[0].website} target="blank">Hogs & Heifers</a> </p>
+            <p> <span className="boldP">Happy hour days: </span> {thecompany[0].hhdays}</p>
+            <p> <span className="boldP">From </span> {thecompany[0].starthour>=12? thecompany[0].starthour==12 ? thecompany[0].starthour + "pm" : thecompany[0].starthour  - 12 + "pm" : thecompany[0].starthour + "am"} <span className="boldP">to</span> {thecompany[0].endhour>=12? thecompany[0].endhour==12 ? thecompany[0].endhour + "pm" : thecompany[0].endhour  - 12 + "pm" : thecompany[0].endhour + "am"}</p>
+            <p> <span className="boldP">Address: </span> {thecompany[0].address}</p>
+        </div>
 
-                  <p> <span className="boldP">Happy hour days: </span> {thecompany[0].hhdays}</p>
-                  <p> <span className="boldP">From </span> {thecompany[0].starthour>=12? thecompany[0].starthour==12 ? thecompany[0].starthour + "pm" : thecompany[0].starthour  - 12 + "pm" : thecompany[0].starthour + "am"} <span className="boldP">to</span> {thecompany[0].endhour>=12? thecompany[0].endhour==12 ? thecompany[0].endhour + "pm" : thecompany[0].endhour  - 12 + "pm" : thecompany[0].endhour + "am"}</p>
-                  <p> <span className="boldP">Address: </span> {thecompany[0].address}</p>
+        </div>
 
+        <div className="middleLeftsvp">
 
-                  </div>
-              </div>
-            <div className="middleLeftsvp">
-              <div  className="mapContainer">
-                      <GoogleMapReact
-                        bootstrapURLKeys={{ 
-                            key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
-                            libraries: ['places','directions']
-                          }}
-                        defaultCenter={ {lat:36.16, lng:-115.15}}
-                        center={{lat:Number(Number(thecompany[0].lat).toFixed(2)), lng:Number(Number(thecompany[0].lng).toFixed(2))}}
-                        defaultZoom={15.4}
-                      >
-                      <AnyReactComponent
-                          key={""}
-                          lat={Number(thecompany[0].lat)} 
-                          lng={Number(thecompany[0].lng)}
-                          showballon={true}
-                          text={""} 
-                        />
-
-                      </GoogleMapReact>
-                </div>
+          <div className="mapContainer">
+              <GoogleMapReact
+                bootstrapURLKeys={{ 
+                    key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
+                    libraries: ['places','directions']
+                  }}
+                defaultCenter={ {lat:36.16, lng:-115.15}}
+                center={{lat:Number(Number(thecompany[0].lat).toFixed(2)), lng:Number(Number(thecompany[0].lng).toFixed(2))}}
+                defaultZoom={15.4}
+              >
+              <AnyReactComponent
+                  key={""}
+                  lat={Number(thecompany[0].lat)} 
+                  lng={Number(thecompany[0].lng)}
+                  showballon={true}
+                  text={""} 
+                />
+              </GoogleMapReact>
           </div>
-        </div>
-        <div className="topRightsvp">
-            <img className="svpImg" src={thecompany[0].picture}/>
-        </div>
-        {/* <div className="bottomLeft">
-              
-        </div>
-        <div className="bottomRight"></div> */}
 
+        </div>
+
+      <div className="svpRightSide">
+          <img className="svpImg" src={thecompany[0].picture}/>
       </div>
-
+      
     </div>
-          <Footer/>
+
+    <Footer/>
 
     </>
   )

@@ -9,7 +9,7 @@ html, body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 50vw;
+    height: 100vh;
     justify-content: space-between;
     position: relative;  
     width: 100vw;

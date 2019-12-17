@@ -71,15 +71,15 @@ export default props => {
   
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '800px', width: '100%' }} className="mapContainer">
+      <div style={{ height: '100vh', width: '100%' }} className="mapContainer">
         <GoogleMapReact
           bootstrapURLKeys={{ 
               key:"AIzaSyCDavrh1NwCNrAAw8DyMi21XpGTrfQCslk",
               libraries: ['places','directions']
             }}
           defaultCenter={ {lat:36.16, lng:-115.15}}
-          center={coordinates}
-          // center={{lat:36.16, lng:-115.1546902}}
+          // center={coordinates}
+          center={{lat:36.16, lng:-115.1546902}}
           defaultZoom={15}
           // onChildMouseEnter={handleMouseOver}
           // onChildMouseLeave={handleMouseLeave}
