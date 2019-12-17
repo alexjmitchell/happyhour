@@ -63,10 +63,10 @@ function Slider(props) {
 
         <div className="sliderSearchBar3">
           <a className="sliderSearchBar3DropDown">
-            Search by company !
+            Happy Hours (by company) !
             <br />
             <input
-              className="searchBar1"
+              className="searchBar"
               placeholder="Search"
               type="text"
               onChange={e => setSearch(e.target.value)}
@@ -139,4 +139,3 @@ function Slider(props) {
   )
 }
 export default Slider
-

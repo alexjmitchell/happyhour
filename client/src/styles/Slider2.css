@@ -59,7 +59,7 @@ p.legend {
   color: white;
   margin: 5px;
 }
-.currentHH {
+.currentHH2 {
   width: 200px;
   height: 40px;
   background: red;
@@ -68,23 +68,20 @@ p.legend {
   margin: 5px;
   border-radius: 10px;
 }
-.searchBar {
+.searchBar1 {
   width: 200px;
   height: 40px;
   margin: 5px;
-  border-radius: 10px;
-  background: blue;
+  background-color: blue;
   color: white;
   font-size: 12px;
+  border-radius: 10px;
+  border:1px solid grey;
 }
-.searchBar::placeholder {
+.searchBar1::placeholder {
   color: white;
-}
-
-.searchBar:focus{
-  outline: none;
 }
 
 .sl2Searchbar{
-  padding:5px 15px 10px 10px;
+  padding-left: 50px;
 }

@@ -45,11 +45,11 @@ function Slider2() {
           <option value="22">10:00 pm</option>
           <option value="23">11:00 pm</option>
         </select>
-        <button className="currentHH" onClick={e => setTime(hr)}>
+        <button className="currentHH2" onClick={e => setTime(hr)}>
           H.H Happening Now !
         </button>
         <input
-          className="searchBar"
+          className="searchBar1"
           placeholder="H.Hours ( by company )!"
           type="text"
           onChange={e => setSearch(e.target.value)}
