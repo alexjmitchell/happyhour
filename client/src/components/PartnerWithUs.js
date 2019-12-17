@@ -1,47 +1,33 @@
-import React, { useState} from 'react';
-import { useAuth } from '../hooks';
-import { useAdmins } from '../hooks';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom'
 // import internal links
-import Header from "./Header";
+import Icon from "../lib/Icon";
 import Footer from "./Footer";
 // import stylesheet
 import "../styles/PartnerWithUs.css"
 // import assets
-// import Step1 from "../assets/step1.png"
-// import Step2 from "../assets/step2.png"
-// import Step3 from "../assets/step3.png"
-// import Step4 from "../assets/step4.png"
 import Step1 from "../assets/s-1.png"
 import Step2 from "../assets/s-2.png"
 import Step3 from "../assets/s-3.png"
 import Step4 from "../assets/s-4.png"
-
 import Happy from "../assets/happy.png"
 import Happier from "../assets/happier.png"
 import Happiest from "../assets/happiest.png"
 
 export default props => {
-const [username, setUsername]=useState('');
-const [password, setPassword]=useState('');
-const [loginmatch, setLoginmatch]=useState(true);
-const { signin } = useAuth();
-const { getone } = useAdmins ();
 
     return (
 
-        <div class="partnerWithUsMainContainer">
-
-          <Header/>
-            <div class="howItWorksMainContainer">
-
-                <div class="howItWorksTitle">Here's How It Works</div>
-
-                <div class="howItWorksWrapper">
-
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
+        <div className="partnerWithUsMainContainer">
+            <div className="ProfloginHouseContainer">
+                <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
+            </div>       
+                 <div className="howItWorksMainContainer">
+                <div className="howItWorksTitle">Here's How It Works</div>
+                <div className="howItWorksWrapper">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
                                     <img
                                         src={Step1}
                                         alt="Step 1"
@@ -53,7 +39,7 @@ const { getone } = useAdmins ();
                                         }}
                                     />
                                 </div>
-                                <div class="flip-card-back">
+                                <div className="flip-card-back">
                                     <h1>Sign Up</h1>
                                     <p>Register and complete<br/> your initial profile</p>
                                     <p>Takes about 10 minutes</p>
@@ -62,9 +48,9 @@ const { getone } = useAdmins ();
                             </div>
                         </div>
 
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
                                     <img
                                         src={Step2}
                                         alt="Step 2"
@@ -76,7 +62,7 @@ const { getone } = useAdmins ();
                                         }}
                                     />
                                 </div>
-                                <div class="flip-card-back">
+                                <div className="flip-card-back">
                                     <h1>Enter your promotion(s)</h1> 
                                     <p>Market your brand</p>
                                     <p>Share your specials and events</p>
@@ -85,9 +71,9 @@ const { getone } = useAdmins ();
                             </div>
                         </div>
 
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
                                 <img
                                         src={Step3}
                                         alt="Step 3"
@@ -99,7 +85,7 @@ const { getone } = useAdmins ();
                                         }}
                                     />
                                 </div>
-                                <div class="flip-card-back">
+                                <div className="flip-card-back">
                                     <h1>Track Your Success</h1> 
                                     <p>Track each promotion's:</p>
                                     <p>&nbsp;&nbsp;...click-through rates</p>
@@ -109,10 +95,9 @@ const { getone } = useAdmins ();
                                 </div>
                             </div>
                         </div>
-
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
                                 <img
                                         src={Step4}
                                         alt="Step 4"
@@ -124,7 +109,7 @@ const { getone } = useAdmins ();
                                         }}
                                     />
                                 </div>
-                                <div class="flip-card-back">
+                                <div className="flip-card-back">
                                     <h1>Improve and Repeat</h1>
                                     <p>We're here to help you<br/> grow your business</p>
                                     <p>Because if you don't succeed,<br/> we don't succeed.</p>

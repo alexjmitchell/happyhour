@@ -2,10 +2,8 @@ import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { Link } from 'react-router-dom'
 import { useAdmins } from '../hooks'
-import Header from "./Header";
 import Footer from "./Footer";
 import "../styles/Registration.css"
-import { set } from 'date-fns';
 import validator from "validator"
 import Icon from "../lib/Icon";
 
@@ -25,21 +23,15 @@ const [phoneError, setPhoneError]=useState(false)
 const [descError, setDescError]=useState('')
 let error = false
 const [iserror, setisanError]=useState(false)
-
-
 const { getRegistered } = useAdmins ()
-
 const { reg } = useAuth()
 const {admins } = useAdmins()
 
 function handlesubmit(e){
     e.preventDefault()
-    // error=false
-// setUserExists(admins.filter(u=>u.username == username).length>0)
-// console.log(userExists)
+    
 
 if(username=="" || password=="" || contactName=="" || password=="" || cpassword=="" || email==""){ 
-    console.log("vacios") 
     setDescError("All fields required") 
     setisanError(true)
     error=true
@@ -48,38 +40,34 @@ if(username=="" || password=="" || contactName=="" || password=="" || cpassword=
 else { 
     setisanError(false)
     if (admins.filter(u=>u.username == username).length>0) { 
-        setDescError("User already exists") // setisanError(true)
+        setDescError("User already exists")
         setUsername('')
          setUserExists(true)  
          setPassError(false) 
          setEmailError(false) 
          setPhoneError(false) 
         error=true
-        console.log("rxiste")
     } else if (!validator.isNumeric(phonenumber))
         { 
-            setDescError("only numbers allowed") // setisanError(true)
+            setDescError("only numbers allowed") 
             setPhone('')
             setPhoneError(true) 
             setEmailError(false) 
             setUserExists(false)
             setPassError(false) 
             error=true
-
     } else if (!validator.isEmail(email))
         { 
-         setDescError("Must enter a valid email") // setisanError(true)
+         setDescError("Must enter a valid email") 
          setEmail('')
          setEmailError(true) 
          setUserExists(false)
          setPassError(false) 
          setPhoneError(false)
          error=true
-
-        console.log("email mal")
     } else if (password !== cpassword)
         {
-        setDescError("passwords do not match") // setisanError(true)
+        setDescError("passwords do not match")
         setPassword('')
         setCPassword('')
         setPassError(true) 
@@ -87,9 +75,6 @@ else {
         setUserExists(false)
         setPhoneError(false) 
         error=true
-        
-        console.log("pass ")
-
     } else{ 
         setUserExists(false) 
         setPassError(false) 
@@ -99,13 +84,8 @@ else {
 
  }
  
-console.log( iserror + "variable iserror")
-
 if (!error){
     
-    // setisanError(false)
-        console.log(username + " entra en if...")
-
             reg(username,password,contactName,phonenumber,email) //after signin we want to redirect to another page
             .then((resp)=>{
                 getRegistered([ //to display on the profile component
@@ -144,9 +124,7 @@ if (!error){
                     </div>
                         <form className="regForm" onSubmit={handlesubmit}>
                             <p className="regPleaseSignIn">Partner Registration</p>
-                            {/* {userExists ? 
-                            <p className="regUserExists">User already exists</p>: ""} */}
-                          <input className={userExists || iserror ? "redstar" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>   
+                            <input className={userExists || iserror ? "redstar" : ""} type="text" name ="username" placeholder= "Username" value={username} onChange={e=>setUsername(e.target.value)}/>   
                             <input className ={iserror ? "redstar" : ""} type="text" name = "contactname" placeholder="Contact name" value={contactName} onChange={e=>setContactName(e.target.value)}/>
                             <input className ={iserror || phoneError ? "redstar" : ""} type="text" name ="phonenumber" placeholder="Phone Number" value={phonenumber} onChange={e=>setPhone(e.target.value)}/>
                             <input className ={emailError || iserror ? "redstar" : ""} type="email" name ="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/>
@@ -165,9 +143,6 @@ if (!error){
                                 <p className="regToTheOtherFormText">Already registered?</p>
                             </div>
                         </form>
-                        {/* { nameError!="" ? 
-                        <p className="regValText">All fields required</p>
-                          :""} */}
                     </div>
                 </div>
                 <Footer/>

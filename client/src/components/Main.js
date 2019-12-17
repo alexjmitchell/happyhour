@@ -4,7 +4,6 @@ import MainBanner from "./Main-Banner"
 import Slider from "../components/Slider"
 import Slider2 from "../components/Slider2"
 import Gmap from "../components/Gmap"
-// import GoogleMaps1 from "./GoogleMaps1"
 import ContactForm from "./ContactForm"
 import Footer from "./Footer"
 

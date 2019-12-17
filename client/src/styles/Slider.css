@@ -126,9 +126,6 @@
   );
   background: -moz-linear-gradient(top, #ff4a4a, #992727);
   background: linear-gradient(to bottom, #ff4a4a, #992727);
-  /* -webkit-box-shadow: #ff5959 0px 0px 40px 0px;
-  -moz-box-shadow: #ff5959 0px 0px 40px 0px;
-  box-shadow: #ff5959 0px 0px 40px 0px; */
   text-shadow: #591717 1px 1px 1px;
   font: normal normal bold 1.5vw arial;
   color: #ffffff;

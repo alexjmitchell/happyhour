@@ -120,7 +120,7 @@ a.regHouse {
 }
 
 .regToLogin {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     border-radius:7px;
     color: #ffffff;
@@ -233,7 +233,7 @@ a.regHouse {
     }
 
     .regButton {
-        background-color: #008CBA; /* Blue */
+        background-color: #008CBA;
         border-radius: 7px;
         color: white;
         cursor: pointer;
@@ -254,7 +254,7 @@ a.regHouse {
     }
 
     .regToLogin {
-        background-color: #4CAF50; /* Green */
+        background-color: #4CAF50; 
         border: 1px solid white;
         border-radius: 7px;
         color: white;
@@ -292,8 +292,5 @@ a.regHouse {
 
     /* ---------- loginBottom ---------- */
 
-    /* .loginBottom {
-        display: none;
-    } */
-
+    
 }

@@ -2,15 +2,14 @@ import React, { useState} from 'react'
 import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
 import "../styles/Profile.css"
-import Header from "./Header";
 import { Link } from 'react-router-dom'
 import Icon from "../lib/Icon";
-
 import Footer from "./Footer";
 import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
 import config from './FbConfig'
 import validator from "validator"
+
 firebase.initializeApp(config)
 
 export default props => {
@@ -113,12 +112,9 @@ export default props => {
         {days.push("Su")}
         const d=days.join(',')     
 
-        console.log(fromRegForm, lastAdminId, admin_id, "before if FROM REG FORMlastadminid - admin id")
 
-        // depending on what form the user is coming from
         if (fromRegForm && fromRegForm.join()==="r")
         {
-            console.log("r exsists")
             admin_id=lastAdminId
             lastAdminId=0
             fromRegForm="r"
@@ -128,12 +124,8 @@ export default props => {
             }
         }
 
-        console.log (fromRegForm, "fromregform")
-        console.log(lastAdminId, admin_id, "after if lastadminid - admin id")
-
 
         if(compName==="" || address==="" || usstate==="" || city==="" || zip==="" || compEmail==="" || compWeb==="" || compPhone ==="" || d==="" || pic==="" || startHr==="" || endHr==="" || !foodType){ 
-            console.log("vacios") 
             setDescError("Please check required fields") 
             setisanError(true)
             setDays(d==="" ? false : true)
@@ -196,10 +188,9 @@ export default props => {
             
     return (
         <>
-        {/* <Header/> */}
-                        <div className="ProfloginHouseContainer">
-                            <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
-                        </div>
+        <div className="ProfloginHouseContainerP">
+            <Link className="loginHouseP" to={'/'}><Icon icon="home"/></Link>
+        </div>
                     
         <div className="prof">
             <h1> Welcome, {username}</h1> 
@@ -228,8 +219,7 @@ export default props => {
                                         value={localUrl}                    
                                     />
                                 </label>    
-                                <img className="thumbpics" src={pic}/>
-                                
+                                <img alt="" className="thumbpics" src={pic}/>
                             </div>
                         </div>
                         <div id="right">
@@ -291,13 +281,12 @@ export default props => {
                                         <option value="WI">Wisconsin</option>
                                         <option value="WY">Wyoming</option>
                                     </select>
-
                                     <input className={city==="" ? "red" : ""} type="text" name = "city" placeholder="City" value={city} onChange={e=>setCity(e.target.value)} tabIndex="4"/>
                                     <input className={zip==="" || isAnumber ? "red" : ""} type="text" name = "zip" placeholder="Zip code" value={zip} onChange={e=>setZip(e.target.value)} tabIndex="5"/>
                                     <textarea type="text" name="menu" placeholder="Menu" value={menu} onChange={e=>setMenu(e.target.value)} tabIndex="14"/>
                                 </div>
-                            
-                                    <div className="contactinputs">
+        
+                                <div className="contactinputs">
                                     <input className={compEmail==="" || emailError ? "red" : ""} type="email" name ="companyemail" placeholder="Company email" value={compEmail} onChange={e=>setCompEmail(e.target.value)} tabIndex="7"/>
                                     <input className={compPhone==="" || isPhoneError ? "red" : ""} type="tel" name ="phone" placeholder="Company phone" value={compPhone} onChange={e=>setCompPhone(e.target.value)} tabIndex="8"/>
                                     <input className={compWeb==="" ? "red" : ""} type="url" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value) } tabIndex="9"/>
@@ -305,13 +294,11 @@ export default props => {
                                     <input type="url" name ="ig" placeholder="Company Instagram" value={ig} onChange={e=>setIg(e.target.value)} tabIndex="11"/>
                                     <input type="url" name ="tw" placeholder="Company Twitter" value={tw} onChange={e=>setTw(e.target.value)} tabIndex="12"/>
                                     <textarea type="text" name="desc" placeholder="Description" value={desc} onChange={e=>setDesc(e.target.value)}tabIndex="13"/>
-
-                                    </div>
+                                </div>
                                 </div>
                                 <div className="middleBottom">
                                     <div className="dayshr">
                                         <div className="happydays">
-                                            
                                             <label className={!days ? "hred" : ""}> Mo
                                                 <input type="checkbox" value={monday} checked={monday} onChange={e=>setMonday(!monday)} tabIndex="15"/>                      
                                             </label >
@@ -333,11 +320,8 @@ export default props => {
                                             <label className={!days ? "hred" : ""}> Su
                                                 <input type="checkbox" name="sun" value={sun} checked={sun} onChange={e=>setSun(!sun)} tabIndex="21"/>                      
                                             </label>
-
                                         </div>
-
                                         <div className="hr">
-                                
                                             <select className={startHr==="" ? "sd red" : "sd"} onChange={e => setStartHr(e.target.value)} tabIndex="22" value={startHr} >
                                                 <option value="default"> Select</option>
                                                 <option value="00">12:00 am</option>
@@ -365,7 +349,6 @@ export default props => {
                                                 <option value="22">10:00 pm</option>
                                                 <option value="23">11:00 pm</option> 
                                                 </select>
-                                            
                                             <select className={endHr==="" ? "sd red" : "sd"} onChange={e => setEndHr(e.target.value)} tabIndex="23" value={endHr} >
                                                 <option value="default"> Select</option>
                                                 <option value="00">12:00 am</option>
@@ -393,28 +376,23 @@ export default props => {
                                                 <option value="22">10:00 pm</option>
                                                 <option value="23">11:00 pm</option> 
                                                 </select>
-
                                         </div>
-                                        
                                 </div>    
-                                        
                                         <select className={foodType==="" ? "st red" : "st"} onChange={e => setFoodType(e.target.value)} tabIndex="23" value={foodType} >
-                                                <option value="foodtype"> Select</option>
-                                                <option value="American">American</option>
-                                                <option value="Mexican">Mexican</option>
-                                                <option value="Japanese">Japanese</option>
-                                                <option value="Chinese">Chinese</option>
-
-                                                <option value="Thai">Thai</option>
-                                                <option value="Vietnamese">Vietnamese</option>
-                                                <option value="Korean">Korean</option>
-                                                <option value="Indian">Indian</option>
-                                                <option value="Mediterranean">Mediterranean</option>
-                                                <option value="Italian">Italian</option>
-                                                </select>
+                                            <option value="foodtype"> Select</option>
+                                            <option value="American">American</option>
+                                            <option value="Mexican">Mexican</option>
+                                            <option value="Japanese">Japanese</option>
+                                            <option value="Chinese">Chinese</option>
+                                            <option value="Thai">Thai</option>
+                                            <option value="Vietnamese">Vietnamese</option>
+                                            <option value="Korean">Korean</option>
+                                            <option value="Indian">Indian</option>
+                                            <option value="Mediterranean">Mediterranean</option>
+                                            <option value="Italian">Italian</option>
+                                        </select>
 
                                         <div className="buttons">
-                                            
                                                 <button type="submit">Update profile</button>
                                                 {iserror || isAnumber || emailError? 
                                             <p className="hred norev">{descError}</p>

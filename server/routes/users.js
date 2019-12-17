@@ -5,6 +5,10 @@ const db = require("../db")
 const jwt = require("jsonwebtoken")
 const config = require("config")
 
+
+
+//************************ posting to admins ************* */
+
 router.post("/register", (req, res, next) => {
   const salt = uuid()
   const username = req.body.username
@@ -13,7 +17,6 @@ router.post("/register", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
 
-  // *********************
   const sql =
     "INSERT INTO admins (username, password, salt, name, phone, email) VALUES (?,?,?,?,?,?)"
 
@@ -32,7 +35,7 @@ router.post("/register", (req, res, next) => {
   )
 })
 
-// *************************
+//************************ login in ************* */
 
 router.post("/login", (req, res, next) => {
   const username = req.body.username
@@ -70,6 +73,9 @@ router.post("/login", (req, res, next) => {
   )
 })
 
+//************************ getting admins ************* */
+
+
 router.get("/admins", (req, res, next) => {
   const sql = `
   SELECT id, username, name, phone, email FROM admins`
@@ -87,7 +93,7 @@ router.get("/companies", (req, res, next) => {
   })
 })
 
-///*********************** */
+//************************ posting to companies************* */
 
 router.post("/profile", (req, res, next) => {
   const companyname = req.body.companyname
@@ -100,13 +106,10 @@ router.post("/profile", (req, res, next) => {
   const website = req.body.website
   const lat = req.body.lat
   const lng=req.body.lng
-  // const coordinates = req.body.coordinates
-  // const logo = req.body.logo
   const picture = req.body.picture
   const facebook = req.body.facebook
   const instagram = req.body.instagram
   const twitter = req.body.twitter
-  // const banner = req.body.state
   const foodtype = req.body.foodtype
   const menu = req.body.menu
   const descript = req.body.descript
@@ -114,33 +117,7 @@ router.post("/profile", (req, res, next) => {
   const starthour = req.body.starthour
   const endhour = req.body.endhour
   const admin_id = req.body.admin_id
-  // const username = req.body.username
 
-  console.log({
-    companyname,
-    address,
-    city,
-    state,
-    zip,
-    phone,
-    email,
-    website,
-    facebook,
-    instagram,
-    twitter,
-    lat,
-    lng,
-    picture,
-    foodtype,
-    menu,
-    descript,
-    hhdays,
-    starthour,
-    endhour,
-    admin_id
-  })
-
-  // *********************
   const sql =
     "INSERT INTO companies (companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
@@ -181,7 +158,8 @@ router.post("/profile", (req, res, next) => {
   )
 })
 
-//getting all the companies profiles
+//************************ companies profiles************* */
+
 router.get("/gprofile", (req, res, next) => {
   const sql = `
     SELECT id, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, descrip, hhdays, starthour, endhour, admin_id FROM companies`
@@ -189,6 +167,10 @@ router.get("/gprofile", (req, res, next) => {
     res.json(results)
   })
 })
+
+
+//************************ updating companies profiles************* */
+
 
 router.put("/gprofile", (req, res, next) => {
   const companyname = req.body.companyname
@@ -199,7 +181,6 @@ router.put("/gprofile", (req, res, next) => {
   const phone = req.body.phone
   const email = req.body.email
   const website = req.body.website
-  // const coordinates = req.body.coordinates
   const lat = req.body.lat
   const lng = req.body.lng
   const logo = req.body.logo
@@ -207,7 +188,6 @@ router.put("/gprofile", (req, res, next) => {
   const facebook = req.body.facebook
   const instagram = req.body.instagram
   const twitter = req.body.twitter
-  // const banner = req.body.state
   const foodtype = req.body.foodtype
   const menu = req.body.menu
   const descript = req.body.descript
@@ -215,8 +195,6 @@ router.put("/gprofile", (req, res, next) => {
   const starthour = req.body.starthour
   const endhour = req.body.endhour
   const admin_id = req.body.admin_id
-
-  console.log(req.body)
 
   const sql = `
     UPDATE companies

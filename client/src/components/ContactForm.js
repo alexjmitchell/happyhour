@@ -1,9 +1,6 @@
 import React, { useState } from "react"
 import "../styles/ContactForm.css"
 import validator from "validator"
-import { BrowserRouter as Router, Route, link } from "react-router-dom"
-// import sub from "../components/Submitted"
-import { Link } from "react-router-dom"
 import { useUsers } from "../hooks"
 import dancing from "../assets/dancing.mp4"
 
@@ -14,16 +11,11 @@ function ContactForm(props) {
   const [emailError, setEmailError] = useState("")
   const [message, setMessage] = useState("")
   const [messageError, setMessageError] = useState("")
-
-  const [button, setButton] = useState("")
   const [buttonError, setButtonError] = useState("")
-
   const { sendF } = useUsers()
 
   function handleSubmit(e) {
     e.preventDefault()
-    // props.history.push("/feedback") // this push is only for pushing to the other components,pages,fields. Not for the data post
-
     let err = false
 
     if (name !== "") {
@@ -61,18 +53,13 @@ function ContactForm(props) {
     }
 
     if (!err) {
-      // err = true
       setButtonError("Thank you for you Feedback.")
     } else {
       setButtonError("Please complete required fields")
     }
-
-    // sendF(message, email, name) // passing the function from ....(const sendF = (message, email, name) => {
-    // return dispatch(sendFeedback(message, email, name)) from client/src/redux/ducks/users/index.js
-
     if (!err) {
       sendF(message, email, name)
-      setName("") // clears the field after submiting.It Set them up as empty field again
+      setName("") 
       setEmail("")
       setMessage("")
     } else {
@@ -80,11 +67,9 @@ function ContactForm(props) {
   }
   return (
     <div className="mainForm">
-      <form onSubmit={handleSubmit} className="contactInputs">
-        <div className="contactForm"> We'd love to hear from you!</div>
-
+      <form onSubmit={handleSubmit}className="contactInputs">
+      <div className="contactForm"> We'd love to hear from you!</div>
         <div className="contactTop">
-          {/* Top Left Section */}
           <div className="contactTopLeft">
             <div className="nameTop">
               <div className="nameField">Name </div>
@@ -98,8 +83,6 @@ function ContactForm(props) {
               placeholder=""
             />
           </div>
-
-          {/* Top Right Section */}
           <div className="contactTopRight">
             <div className="emailTop">
               <div className="emailField">Email </div>
@@ -116,8 +99,6 @@ function ContactForm(props) {
             />
           </div>
         </div>
-
-        {/* Message Section */}
         <div className="messageContainer">
           <div className="messageTop">
             <div className="messageText">Message</div>
@@ -137,11 +118,15 @@ function ContactForm(props) {
           Submit
         </button>
         <p className="contactConfirmation">{buttonError}</p>
-      </form>
-
+      </form> 
       <div className="contactPicRight">
         <div id="myVideoContainer">
-          <video autoplay="true" loop="true" id="myVideo" src={dancing}></video>
+          <video
+            autoPlay={true}
+            loop={true}
+            id="myVideo"
+            src={dancing}
+          ></video>
         </div>
       </div>
     </div>

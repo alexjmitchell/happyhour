@@ -4,7 +4,6 @@ body {
 }
 
 #partnerWithUs {
-  /* background: #e68a00; */
   margin: 0 auto;
   padding-left: 10%;
    width: 100%; 
@@ -129,7 +128,6 @@ body {
 #happyIcon,
 #happierIcon,
 #happiestIcon {
-  /* background-color: beige;   */
   margin: 0 auto;
 }
 
@@ -169,4 +167,19 @@ body {
   width: 100%;
   color:white;
 }
+
+.ProfloginHouseContainer {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2vw 4vw 0 0;
+}
+  
+a.loginHouse {
+  color: royalblue;
+  font-size: 64px;
+  text-align: right;
+}
+
+
 /* ---------- End: pricingMainContainer Section ---------- */

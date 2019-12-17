@@ -4,9 +4,7 @@
     height: 0;
   }
 }
-/* .sliderResponsive {
-  display: block;
-} */
+
 @media (min-width: 999px) {
   .sliderResponsive {
     display: none;
@@ -18,9 +16,6 @@
     display: none;
   }
 }
-/* li.slide.selected {
-  height: 800px;
-} */
 li.thumb {
   height: 100px;
 }

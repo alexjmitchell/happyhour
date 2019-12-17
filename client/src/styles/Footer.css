@@ -15,7 +15,6 @@ body {
     sans-serif;  
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
-  /* -webkit-font-smoothing: antialiased; */
 }
 
 code {
@@ -101,7 +100,7 @@ code {
   width: 60px;
 }
 
-/* Facebooke */
+/* Facebook */
 .socialWrapper > a:nth-child(1) {
   background-color:rgb(58,79,138);
 }
