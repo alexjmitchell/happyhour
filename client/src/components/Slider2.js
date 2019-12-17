@@ -54,43 +54,45 @@ function Slider2() {
   // console.log(newArray)
   return (
     <div className="sliderResponsive">
-      <label>Select Happy Hour Time </label>
-      <select className="dropDown" onChange={e => setTime(e.target.value)}>
-        <option value=""> Select</option>
-        <option value="00">12:00 am</option>
-        <option value="01">01:00 am</option>
-        <option value="02">02:00 am</option>
-        <option value="03">03:00 am</option>
-        <option value="04">04:00 am</option>
-        <option value="05">05:00 am</option>
-        <option value="06">06:00 am</option>
-        <option value="07">07:00 am</option>
-        <option value="08">08:00 am</option>
-        <option value="09">09:00 am</option>
-        <option value="10">10:00 am</option>
-        <option value="11">11:00 am</option>
-        <option value="12">12:00 pm</option>
-        <option value="13">01:00 pm</option>
-        <option value="14">02:00 pm</option>
-        <option value="15">03:00 pm</option>
-        <option value="16">04:00 pm</option>
-        <option value="17">05:00 pm</option>
-        <option value="18">06:00 pm</option>
-        <option value="19">07:00 pm</option>
-        <option value="20">08:00 pm</option>
-        <option value="21">09:00 pm</option>
-        <option value="22">10:00 pm</option>
-        <option value="23">11:00 pm</option>
-      </select>
-      <button className="currentHH" onClick={e => setTime(hr)}>
-        happy hour now
-      </button>
-      <input
-        className="searchBar"
-        placeholder="Search Company Name"
-        type="text"
-        onChange={e => setSearch(e.target.value)}
-      />
+      <div className="filters">
+        {/* <label>Happy Hours ( select time)! </label> */}
+        <select className="dropDown" onChange={e => setTime(e.target.value)}>
+          <option value=""> Select</option>
+          <option value="00">12:00 am</option>
+          <option value="01">01:00 am</option>
+          <option value="02">02:00 am</option>
+          <option value="03">03:00 am</option>
+          <option value="04">04:00 am</option>
+          <option value="05">05:00 am</option>
+          <option value="06">06:00 am</option>
+          <option value="07">07:00 am</option>
+          <option value="08">08:00 am</option>
+          <option value="09">09:00 am</option>
+          <option value="10">10:00 am</option>
+          <option value="11">11:00 am</option>
+          <option value="12">12:00 pm</option>
+          <option value="13">01:00 pm</option>
+          <option value="14">02:00 pm</option>
+          <option value="15">03:00 pm</option>
+          <option value="16">04:00 pm</option>
+          <option value="17">05:00 pm</option>
+          <option value="18">06:00 pm</option>
+          <option value="19">07:00 pm</option>
+          <option value="20">08:00 pm</option>
+          <option value="21">09:00 pm</option>
+          <option value="22">10:00 pm</option>
+          <option value="23">11:00 pm</option>
+        </select>
+        <button className="currentHH" onClick={e => setTime(hr)}>
+          H.H Happening Now !
+        </button>
+        <input
+          className="searchBar"
+          placeholder="H.Hours ( by company )!"
+          type="text"
+          onChange={e => setSearch(e.target.value)}
+        />
+      </div>
       {newSearch.map((user, i) => (
         <Link to={`/SingleViewPage/${user.companyname}`}>
           {user.companyname}

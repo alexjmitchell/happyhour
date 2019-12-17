@@ -39,13 +39,12 @@ function Slider(props) {
 
   return (
     <div id="go" className="sliderMainContainer">
-
       <div className="sliderSearchBar">
-
         <div className="sliderSearchBar1">
-          <a className="sliderSearchBar1DropDown">Happy Hours (select time) !
-            <br/>
-            <select  onChange={e => setTime(e.target.value)}>
+          <a className="sliderSearchBar1DropDown">
+            Happy Hours (select time) !
+            <br />
+            <select onChange={e => setTime(e.target.value)}>
               <option value=""> Select</option>
               <option value="00">12:00 am</option>
               <option value="01">1:00 am</option>
@@ -76,18 +75,23 @@ function Slider(props) {
         </div>
 
         <div className="sliderSearchBar2">
-          <a className="hhhNow" onClick={e => setTime(hr)}>Happy Hours Happening Now!<br/><span className="hhhNowClickHere">(Click Here)</span></a>    
+          <a className="hhhNow" onClick={e => setTime(hr)}>
+            Happy Hours Happening Now!
+            <br />
+            <span className="hhhNowClickHere">(Click Here)</span>
+          </a>
         </div>
 
         <div className="sliderSearchBar3">
-        <a className="sliderSearchBar3DropDown">Happy Hours (by company) !
-            <br/>
+          <a className="sliderSearchBar3DropDown">
+            Happy Hours (by company) !
+            <br />
             <input
-            className="searchBar"
-            placeholder="Search"
-            type="text"
-            onChange={e => setSearch(e.target.value)}
-          />
+              className="searchBar"
+              placeholder="Search"
+              type="text"
+              onChange={e => setSearch(e.target.value)}
+            />
           </a>
           {newSearch.map((user, i) => (
             <Link to={`/SingleViewPage/${user.id}`}>
@@ -98,13 +102,14 @@ function Slider(props) {
                 src={user.picture}
                 height={100}
                 alt={
-                  <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+                  <Link className="sliderImg" to={`/SingleViewPage/${user.id}`}>
+                    {user.companyname}
+                  </Link>
                 }
               />
             </Link>
           ))}
         </div>
-
       </div>
 
       <div className="CoverflowContainer">

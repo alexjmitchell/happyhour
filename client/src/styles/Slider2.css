@@ -19,7 +19,7 @@ li.thumb {
   height: 100px;
 }
 li.slide {
-  height: 1200px;
+  height: 550px;
 }
 .slidePics2 {
   height: 100%;
@@ -45,4 +45,36 @@ p.legend {
 .carousel .slide .legend {
   background: transparent !important;
   width: 50% !important;
+}
+.filters {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
+.dropDown {
+  width: 200px;
+  height: 40px;
+  background: blue;
+  color: white;
+  margin: 5px;
+}
+.currentHH {
+  width: 200px;
+  height: 40px;
+  background: red;
+  color: white;
+  font-size: 15px;
+  margin: 5px;
+  border-radius: 100px;
+}
+.searchBar {
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  background: blue;
+  color: white;
+  font-size: 12px;
+}
+::placeholder {
+  color: white;
 }
