@@ -1,14 +1,9 @@
 import React, { useState} from 'react'
 import { useAuth } from '../hooks'
 import { useAdmins } from '../hooks'
-import {useCompanies} from "../hooks"
-
 import { Link } from 'react-router-dom'
-import Header from "./Header";
 import Footer from "./Footer";
-import admins from '../redux/ducks/admins'
 import "../styles/Login.css"
-import { get } from 'https'
 import Icon from "../lib/Icon";
 
 export default props => {
@@ -16,8 +11,7 @@ const [username, setUsername]=useState('')
 const [password, setPassword]=useState('')
 const [loginmatch, setLoginmatch]=useState(true)
 const { signin } = useAuth()
-const {getone, getRegistered } = useAdmins ()
-// const { getonc } = useCompanies()
+const {getone } = useAdmins ()
 const [nameError, setNameError] = useState('')
 
 function handlesubmit(e){
@@ -34,7 +28,6 @@ function handlesubmit(e){
     .then((resp)=>{
         setLoginmatch(true)
         getone(username)
-        
         props.history.push("/profile")
 
     }) 
@@ -44,7 +37,7 @@ function handlesubmit(e){
     
         console.log("LOGIN ERROR")
     })
-// needs to be a promise because if not it will redirect before everything is done.
+    // needs to be a promise because if not it will redirect before everything is done.
     //the "/" takes us to "*" in app.js that take us to checklogin. this check if it's authenticated shows profile if not, redirect to login
 
 }
@@ -55,12 +48,6 @@ function handlesubmit(e){
                 <div className="loginWrapper">
                     <div className="loginLeftSide">
                         <div className="loginLogo">HHFindr.com</div>
-                        {/* <div className="loginLeftSidePics">
-                            <div className="loginLeftSidePic1"></div>
-                            <div className="loginLeftSidePic2"></div>
-                            <div className="loginLeftSidePic3"></div>
-                            <div className="loginLeftSidePic4"></div>
-                        </div> */}
                     </div>
                     <div className="loginRightSide">
                         <div className="loginHouseContainer">
@@ -68,8 +55,6 @@ function handlesubmit(e){
                         </div>
                         <form className="loginForm" onSubmit={handlesubmit}>
                             <p className="loginPleaseSignIn">Welcome Back!</p>
-                            {/* {userExists ? 
-                            <p className="pred">User already exists</p>: ""} */}
                             <input className={!loginmatch && !nameError? "red" : ""} type="text" name ="username" placeholder="Username" value={username} onChange={e=>setUsername(e.target.value)}/>
                             <input className={!loginmatch && !nameError? "red" : ""} type="password" name = "password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/>
                             <div className="loginBottom">
@@ -85,9 +70,6 @@ function handlesubmit(e){
                                 <p className="loginToTheOtherFormText"> Don't have an account?</p>
                             </div>
                         </form>
-                        {/* { nameError!="" ? 
-                        <p className="pred">All fields required</p>
-                          :""} */}
                     </div>
                 </div>
                 <div className="loginBottomSection">

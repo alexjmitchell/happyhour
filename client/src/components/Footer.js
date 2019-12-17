@@ -1,12 +1,6 @@
 import React, { useState } from "react"
-import Icon from "../lib/Icon"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../styles/Footer.css"
-import AboutUs from "./AboutUs"
-import PartnerWithUs from "./PartnerWithUs"
-import SingleViewPage from "./SingleViewPage"
-// import GoogleMaps1 from "./GoogleMaps1"
-// import GoogleMaps2 from "./GoogleMaps2"
 import validator from "validator"
 import { useUsers } from "../hooks"
 
@@ -18,7 +12,6 @@ function Footer() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
     let err = false
 
     if (email !== "") {
@@ -51,8 +44,6 @@ function Footer() {
         <h2>LINKS</h2>
         <Link to={"/AboutUs"}>About Us</Link>
         <Link to={"/PartnerWithUs"}>Partner With Us</Link>
-        {/* <Link to={"/SingleViewPage"}>Single View Page</Link>
-        <Link to={"/GoogleMaps1"}>Google Maps 1</Link> */}
         <br/>
       </div>
 

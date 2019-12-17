@@ -1,8 +1,4 @@
-import React, { useState } from "react"
-import { useAuth } from "../hooks"
-import { useAdmins } from "../hooks"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-// import internal links
+import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
 // import stylesheet
@@ -16,20 +12,13 @@ export default props => {
   return (
     <div className="aboutUsMainContainer">
       <Header />
-      {/* <div className="aboutUsStoryContainer">
-        <div className="aboutUsStoryWrapper">
-          <h1>
-            <span className="mission"> " HHFindr.com "</span>
-          </h1>
-        </div>
-      </div> */}
       <div className="row">
         <div className="column">
           <div className="card">
             <img
               className="daniloPic"
               src={DaniloPic}
-              alt="Picture of Danilo Nikolic"
+              alt="Danilo Nikolic"
               style={{
                 display: "block",
                 width: "100%"
@@ -57,7 +46,7 @@ export default props => {
             <img
               className="ainhoaPic"
               src={AinhoaPic}
-              alt="Picture of Ainhoa Martinez"
+              alt="Ainhoa Martinez"
               data-action="our link"
               style={{
                 display: "block",
@@ -84,7 +73,7 @@ export default props => {
             <img
               className="lazPic"
               src={LazPic}
-              alt="Picture of Steve Lazarus"
+              alt="Steve Lazarus"
               data-action="our link"
               style={{
                 display: "block",

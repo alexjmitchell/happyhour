@@ -40,9 +40,8 @@ html, body {
   }
   
   .bannerSignUp {
-    background-color: #008CBA; /* Blue */
+    background-color: #008CBA; 
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: white;
     cursor: pointer;
     display: inline-block;
@@ -65,7 +64,6 @@ html, body {
   .bannerLogIn {
     background-color: #b800e6;
     border-radius:7px;
-    /* border:1px solid #dcdcdc; */
     color: white;
     cursor: pointer;
     display: inline-block;
@@ -135,10 +133,3 @@ html, body {
   font-style: italic;  
   margin: .5vh 0 3vmax 2vw;
 }
-
-  /* ********** Responsive Design ********** */
-  
-  @media screen and (max-width: 1200px) {
-  
-
-  }

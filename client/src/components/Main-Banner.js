@@ -1,9 +1,6 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../styles/Main-Banner.css"
-import Register from "./Register"
-import Logiin from "./Login"
-import Slider from "./Slider"
 import { HashLink as Link2 } from 'react-router-hash-link';
 
 function Banner() {

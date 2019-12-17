@@ -2,12 +2,10 @@ import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
-
 // action definitions
 const GET_ADMINS = "users/GET_ADMINS"
 const GET_ONEADMIN = "users/GET_ONEADMIN"
 const GET_REGISTERED = "users/GET_REGISTERED"
-//const GET_COMPANIES = "users/GET_COMPANIES"
 
 // initial state
 const initialState = {
@@ -45,7 +43,6 @@ const getAdmins = () => {
 
 
 
-//too many re renders in profile. var gets value late so it doesn't display on time. trying here
 
 const getOneAdmin = (user)=>{
 
