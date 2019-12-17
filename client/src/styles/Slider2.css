@@ -12,6 +12,12 @@
     display: none;
   }
 }
+
+@media (max-width: 1000px) {
+  .sliderSearchBar {
+    display: none;
+  }
+}
 /* li.slide.selected {
   height: 800px;
 } */
