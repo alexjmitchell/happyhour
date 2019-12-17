@@ -21,6 +21,7 @@ body, html{
     .prof{
       display: flex;
       flex-direction: column;
+      height: 100vh;
       margin: auto;
   
       width: 100%;

@@ -8,8 +8,12 @@ html {
   *::after {
     box-sizing: inherit;
   }
-  
 
+/* ---------- GmapMainContainer ---------- */
+
+.mapContainer {
+    border: 1px solid black;
+}
 
 /* GOOGLE PINS */
 .mapContainer1{

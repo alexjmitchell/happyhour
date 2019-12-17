@@ -77,6 +77,10 @@ function ContactForm(props) {
   }
   return (
     <div className="mainForm">
+      <div className="contactFormLeftSide">
+        
+      </div>
+
       <form onSubmit={handleSubmit}className="contactInputs">
       <div className="contactForm"> We'd love to hear from you!</div>
 

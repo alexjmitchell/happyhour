@@ -39,81 +39,83 @@ function Slider(props) {
   const newTime = users.filter(p => time >= p.starthour && time <= p.endhour)
   const newSearch = users.filter(p => p.companyname.toLowerCase() == search)
 
-  // const newerArray = newArray.filter(i => i.name === SVGPathSegCurve)
-  // console.log(newArray)
   return (
-    <div id="go" className="sliderW">
-      {/* <p>
-        Check Your Liked List Here:{" "}
-        <Link to="/liked">
-          {" "}
-          <Icon icon="heart" />
-        </Link>
-      </p> */}
-      {/* // onChange={e => filter(e.target.value)}  */}
-      {/* // ovde prosledjujemo e.target.value u setVal() i to je sad u stvari val  */}
-      {/* // e.target.value je u stvari value bilo koja od 00 do 23 koji prenosimo preko setVal u val i komperujemo je sa starthour u filter i prenosimo u newArray */}
+    <div id="go" className="sliderMainContainer">
 
-      <label>Select Happy Hour Time </label>
-      <select className="dropDown" onChange={e => setTime(e.target.value)}>
-        <option value=""> Select</option>
-        <option value="00">12:00 am</option>
-        <option value="01">01:00 am</option>
-        <option value="02">02:00 am</option>
-        <option value="03">03:00 am</option>
-        <option value="04">04:00 am</option>
-        <option value="05">05:00 am</option>
-        <option value="06">06:00 am</option>
-        <option value="07">07:00 am</option>
-        <option value="08">08:00 am</option>
-        <option value="09">09:00 am</option>
-        <option value="10">10:00 am</option>
-        <option value="11">11:00 am</option>
-        <option value="12">12:00 pm</option>
-        <option value="13">01:00 pm</option>
-        <option value="14">02:00 pm</option>
-        <option value="15">03:00 pm</option>
-        <option value="16">04:00 pm</option>
-        <option value="17">05:00 pm</option>
-        <option value="18">06:00 pm</option>
-        <option value="19">07:00 pm</option>
-        <option value="20">08:00 pm</option>
-        <option value="21">09:00 pm</option>
-        <option value="22">10:00 pm</option>
-        <option value="23">11:00 pm</option>
-      </select>
-      {/* // ovde prosledjujemo hr u setVal() i to je sad u stvari val  koji je jednak sa data koji komperujemo u ovom slucaju starthour gore u filter */}
-      <button className="currentHH" onClick={e => setTime(hr)}>
-        happy hour now
-      </button>
-      <input
-        className="searchBar"
-        placeholder="Search Company Name"
-        type="text"
-        onChange={e => setSearch(e.target.value)}
-      />
-      {newSearch.map((user, i) => (
-        <Link to={`/SingleViewPage/${user.id}`}>
-          {user.companyname}
+      <div className="sliderSearchBar">
 
-          <img
-            key={i}
-            className="slidePics"
-            src={user.picture}
-            height={100}
-            alt={
-              <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
-            }
+        <div className="sliderSearchBar1">
+          <a className="sliderSearchBar1DropDown">Happy Hours (select time) !
+            <br/>
+            <select  onChange={e => setTime(e.target.value)}>
+              <option value=""> Select</option>
+              <option value="00">12:00 am</option>
+              <option value="01">1:00 am</option>
+              <option value="02">2:00 am</option>
+              <option value="03">3:00 am</option>
+              <option value="04">4:00 am</option>
+              <option value="05">5:00 am</option>
+              <option value="06">6:00 am</option>
+              <option value="07">7:00 am</option>
+              <option value="08">8:00 am</option>
+              <option value="09">9:00 am</option>
+              <option value="10">10:00 am</option>
+              <option value="11">11:00 am</option>
+              <option value="12">12:00 pm</option>
+              <option value="13">1:00 pm</option>
+              <option value="14">2:00 pm</option>
+              <option value="15">3:00 pm</option>
+              <option value="16">4:00 pm</option>
+              <option value="17">5:00 pm</option>
+              <option value="18">6:00 pm</option>
+              <option value="19">7:00 pm</option>
+              <option value="20">8:00 pm</option>
+              <option value="21">9:00 pm</option>
+              <option value="22">10:00 pm</option>
+              <option value="23">11:00 pm</option>
+            </select>
+          </a>
+        </div>
+
+        <div className="sliderSearchBar2">
+          <a className="hhhNow" onClick={e => setTime(hr)}>Happy Hours Happening Now!<br/><span className="hhhNowClickHere">(Click Here)</span></a>    
+        </div>
+
+        <div className="sliderSearchBar3">
+        <a className="sliderSearchBar3DropDown">Happy Hours (by company) !
+            <br/>
+            <input
+            className="searchBar"
+            placeholder="Search"
+            type="text"
+            onChange={e => setSearch(e.target.value)}
           />
-        </Link>
-      ))}
-      <div>
+          </a>
+          {newSearch.map((user, i) => (
+            <Link to={`/SingleViewPage/${user.id}`}>
+              {/* {user.companyname} */}
+              <img
+                key={i}
+                className="slidePics"
+                src={user.picture}
+                height={100}
+                alt={
+                  <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+                }
+              />
+            </Link>
+          ))}
+        </div>
+
+      </div>
+
+      <div className="CoverflowContainer">
         <Coverflow
           width="960"
           height="1000"
           displayQuantityOfSide={2}
           navigation={false}
-          // enableScroll={false}
+          enableScroll={false}
           // enableHeading={true}
           // infiniteScroll={true}
           clickable={true}

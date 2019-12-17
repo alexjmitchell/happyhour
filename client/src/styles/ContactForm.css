@@ -108,6 +108,12 @@
 
 /* ---------- messageContainer ---------- */
 
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .messageText {
   color: black;
   font-size: 2vw;
