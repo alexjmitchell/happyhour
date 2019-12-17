@@ -9,7 +9,6 @@ import { filterBars } from "../redux/ducks/users/"
 import "../styles/Slider.css"
 // import { start } from "repl"
 
-
 function Slider(props) {
   const { users, filter, usersS } = useUsers() //all the companies
   // const comp = props.match.params.id
@@ -30,7 +29,6 @@ function Slider(props) {
     // props.history.push("/CompanyPage/")
     // je ako hocemo da prenesemo data na bilo koju komponentu . u ovom slucaju je CompanyPage. a + liked je data koju prenosimo tamo
   }
-
 
   // useEffect(() => {
   //   filterBars
@@ -102,7 +100,9 @@ function Slider(props) {
             src={user.picture}
             height={100}
             alt={
-              <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+              <Link className="sliderImg" to={`/SingleViewPage/${user.id}`}>
+                {user.companyname}
+              </Link>
             }
           />
         </Link>
@@ -113,7 +113,7 @@ function Slider(props) {
           height="1000"
           displayQuantityOfSide={2}
           navigation={false}
-          // enableScroll={false}
+          enableScroll={false}
           // enableHeading={true}
           // infiniteScroll={true}
           clickable={true}
@@ -139,7 +139,12 @@ function Slider(props) {
                   src={user.picture}
                   height={450}
                   alt={
-                    <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+                    <Link
+                      className="sliderImg"
+                      to={`/SingleViewPage/${user.id}`}
+                    >
+                      {user.companyname}
+                    </Link>
                   }
                 />
               ))
@@ -154,7 +159,12 @@ function Slider(props) {
                     //   {user.companyname}
                     // </a>
 
-                  <Link className="sliderImg" to ={`/SingleViewPage/${user.id}`}>{user.companyname}</Link>
+                    <Link
+                      className="sliderImg"
+                      to={`/SingleViewPage/${user.id}`}
+                    >
+                      {user.companyname}
+                    </Link>
                   }
                 />
               ))}
