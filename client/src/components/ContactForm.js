@@ -27,8 +27,10 @@ function ContactForm(props) {
     let err = false
 
     if (name !== "") {
-      if (!validator.isAlpha(name) && 
-      validator.isEmpty(name, { ignore_whitespace: true } )) {
+      if (
+        !validator.isAlpha(name) &&
+        validator.isEmpty(name, { ignore_whitespace: true })
+      ) {
         err = true
         setNameError("Must be a valid text")
       } else {
@@ -78,15 +80,10 @@ function ContactForm(props) {
   }
   return (
     <div className="mainForm">
-      <div className="contactFormLeftSide">
-        
-      </div>
-
-      <form onSubmit={handleSubmit}className="contactInputs">
-      <div className="contactForm"> We'd love to hear from you!</div>
+      <form onSubmit={handleSubmit} className="contactInputs">
+        <div className="contactForm"> We'd love to hear from you!</div>
 
         <div className="contactTop">
-
           {/* Top Left Section */}
           <div className="contactTopLeft">
             <div className="nameTop">
@@ -109,7 +106,9 @@ function ContactForm(props) {
               <span className="emailFieldError">{emailError}</span>
             </div>
             <input
-              className={emailError === "" ? "emailInputField" : "emailInputField"}
+              className={
+                emailError === "" ? "emailInputField" : "emailInputField"
+              }
               onChange={element => setEmail(element.target.value)}
               value={email}
               type=""
@@ -125,7 +124,9 @@ function ContactForm(props) {
             <div className="messageFieldError">{messageError}</div>
           </div>
           <textarea
-            className={messageError === "" ? "messageInputField" : "messageInputField"}
+            className={
+              messageError === "" ? "messageInputField" : "messageInputField"
+            }
             onChange={element => setMessage(element.target.value)}
             value={message}
             type="text"
@@ -137,15 +138,10 @@ function ContactForm(props) {
         </button>
         <p className="contactConfirmation">{buttonError}</p>
       </form>
-      
+
       <div className="contactPicRight">
         <div id="myVideoContainer">
-          <video
-            autoplay="true"
-            loop="true"
-            id="myVideo"
-            src={dancing}
-          ></video>
+          <video autoplay="true" loop="true" id="myVideo" src={dancing}></video>
         </div>
       </div>
     </div>
