@@ -1,11 +1,22 @@
 .mainForm {
   background: rgb(32, 73, 117);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* display: flex; */
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-direction: column;
+  justify-content: center; */
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+
+.contactPicRight{
+  display: flex;
+  align-items: center;
+  background: rgb(32, 73, 117);
+  margin: 0 auto;
+  width:85%;
 }
 
 .contactInputs {
@@ -13,13 +24,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5vw auto;
-  width: 80%;
+  margin: 5vh auto;
+  width: 85%;
 }
 
 .contactForm {
   color: black;
-  font-size: 4vw;
+  font-size: 3vw;
   margin: 2vh;
   padding: 0.5vh 0;
   text-align: center;
@@ -107,6 +118,11 @@
 }
 
 /* ---------- messageContainer ---------- */
+.messageContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .messageText {
   color: black;
@@ -143,7 +159,8 @@
   align-items: center;
   background-color: #008cba;
   border: none;
-  border-radius: 1vw;
+  border-radius:0.3vw ;
+  /* border-radius: 1vw; */
   color: white;
   cursor: pointer;
   display: inline-block;
@@ -160,11 +177,36 @@
   text-align: center;
 }
 
+/* ---------- Video ---------- */
+
+#myVideo {
+  background: rgb(32, 73, 117);
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  /* padding-left:20px; */
+}
+
+#myVideoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh auto;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 /* ********** RESPONSIVE DESIGN ********** */
 
 @media screen and (max-width: 1200px) {
-  .contactTop {
-    display: block;
+
+  .mainForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   .nameInputField,
@@ -175,6 +217,15 @@
   .messageInputField {
     height: 10vw;
   }
+
+  /* .mainForm{
+    display: block;
+  } */
+
+  .contactInputs{
+
+  }
+
 }
 
 /* .mainNameEmailInputs {
