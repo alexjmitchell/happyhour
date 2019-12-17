@@ -56,9 +56,9 @@ function Slider2() {
         />
       </div>
       {newSearch.map((user, i) => (
-        <Link to={`/SingleViewPage/${user.companyname}`}>
+        <Link className="sl2Searchbar" to={`/SingleViewPage/${user.id}`}>
           {user.companyname}
-          <img
+          {/* <img
             key={"c" + i}
             className="slidePics"
             src={user.picture}
@@ -68,7 +68,7 @@ function Slider2() {
                 {user.companyname}
               </a>
             }
-          />
+          /> */}
         </Link>
       ))}
       <div>

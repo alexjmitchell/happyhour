@@ -79,3 +79,7 @@ p.legend {
 ::placeholder {
   color: white;
 }
+
+.sl2Searchbar{
+  padding:5px 15px;
+}
