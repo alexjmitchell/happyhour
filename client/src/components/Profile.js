@@ -3,6 +3,9 @@ import { useAdmins} from '../hooks'
 import {useCompanies} from "../hooks"
 import "../styles/Profile.css"
 import Header from "./Header";
+import { Link } from 'react-router-dom'
+import Icon from "../lib/Icon";
+
 import Footer from "./Footer";
 import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
@@ -21,11 +24,9 @@ export default props => {
     const thecompany = companies.filter(f=>f.admin_id==admin_id)
     const dd=thecompany.map(c =>c.hhdays).join()
     const ddarr=dd.split(",")
-
     const [contactName, setContactName]=useState(oneAdmin.map(u=>u.name).toString())
     const [email, setEmail]=useState(oneAdmin.map(u=>u.email).toString())
     const [phonenumber, setPhone]=useState(oneAdmin.map(u=>u.phone).toString())
-
     const [compName,setCompName]=useState(thecompany.map(c=>c.companyname).join())
     const [address,setAddress]=useState(thecompany.map(c=>c.address).join())
     const [usstate, setUsState]=useState(thecompany.map(c=>c.state).join())
@@ -64,6 +65,7 @@ export default props => {
     const [iserror, setisanError]=useState(false)
     const [isAnumber, setIsAnumber]=useState(false)
     const [isPhoneError, setIsPhoneError]=useState(false)
+    const [days, setDays]=useState(true)
 
     function handleUploadStart(filename) {
         setIsUploading(true)
@@ -134,6 +136,7 @@ export default props => {
             console.log("vacios") 
             setDescError("Please check required fields") 
             setisanError(true)
+            setDays(d==="" ? false : true)
             error=true
             } 
         else { 
@@ -193,8 +196,11 @@ export default props => {
             
     return (
         <>
-        <Header/>
-
+        {/* <Header/> */}
+                        <div className="ProfloginHouseContainer">
+                            <Link className="loginHouse" to={'/'}><Icon icon="home"/></Link>
+                        </div>
+                    
         <div className="prof">
             <h1> Welcome, {username}</h1> 
             <form onSubmit={handlesubmit}>
@@ -229,9 +235,9 @@ export default props => {
                         <div id="right">
                                 <div id="rightTop">
                                     <div className="loactioninputs">
-                                    <input className={iserror ? "red" : ""}  type="text" name = "companyname" placeholder="Company name" value={compName} onChange={e=>setCompName(e.target.value)} tabIndex="1" autoFocus/>
-                                    <input className={iserror ? "red" : ""}  type="text" name = "address" placeholder="Address" value={address} onChange={e=>setAddress(e.target.value)} tabIndex="2"/>
-                                    <select className={iserror ? "st red" : "st"} onChange={e => setUsState(e.target.value)} tabIndex="3" value={usstate} >
+                                    <input className={compName==="" ? "red" : ""}  type="text" name = "companyname" placeholder="Company name" value={compName} onChange={e=>setCompName(e.target.value)} tabIndex="1" autoFocus/>
+                                    <input className={address==="" ? "red" : ""}  type="text" name = "address" placeholder="Address" value={address} onChange={e=>setAddress(e.target.value)} tabIndex="2"/>
+                                    <select className={usstate==="" ? "st red" : "st"} onChange={e => setUsState(e.target.value)} tabIndex="3" value={usstate} >
                                         <option value="default"> Select</option>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -286,15 +292,15 @@ export default props => {
                                         <option value="WY">Wyoming</option>
                                     </select>
 
-                                    <input className={iserror ? "red" : ""} type="text" name = "city" placeholder="City" value={city} onChange={e=>setCity(e.target.value)} tabIndex="4"/>
-                                    <input className={iserror || isAnumber ? "red" : ""} type="text" name = "zip" placeholder="Zip code" value={zip} onChange={e=>setZip(e.target.value)} tabIndex="5"/>
+                                    <input className={city==="" ? "red" : ""} type="text" name = "city" placeholder="City" value={city} onChange={e=>setCity(e.target.value)} tabIndex="4"/>
+                                    <input className={zip==="" || isAnumber ? "red" : ""} type="text" name = "zip" placeholder="Zip code" value={zip} onChange={e=>setZip(e.target.value)} tabIndex="5"/>
                                     <textarea type="text" name="menu" placeholder="Menu" value={menu} onChange={e=>setMenu(e.target.value)} tabIndex="14"/>
                                 </div>
                             
                                     <div className="contactinputs">
-                                    <input className={iserror || emailError ? "red" : ""} type="email" name ="companyemail" placeholder="Company email" value={compEmail} onChange={e=>setCompEmail(e.target.value)} tabIndex="7"/>
-                                    <input className={iserror || isAnumber ? "red" : ""} type="tel" name ="phone" placeholder="Company phone" value={compPhone} onChange={e=>setCompPhone(e.target.value)} tabIndex="8"/>
-                                    <input className={iserror ? "red" : ""} type="url" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value) } tabIndex="9"/>
+                                    <input className={compEmail==="" || emailError ? "red" : ""} type="email" name ="companyemail" placeholder="Company email" value={compEmail} onChange={e=>setCompEmail(e.target.value)} tabIndex="7"/>
+                                    <input className={compPhone==="" || isPhoneError ? "red" : ""} type="tel" name ="phone" placeholder="Company phone" value={compPhone} onChange={e=>setCompPhone(e.target.value)} tabIndex="8"/>
+                                    <input className={compWeb==="" ? "red" : ""} type="url" name ="website" placeholder="Company website" value={compWeb} onChange={e=>setCompWeb(e.target.value) } tabIndex="9"/>
                                     <input type="url" name ="fb" placeholder="Company Facebook" value={fb} onChange={e=>setFb(e.target.value)} tabIndex="10"/>
                                     <input type="url" name ="ig" placeholder="Company Instagram" value={ig} onChange={e=>setIg(e.target.value)} tabIndex="11"/>
                                     <input type="url" name ="tw" placeholder="Company Twitter" value={tw} onChange={e=>setTw(e.target.value)} tabIndex="12"/>
@@ -306,25 +312,25 @@ export default props => {
                                     <div className="dayshr">
                                         <div className="happydays">
                                             
-                                            <label className={iserror ? "hred" : ""}> Mo
+                                            <label className={!days ? "hred" : ""}> Mo
                                                 <input type="checkbox" value={monday} checked={monday} onChange={e=>setMonday(!monday)} tabIndex="15"/>                      
                                             </label >
-                                            <label className={iserror ? "hred" : ""}> Tu
+                                            <label className={!days ? "hred" : ""}> Tu
                                                 <input type="checkbox" value={tuesday} checked={tuesday} onChange={e=>setTuesday(!tuesday)} tabIndex="16"/>                      
                                             </label>
-                                            <label className={iserror ? "hred" : ""}> We
+                                            <label className={!days?"hred" : ""}> We
                                                 <input type="checkbox" value={wed} checked={wed} onChange={e=>setWed(!wed)} tabIndex="17"/>                      
                                             </label >
-                                            <label className={iserror ? "hred" : ""}> Th
+                                            <label className={!days ?"hred" : ""}> Th
                                                 <input type="checkbox" value={thurs} checked={thurs} onChange={e=>setThurs(!thurs)} tabIndex="18"/>                      
                                             </label>
-                                            <label className={iserror ? "hred" : ""}> Fr
+                                            <label className={!days ? "hred" : ""}> Fr
                                                 <input type="checkbox" value={fri} checked={fri} onChange={e=>setFri(!fri)} tabIndex="19"/>                      
                                             </label>
-                                            <label className={iserror ? "hred" : ""}> Sa
+                                            <label className={!days ? "hred" : ""}> Sa
                                                 <input type="checkbox" value={sat} checked={sat} onChange={e=>setSat(!sat)} tabIndex="20"/>                      
                                             </label>
-                                            <label className={iserror ? "hred" : ""}> Su
+                                            <label className={!days ? "hred" : ""}> Su
                                                 <input type="checkbox" name="sun" value={sun} checked={sun} onChange={e=>setSun(!sun)} tabIndex="21"/>                      
                                             </label>
 
@@ -332,7 +338,7 @@ export default props => {
 
                                         <div className="hr">
                                 
-                                            <select className={iserror ? "sd red" : "sd"} onChange={e => setStartHr(e.target.value)} tabIndex="22" value={startHr} >
+                                            <select className={startHr==="" ? "sd red" : "sd"} onChange={e => setStartHr(e.target.value)} tabIndex="22" value={startHr} >
                                                 <option value="default"> Select</option>
                                                 <option value="00">12:00 am</option>
                                                 <option value="01">01:00 am</option>
@@ -360,7 +366,7 @@ export default props => {
                                                 <option value="23">11:00 pm</option> 
                                                 </select>
                                             
-                                            <select className={iserror ? "sd red" : "sd"} onChange={e => setEndHr(e.target.value)} tabIndex="23" value={endHr} >
+                                            <select className={endHr==="" ? "sd red" : "sd"} onChange={e => setEndHr(e.target.value)} tabIndex="23" value={endHr} >
                                                 <option value="default"> Select</option>
                                                 <option value="00">12:00 am</option>
                                                 <option value="01">01:00 am</option>
@@ -392,7 +398,7 @@ export default props => {
                                         
                                 </div>    
                                         
-                                        <select className={iserror ? "st red" : "st"} onChange={e => setFoodType(e.target.value)} tabIndex="23" value={foodType} >
+                                        <select className={foodType==="" ? "st red" : "st"} onChange={e => setFoodType(e.target.value)} tabIndex="23" value={foodType} >
                                                 <option value="foodtype"> Select</option>
                                                 <option value="American">American</option>
                                                 <option value="Mexican">Mexican</option>

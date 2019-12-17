@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, link } from "react-router-dom"
 // import sub from "../components/Submitted"
 import { Link } from "react-router-dom"
 import { useUsers } from "../hooks"
+import dancing from "../assets/dancing.mp4"
 
 function ContactForm(props) {
   const [name, setName] = useState("")
@@ -136,6 +137,17 @@ function ContactForm(props) {
         </button>
         <p className="contactConfirmation">{buttonError}</p>
       </form>
+      
+      <div className="contactPicRight">
+        <div id="myVideoContainer">
+          <video
+            autoplay="true"
+            loop="true"
+            id="myVideo"
+            src={dancing}
+          ></video>
+        </div>
+      </div>
     </div>
   )
 }

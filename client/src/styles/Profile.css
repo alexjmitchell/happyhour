@@ -2,8 +2,12 @@ body, html{
     background-color: white;
   }
    
-  .profInputs input, .profInputs textarea{ 
-    font-size: 18px;
+  .profInputs input, .profInputs textarea, select{ 
+    /* font-size: 18px; */
+    color:#333;
+    font-size: 23px;
+    font-size: bolder;
+    font-weight: bold;
       padding-left: 10px;
       margin:5px 0;
       width:350px;
@@ -12,22 +16,22 @@ body, html{
   
   
     .inputs input{
-      font-size: 18px;
+      /* font-size: 18px; */
       padding-left: 10px;
       border:none;
     
     }
     
     .prof{
+      background-color: rgb(228, 233, 238);
       display: flex;
       flex-direction: column;
       height: 100vh;
       margin: auto;
-  
       width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+    /* margin-bottom: 10px; */
     }
   
     .prof form{
@@ -61,22 +65,21 @@ body, html{
   
     .buttons{
       margin-top: 30px;
+      margin-right:40px;
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
     
     }
+
     .buttons button:focus{
     outline: none;
   
   }
   
-    .norev{
-      /* flex-direction: row;
-      justify-content: space-between; */
-      justify-content: space-between;  
+.norev{
+    justify-content: space-between;  
     border:none;
-  
   }
   
   /* .days>div.hred{
@@ -102,12 +105,13 @@ select.red{
     .middleBottom button{
       width: 350px;
       height: 50px;
-      background-color: red;
+      margin-right:10px;
+      background-color:#333;
       color:white;
       font-size: 25px;
       border:none;
       cursor: pointer;
-      align-items: right;
+      /* align-items: right; */
     }
   
   
@@ -196,5 +200,21 @@ select.red{
     width:350px;
   }
   
+.ProfloginHouseContainer {
+  background-color: rgb(228, 233, 238);
+  display: flex;
+  justify-content: flex-end;
+  padding: 2vw 4vw 0 0;
+}
   
-  
+a.loginHouse {
+  color: royalblue;
+  font-size: 64px;
+  text-align: right;
+}
+
+.loactioninputs {
+  /* font-size: 30px; */
+  /* font-weight: bold;    
+  text-align: center; */
+}
