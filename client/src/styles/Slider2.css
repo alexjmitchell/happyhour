@@ -66,20 +66,25 @@ p.legend {
   color: white;
   font-size: 15px;
   margin: 5px;
-  border-radius: 100px;
+  border-radius: 10px;
 }
 .searchBar {
   width: 200px;
   height: 40px;
   margin: 5px;
+  border-radius: 10px;
   background: blue;
   color: white;
   font-size: 12px;
 }
-::placeholder {
+.searchBar::placeholder {
   color: white;
 }
 
+.searchBar:focus{
+  outline: none;
+}
+
 .sl2Searchbar{
-  padding:5px 15px;
+  padding:5px 15px 10px 10px;
 }

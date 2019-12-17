@@ -63,10 +63,10 @@ function Slider(props) {
 
         <div className="sliderSearchBar3">
           <a className="sliderSearchBar3DropDown">
-            Happy Hours (by company) !
+            Search by company !
             <br />
             <input
-              className="searchBar"
+              className="searchBar1"
               placeholder="Search"
               type="text"
               onChange={e => setSearch(e.target.value)}
