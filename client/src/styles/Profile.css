@@ -3,7 +3,6 @@ body, html{
   }
    
   .profInputs input, .profInputs textarea, select{ 
-    /* font-size: 18px; */
     color:#333;
     font-size: 23px;
     font-size: bolder;
@@ -16,7 +15,6 @@ body, html{
   
   
     .inputs input{
-      /* font-size: 18px; */
       padding-left: 10px;
       border:none;
     
@@ -31,7 +29,6 @@ body, html{
       width: 100%;
       align-items: center;
       justify-content: center;
-    /* margin-bottom: 10px; */
     }
   
     .prof form{
@@ -82,15 +79,10 @@ body, html{
     border:none;
   }
   
-  /* .days>div.hred{
-    border:1px solid red;
-  } */
 .hred{
   color:red;
 }
-   /* .hred{ */
-    /* color:red;
-  } */
+   
   
 .red::placeholder{
   color:red;
@@ -111,7 +103,6 @@ select.red{
       font-size: 25px;
       border:none;
       cursor: pointer;
-      /* align-items: right; */
     }
   
   
@@ -200,21 +191,15 @@ select.red{
     width:350px;
   }
   
-.ProfloginHouseContainer {
+.ProfloginHouseContainerP {
   background-color: rgb(228, 233, 238);
   display: flex;
   justify-content: flex-end;
   padding: 2vw 4vw 0 0;
 }
   
-a.loginHouse {
+a.loginHouseP {
   color: royalblue;
   font-size: 64px;
   text-align: right;
-}
-
-.loactioninputs {
-  /* font-size: 30px; */
-  /* font-weight: bold;    
-  text-align: center; */
 }

@@ -46,7 +46,6 @@ const getCompanies = () => {
 
 
 const getOneCompany = (companyname)=>{
-console.log ("hooks " + companyname )
   return dispatch => {
 
     dispatch ({
@@ -61,14 +60,12 @@ console.log ("hooks " + companyname )
 
 const getPlace = (name, dispatch) => {
   return new Promise((resolve, reject) => {
-    console.log(name + " actionreduxname")
     axios.put(`/map/places/${name}`).then(resp => {
       dispatch({
         type: GET_PLACE,
         lat: resp.data.lat,
         lng:resp.data.lng
       })
-      
       resolve()
 
     }).catch(e=>{
@@ -85,8 +82,7 @@ const getPlace = (name, dispatch) => {
 function regProfile(username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id, fromRegForm) {
 if (fromRegForm=="r")
 {
-
-    console.log("company doesn't exist")
+//company does not exists
     return new Promise((resolve, reject) => {
         axios
             .post("/profile", {username, companyname, address, city, state, zip, phone, email, website, facebook, instagram, twitter, lat, lng, picture, foodtype, menu, description, hhdays, starthour, endhour, admin_id })
@@ -102,7 +98,6 @@ if (fromRegForm=="r")
          })
 
 }else{
-    console.log("company exists")
 
     return new Promise((resolve, reject) => {
 

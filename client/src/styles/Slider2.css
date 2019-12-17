@@ -1,20 +1,16 @@
 @media (max-width: 1000px) {
-  .sliderW {
+  .sliderMainContainer {
     width: 0;
     height: 0;
   }
 }
-/* .sliderResponsive {
-  display: block;
-} */
+
 @media (min-width: 999px) {
   .sliderResponsive {
     display: none;
   }
 }
-/* li.slide.selected {
-  height: 800px;
-} */
+
 li.thumb {
   height: 100px;
 }
