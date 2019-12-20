@@ -7,7 +7,7 @@ function Banner() {
   return (
     <div className="banner">
         <div className="bannerTop">
-          <div className="bannerLogo">HHFindr.com</div>
+          <div className="bannerLogo">HappyHoursNow</div>
           <div className="nav">
             <Link className="bannerSignUp" to={'/Register'}>Sign Up</Link>       
             <Link className="bannerLogIn" to={'/Login'}>Log In</Link>
